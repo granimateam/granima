@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="nima"
+    nsURI="http://nima/1.0" nsPrefix="nima">
+  <eClassifiers xsi:type="ecore:EClass" name="Archetype">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configs" upperBound="-1"
+        eType="#//Config" containment="true" eOpposite="#//Config/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attaque" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defense" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeDef" eType="#//TypeDef"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rphy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rmys" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rpsy" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="perf" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tran" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="con" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cha" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="froid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ener" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="active" eType="#//Config"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Attaque"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbDef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="joueur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Config">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defense" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="degats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeDegat" eType="#//typeAtt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" lowerBound="1" eType="#//Archetype"
+        eOpposite="#//Archetype/configs"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attaque" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DualHandConfig" eSuperTypes="#//ConfigCac">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initGauche" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="attaqueGauche" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defGauche" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="degatsGauche" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeDegatGuche" eType="#//typeAtt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeDef">
+    <eLiterals name="esquive"/>
+    <eLiterals name="parade" value="1"/>
+    <eLiterals name="bouclier" value="2"/>
+    <eLiterals name="encaissement" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="typeAtt">
+    <eLiterals name="tranchant"/>
+    <eLiterals name="contondant" value="1"/>
+    <eLiterals name="perforant" value="2"/>
+    <eLiterals name="chaleur" value="3"/>
+    <eLiterals name="froid" value="4"/>
+    <eLiterals name="electricite" value="5"/>
+    <eLiterals name="energie" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigCac" eSuperTypes="#//Config"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigLance" eSuperTypes="#//Config"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigTir" eSuperTypes="#//Config"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigAoe" eSuperTypes="#//Config">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rayon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Univers">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="archetypes" upperBound="-1"
+        eType="#//Archetype" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="combats" upperBound="-1"
+        eType="#//Combat" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Combat">
+    <eOperations name="resetRound"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="archetypes" upperBound="-1"
+        eType="#//Archetype" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attaques" upperBound="-1"
+        eType="#//Attaque" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attaque">
+    <eOperations name="resolve"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cible" lowerBound="1" eType="#//Archetype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bonus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attaquant" lowerBound="1"
+        eType="#//Config"/>
+  </eClassifiers>
+</ecore:EPackage>
