@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="nima"
-    nsURI="http://nima/1.0" nsPrefix="nima">
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="nima" nsURI="http://nima/1.0" nsPrefix="nima">
   <eClassifiers xsi:type="ecore:EClass" name="Archetype">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="configs" upperBound="-1"
@@ -27,6 +25,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Attaque"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbDef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="joueur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Config">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -79,12 +78,14 @@
         eType="#//Archetype" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attaques" upperBound="-1"
         eType="#//Attaque" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbRound" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attaque">
     <eOperations name="resolve"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cible" lowerBound="1" eType="#//Archetype"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bonus" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bonusAtt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attaquant" lowerBound="1"
         eType="#//Config"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bonusDef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>
