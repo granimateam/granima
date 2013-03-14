@@ -240,48 +240,45 @@ public class AttaqueImpl extends EObjectImpl implements Attaque {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void resolve() {
-		Archetype attaquant, defenseur;
-		Config attaque, defense;
-		attaque = this.getAttaquant();
-		defense = this.getCible().getActive();
-		attaquant=this.getAttaquant().getOwner();
-		defenseur = this.getCible();
-		int attaqueTotale = this.getAttaquant().getAttaque();
-		attaqueTotale+= this.getBonusAtt();
-		attaqueTotale+=Des.fullRoll();
-		int nbatt = attaquant.getNbAction();
-		attaqueTotale = attaqueTotale + (-25 *nbatt);
-		this.getAttaquant().getOwner().setNbAction(nbatt+1);
-		int defenseTotale = this.getBonusDef();
-		defenseTotale+= defenseur.getActive().getDefense();
-		defenseTotale+=Des.fullRoll();
-		int def = defenseur.getNbDef();
-		if(def ==1) defenseTotale=defenseTotale-30;
-		if(def ==2) defenseTotale=defenseTotale-50;
-		if(def ==3) defenseTotale=defenseTotale-70;
-		if(def >3) defenseTotale=defenseTotale-90;
-		this.getCible().setNbDef(def+1);
-		
-		int marge = attaqueTotale - defenseTotale;
-		System.out.println(marge);
-		if(marge>10)
-		{
-			defenseur.setPeutAgir(false);
-			int absorption = 2 + defenseur.getIP(attaque.getTypeDegat());
-			marge -= absorption * 10;
-			if(marge>10)
-			{
-				int degat = attaque.getDegats()* marge /100;
-				int hp = defenseur.getHp()- degat;
-				defenseur.setHp(hp);
+				Archetype attaquant, defenseur;
+				Config attaque, defense;
+				attaque = this.getAttaquant();
+				defense = this.getCible().getActive();
+				attaquant=this.getAttaquant().getOwner();
+				defenseur = this.getCible();
+				int attaqueTotale = this.getAttaquant().getAttaque();
+				attaqueTotale+= this.getBonusAtt();
+				attaqueTotale+=Des.fullRoll();
+				int nbatt = attaquant.getNbAction();
+				attaqueTotale = attaqueTotale + (-25 *nbatt);
+				this.getAttaquant().getOwner().setNbAction(nbatt+1);
+				int defenseTotale = this.getBonusDef();
+				defenseTotale+= defense.getDefense();
+				defenseTotale+=Des.fullRoll();
+				int def = defenseur.getNbDef();
+				if(def ==1) defenseTotale=defenseTotale-30;
+				if(def ==2) defenseTotale=defenseTotale-50;
+				if(def ==3) defenseTotale=defenseTotale-70;
+				if(def >3) defenseTotale=defenseTotale-90;
+				this.getCible().setNbDef(def+1);
 				
-			}
-		}
-		//TODO contre attaque
-		
+				int marge = attaqueTotale - defenseTotale;
+				System.out.println(marge);
+				if(marge>10) {
+					defenseur.setPeutAgir(false);
+					int absorption = 2 + defenseur.getIP(attaque.getTypeDegat());
+					marge -= absorption * 10;
+					if(marge>10) {
+						int degat = attaque.getDegats()* marge /100;
+						int hp = defenseur.getHp()- degat;
+						defenseur.setHp(hp);
+						
+					}
+				}
+				//TODO contre attaque
 	}
 
 	/**

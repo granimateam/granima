@@ -135,7 +135,7 @@ public interface Attaque extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tArchetype attaquant, defenseur;\r\n\t\tConfig attaque, defense;\r\n\t\tattaque = this.getAttaquant();\r\n\t\tdefense = this.getCible().getActive();\r\n\t\tattaquant=this.getAttaquant().getOwner();\r\n\t\tdefenseur = this.getCible();\r\n\t\tint attaqueTotale = this.getAttaquant().getAttaque();\r\n\t\tattaqueTotale+= this.getBonusAtt();\r\n\t\tattaqueTotale+=Des.fullRoll();\r\n\t\tint nbatt = attaquant.getNbAction();\r\n\t\tattaqueTotale = attaqueTotale + (-25 *nbatt);\r\n\t\tthis.getAttaquant().getOwner().setNbAction(nbatt+1);\r\n\t\tint defenseTotale = this.getBonusDef();\r\n\t\tdefenseTotale+= defenseur.getActive().getDefense();\r\n\t\tdefenseTotale+=Des.fullRoll();\r\n\t\tint def = defenseur.getNbDef();\r\n\t\tif(def ==1) defenseTotale=defenseTotale-30;\r\n\t\tif(def ==2) defenseTotale=defenseTotale-50;\r\n\t\tif(def ==3) defenseTotale=defenseTotale-70;\r\n\t\tif(def >3) defenseTotale=defenseTotale-90;\r\n\t\tthis.getCible().setNbDef(def+1);\r\n\t\t\r\n\t\tint marge = attaqueTotale - defenseTotale;\r\n\t\tSystem.out.println(marge);\r\n\t\tif(marge>10)\r\n\t\t{\r\n\t\t\tdefenseur.setPeutAgir(false);\r\n\t\t\tint absorption = 2 + defenseur.getIP(attaque.getTypeDegat());\r\n\t\t\tmarge -= absorption * 10;\r\n\t\t\tif(marge>10)\r\n\t\t\t{\r\n\t\t\t\tint degat = attaque.getDegats()* marge /100;\r\n\t\t\t\tint hp = defenseur.getHp()- degat;\r\n\t\t\t\tdefenseur.setHp(hp);\r\n\t\t\t\t\r\n\t\t\t}\r\n\t\t}\r\n\t\t//TODO contre attaque'"
 	 * @generated
 	 */
 	void resolve();
