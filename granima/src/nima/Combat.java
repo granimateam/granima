@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link nima.Combat#getArchetypes <em>Archetypes</em>}</li>
  *   <li>{@link nima.Combat#getAttaques <em>Attaques</em>}</li>
+ *   <li>{@link nima.Combat#getNbRound <em>Nb Round</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +60,32 @@ public interface Combat extends EObject {
 	 * @generated
 	 */
 	EList<Attaque> getAttaques();
+
+	/**
+	 * Returns the value of the '<em><b>Nb Round</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nb Round</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nb Round</em>' attribute.
+	 * @see #setNbRound(int)
+	 * @see nima.NimaPackage#getCombat_NbRound()
+	 * @model
+	 * @generated
+	 */
+	int getNbRound();
+
+	/**
+	 * Sets the value of the '{@link nima.Combat#getNbRound <em>Nb Round</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nb Round</em>' attribute.
+	 * @see #getNbRound()
+	 * @generated
+	 */
+	void setNbRound(int value);
 
 	/**
 	 * <!-- begin-user-doc -->

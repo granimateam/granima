@@ -40,6 +40,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link nima.Archetype#getEReference0 <em>EReference0</em>}</li>
  *   <li>{@link nima.Archetype#getNbDef <em>Nb Def</em>}</li>
  *   <li>{@link nima.Archetype#isJoueur <em>Joueur</em>}</li>
+ *   <li>{@link nima.Archetype#getNbAction <em>Nb Action</em>}</li>
+ *   <li>{@link nima.Archetype#isPeutAgir <em>Peut Agir</em>}</li>
  * </ul>
  * </p>
  *
@@ -614,5 +616,65 @@ public interface Archetype extends EObject {
 	 * @generated
 	 */
 	void setJoueur(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Nb Action</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nb Action</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nb Action</em>' attribute.
+	 * @see #setNbAction(int)
+	 * @see nima.NimaPackage#getArchetype_NbAction()
+	 * @model
+	 * @generated
+	 */
+	int getNbAction();
+
+	/**
+	 * Sets the value of the '{@link nima.Archetype#getNbAction <em>Nb Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nb Action</em>' attribute.
+	 * @see #getNbAction()
+	 * @generated
+	 */
+	void setNbAction(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Peut Agir</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Peut Agir</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Peut Agir</em>' attribute.
+	 * @see #setPeutAgir(boolean)
+	 * @see nima.NimaPackage#getArchetype_PeutAgir()
+	 * @model
+	 * @generated
+	 */
+	boolean isPeutAgir();
+
+	/**
+	 * Sets the value of the '{@link nima.Archetype#isPeutAgir <em>Peut Agir</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Peut Agir</em>' attribute.
+	 * @see #isPeutAgir()
+	 * @generated
+	 */
+	void setPeutAgir(boolean value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	int getIP(typeAtt type);
 
 } // Archetype

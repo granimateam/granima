@@ -13,6 +13,7 @@ import nima.Attaque;
 import nima.Combat;
 import nima.NimaPackage;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -20,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -34,6 +36,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link nima.impl.CombatImpl#getArchetypes <em>Archetypes</em>}</li>
  *   <li>{@link nima.impl.CombatImpl#getAttaques <em>Attaques</em>}</li>
+ *   <li>{@link nima.impl.CombatImpl#getNbRound <em>Nb Round</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +62,26 @@ public class CombatImpl extends EObjectImpl implements Combat {
 	 * @ordered
 	 */
 	protected EList<Attaque> attaques;
+
+	/**
+	 * The default value of the '{@link #getNbRound() <em>Nb Round</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbRound()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NB_ROUND_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNbRound() <em>Nb Round</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbRound()
+	 * @generated
+	 * @ordered
+	 */
+	protected int nbRound = NB_ROUND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,6 +131,27 @@ public class CombatImpl extends EObjectImpl implements Combat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getNbRound() {
+		return nbRound;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNbRound(int newNbRound) {
+		int oldNbRound = nbRound;
+		nbRound = newNbRound;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.COMBAT__NB_ROUND, oldNbRound, nbRound));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public void resetRound() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
@@ -142,6 +186,8 @@ public class CombatImpl extends EObjectImpl implements Combat {
 				return getArchetypes();
 			case NimaPackage.COMBAT__ATTAQUES:
 				return getAttaques();
+			case NimaPackage.COMBAT__NB_ROUND:
+				return getNbRound();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,6 +209,9 @@ public class CombatImpl extends EObjectImpl implements Combat {
 				getAttaques().clear();
 				getAttaques().addAll((Collection<? extends Attaque>)newValue);
 				return;
+			case NimaPackage.COMBAT__NB_ROUND:
+				setNbRound((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -181,6 +230,9 @@ public class CombatImpl extends EObjectImpl implements Combat {
 			case NimaPackage.COMBAT__ATTAQUES:
 				getAttaques().clear();
 				return;
+			case NimaPackage.COMBAT__NB_ROUND:
+				setNbRound(NB_ROUND_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -197,8 +249,26 @@ public class CombatImpl extends EObjectImpl implements Combat {
 				return archetypes != null && !archetypes.isEmpty();
 			case NimaPackage.COMBAT__ATTAQUES:
 				return attaques != null && !attaques.isEmpty();
+			case NimaPackage.COMBAT__NB_ROUND:
+				return nbRound != NB_ROUND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (nbRound: ");
+		result.append(nbRound);
+		result.append(')');
+		return result.toString();
 	}
 
 } //CombatImpl

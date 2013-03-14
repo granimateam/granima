@@ -14,6 +14,7 @@ import nima.Config;
 import nima.NimaPackage;
 import nima.TypeDef;
 
+import nima.typeAtt;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -57,6 +58,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link nima.impl.ArchetypeImpl#getEReference0 <em>EReference0</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#getNbDef <em>Nb Def</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#isJoueur <em>Joueur</em>}</li>
+ *   <li>{@link nima.impl.ArchetypeImpl#getNbAction <em>Nb Action</em>}</li>
+ *   <li>{@link nima.impl.ArchetypeImpl#isPeutAgir <em>Peut Agir</em>}</li>
  * </ul>
  * </p>
  *
@@ -472,6 +475,46 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	 * @ordered
 	 */
 	protected boolean joueur = JOUEUR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getNbAction() <em>Nb Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NB_ACTION_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getNbAction() <em>Nb Action</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected int nbAction = NB_ACTION_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isPeutAgir() <em>Peut Agir</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPeutAgir()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean PEUT_AGIR_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isPeutAgir() <em>Peut Agir</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isPeutAgir()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean peutAgir = PEUT_AGIR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -984,6 +1027,71 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getNbAction() {
+		return nbAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNbAction(int newNbAction) {
+		int oldNbAction = nbAction;
+		nbAction = newNbAction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ARCHETYPE__NB_ACTION, oldNbAction, nbAction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isPeutAgir() {
+		return peutAgir;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPeutAgir(boolean newPeutAgir) {
+		boolean oldPeutAgir = peutAgir;
+		peutAgir = newPeutAgir;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ARCHETYPE__PEUT_AGIR, oldPeutAgir, peutAgir));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public int getIP(typeAtt type) {
+		if(typeAtt.CHALEUR == type)
+			return cha;
+		if(typeAtt.ELECTRICITE == type)
+			return elec;
+		if(typeAtt.FROID == type)
+			return cha;
+		if(typeAtt.TRANCHANT == type)
+			return tran;
+		if(typeAtt.CONTONDANT == type)
+			return con;
+		if(typeAtt.PERFORANT == type)
+			return perf;
+		if(typeAtt.ENERGIE == type)
+			return ener;
+		return 0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -1062,6 +1170,10 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 				return getNbDef();
 			case NimaPackage.ARCHETYPE__JOUEUR:
 				return isJoueur();
+			case NimaPackage.ARCHETYPE__NB_ACTION:
+				return getNbAction();
+			case NimaPackage.ARCHETYPE__PEUT_AGIR:
+				return isPeutAgir();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1142,6 +1254,12 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 			case NimaPackage.ARCHETYPE__JOUEUR:
 				setJoueur((Boolean)newValue);
 				return;
+			case NimaPackage.ARCHETYPE__NB_ACTION:
+				setNbAction((Integer)newValue);
+				return;
+			case NimaPackage.ARCHETYPE__PEUT_AGIR:
+				setPeutAgir((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1220,6 +1338,12 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 			case NimaPackage.ARCHETYPE__JOUEUR:
 				setJoueur(JOUEUR_EDEFAULT);
 				return;
+			case NimaPackage.ARCHETYPE__NB_ACTION:
+				setNbAction(NB_ACTION_EDEFAULT);
+				return;
+			case NimaPackage.ARCHETYPE__PEUT_AGIR:
+				setPeutAgir(PEUT_AGIR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1276,6 +1400,10 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 				return nbDef != NB_DEF_EDEFAULT;
 			case NimaPackage.ARCHETYPE__JOUEUR:
 				return joueur != JOUEUR_EDEFAULT;
+			case NimaPackage.ARCHETYPE__NB_ACTION:
+				return nbAction != NB_ACTION_EDEFAULT;
+			case NimaPackage.ARCHETYPE__PEUT_AGIR:
+				return peutAgir != PEUT_AGIR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1328,6 +1456,10 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 		result.append(nbDef);
 		result.append(", joueur: ");
 		result.append(joueur);
+		result.append(", nbAction: ");
+		result.append(nbAction);
+		result.append(", peutAgir: ");
+		result.append(peutAgir);
 		result.append(')');
 		return result.toString();
 	}

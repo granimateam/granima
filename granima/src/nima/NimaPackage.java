@@ -269,13 +269,31 @@ public interface NimaPackage extends EPackage {
 	int ARCHETYPE__JOUEUR = 21;
 
 	/**
+	 * The feature id for the '<em><b>Nb Action</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHETYPE__NB_ACTION = 22;
+
+	/**
+	 * The feature id for the '<em><b>Peut Agir</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHETYPE__PEUT_AGIR = 23;
+
+	/**
 	 * The number of structural features of the '<em>Archetype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHETYPE_FEATURE_COUNT = 22;
+	int ARCHETYPE_FEATURE_COUNT = 24;
 
 	/**
 	 * The meta object id for the '{@link nima.impl.ConfigImpl <em>Config</em>}' class.
@@ -943,13 +961,22 @@ public interface NimaPackage extends EPackage {
 	int COMBAT__ATTAQUES = 1;
 
 	/**
+	 * The feature id for the '<em><b>Nb Round</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMBAT__NB_ROUND = 2;
+
+	/**
 	 * The number of structural features of the '<em>Combat</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMBAT_FEATURE_COUNT = 2;
+	int COMBAT_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link nima.impl.AttaqueImpl <em>Attaque</em>}' class.
@@ -971,13 +998,13 @@ public interface NimaPackage extends EPackage {
 	int ATTAQUE__CIBLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Bonus</b></em>' attribute.
+	 * The feature id for the '<em><b>Bonus Att</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTAQUE__BONUS = 1;
+	int ATTAQUE__BONUS_ATT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Attaquant</b></em>' reference.
@@ -989,13 +1016,22 @@ public interface NimaPackage extends EPackage {
 	int ATTAQUE__ATTAQUANT = 2;
 
 	/**
+	 * The feature id for the '<em><b>Bonus Def</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ATTAQUE__BONUS_DEF = 3;
+
+	/**
 	 * The number of structural features of the '<em>Attaque</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ATTAQUE_FEATURE_COUNT = 3;
+	int ATTAQUE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link nima.TypeDef <em>Type Def</em>}' enum.
@@ -1269,6 +1305,28 @@ public interface NimaPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getArchetype_Joueur();
+
+	/**
+	 * Returns the meta object for the attribute '{@link nima.Archetype#getNbAction <em>Nb Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nb Action</em>'.
+	 * @see nima.Archetype#getNbAction()
+	 * @see #getArchetype()
+	 * @generated
+	 */
+	EAttribute getArchetype_NbAction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link nima.Archetype#isPeutAgir <em>Peut Agir</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Peut Agir</em>'.
+	 * @see nima.Archetype#isPeutAgir()
+	 * @see #getArchetype()
+	 * @generated
+	 */
+	EAttribute getArchetype_PeutAgir();
 
 	/**
 	 * Returns the meta object for class '{@link nima.Config <em>Config</em>}'.
@@ -1549,6 +1607,17 @@ public interface NimaPackage extends EPackage {
 	EReference getCombat_Attaques();
 
 	/**
+	 * Returns the meta object for the attribute '{@link nima.Combat#getNbRound <em>Nb Round</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nb Round</em>'.
+	 * @see nima.Combat#getNbRound()
+	 * @see #getCombat()
+	 * @generated
+	 */
+	EAttribute getCombat_NbRound();
+
+	/**
 	 * Returns the meta object for class '{@link nima.Attaque <em>Attaque</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1570,15 +1639,15 @@ public interface NimaPackage extends EPackage {
 	EReference getAttaque_Cible();
 
 	/**
-	 * Returns the meta object for the attribute '{@link nima.Attaque#getBonus <em>Bonus</em>}'.
+	 * Returns the meta object for the attribute '{@link nima.Attaque#getBonusAtt <em>Bonus Att</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Bonus</em>'.
-	 * @see nima.Attaque#getBonus()
+	 * @return the meta object for the attribute '<em>Bonus Att</em>'.
+	 * @see nima.Attaque#getBonusAtt()
 	 * @see #getAttaque()
 	 * @generated
 	 */
-	EAttribute getAttaque_Bonus();
+	EAttribute getAttaque_BonusAtt();
 
 	/**
 	 * Returns the meta object for the reference '{@link nima.Attaque#getAttaquant <em>Attaquant</em>}'.
@@ -1590,6 +1659,17 @@ public interface NimaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAttaque_Attaquant();
+
+	/**
+	 * Returns the meta object for the attribute '{@link nima.Attaque#getBonusDef <em>Bonus Def</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Bonus Def</em>'.
+	 * @see nima.Attaque#getBonusDef()
+	 * @see #getAttaque()
+	 * @generated
+	 */
+	EAttribute getAttaque_BonusDef();
 
 	/**
 	 * Returns the meta object for enum '{@link nima.TypeDef <em>Type Def</em>}'.
@@ -1820,6 +1900,22 @@ public interface NimaPackage extends EPackage {
 		EAttribute ARCHETYPE__JOUEUR = eINSTANCE.getArchetype_Joueur();
 
 		/**
+		 * The meta object literal for the '<em><b>Nb Action</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHETYPE__NB_ACTION = eINSTANCE.getArchetype_NbAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Peut Agir</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHETYPE__PEUT_AGIR = eINSTANCE.getArchetype_PeutAgir();
+
+		/**
 		 * The meta object literal for the '{@link nima.impl.ConfigImpl <em>Config</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2044,6 +2140,14 @@ public interface NimaPackage extends EPackage {
 		EReference COMBAT__ATTAQUES = eINSTANCE.getCombat_Attaques();
 
 		/**
+		 * The meta object literal for the '<em><b>Nb Round</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMBAT__NB_ROUND = eINSTANCE.getCombat_NbRound();
+
+		/**
 		 * The meta object literal for the '{@link nima.impl.AttaqueImpl <em>Attaque</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2062,12 +2166,12 @@ public interface NimaPackage extends EPackage {
 		EReference ATTAQUE__CIBLE = eINSTANCE.getAttaque_Cible();
 
 		/**
-		 * The meta object literal for the '<em><b>Bonus</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Bonus Att</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ATTAQUE__BONUS = eINSTANCE.getAttaque_Bonus();
+		EAttribute ATTAQUE__BONUS_ATT = eINSTANCE.getAttaque_BonusAtt();
 
 		/**
 		 * The meta object literal for the '<em><b>Attaquant</b></em>' reference feature.
@@ -2076,6 +2180,14 @@ public interface NimaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ATTAQUE__ATTAQUANT = eINSTANCE.getAttaque_Attaquant();
+
+		/**
+		 * The meta object literal for the '<em><b>Bonus Def</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ATTAQUE__BONUS_DEF = eINSTANCE.getAttaque_BonusDef();
 
 		/**
 		 * The meta object literal for the '{@link nima.TypeDef <em>Type Def</em>}' enum.

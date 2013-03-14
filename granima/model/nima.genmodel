@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/granima/src"
-    modelPluginID="granima" modelName="Nima" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="6.0" copyrightFields="false">
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/granima/src" modelPluginID="granima" modelName="Nima"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false">
   <foreignModel>nima.ecore</foreignModel>
   <genPackages prefix="Nima" disposableProviderFactory="true" ecorePackage="nima.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="nima.ecore#//TypeDef">
@@ -44,6 +42,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nima.ecore#//Archetype/EReference0"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/nbDef"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/joueur"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/nbAction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/peutAgir"/>
+      <genOperations ecoreOperation="nima.ecore#//Archetype/getIP">
+        <genParameters ecoreParameter="nima.ecore#//Archetype/getIP/type"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="nima.ecore#//Config">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Config/init"/>
@@ -75,12 +78,14 @@
     <genClasses ecoreClass="nima.ecore#//Combat">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nima.ecore#//Combat/archetypes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nima.ecore#//Combat/attaques"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Combat/nbRound"/>
       <genOperations ecoreOperation="nima.ecore#//Combat/resetRound"/>
     </genClasses>
     <genClasses ecoreClass="nima.ecore#//Attaque">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nima.ecore#//Attaque/cible"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Attaque/bonus"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Attaque/bonusAtt"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nima.ecore#//Attaque/attaquant"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Attaque/bonusDef"/>
       <genOperations ecoreOperation="nima.ecore#//Attaque/resolve"/>
     </genClasses>
   </genPackages>

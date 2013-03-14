@@ -83,18 +83,26 @@
         <element xmi:type="ecore:EAttribute" href="nima.ecore#//Archetype/nbAction"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_L_unkYyaEeK8FZVwtjjNDQ"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_K1HKYIyhEeKDB6d7eoU5qg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="nima.ecore#//Archetype/peutAgir"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_K1HKYYyhEeKDB6d7eoU5qg"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="__fvB8or9EeKlbfFjmI1K-A"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="__fvB84r9EeKlbfFjmI1K-A"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="__fvB9Ir9EeKlbfFjmI1K-A"/>
     </children>
     <children xmi:type="notation:Node" xmi:id="__fvB9Yr9EeKlbfFjmI1K-A" type="5002">
+      <children xmi:type="notation:Node" xmi:id="_A2UJgIyiEeKDB6d7eoU5qg" type="2002">
+        <element xmi:type="ecore:EOperation" href="nima.ecore#//Archetype/getIP"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_A2UJgYyiEeKDB6d7eoU5qg"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="__fvB9or9EeKlbfFjmI1K-A"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="__fvB94r9EeKlbfFjmI1K-A"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="__fvB-Ir9EeKlbfFjmI1K-A"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="__flQ8Yr9EeKlbfFjmI1K-A" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="nima.ecore#//Archetype"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__flQ8or9EeKlbfFjmI1K-A" x="5" y="30" height="358"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__flQ8or9EeKlbfFjmI1K-A" x="5" y="30" height="378"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_AcrLUIr-EeKlbfFjmI1K-A" type="1001">
     <children xmi:type="notation:Node" xmi:id="_Ac08UIr-EeKlbfFjmI1K-A" type="4001"/>
@@ -203,7 +211,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_MQMnQYr_EeKlbfFjmI1K-A" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="nima.ecore#//TypeDef"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MQMnQor_EeKlbfFjmI1K-A" x="70" y="400"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MQMnQor_EeKlbfFjmI1K-A" x="165" y="415"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_clqZ0Ir_EeKlbfFjmI1K-A" type="1005">
     <children xmi:type="notation:Node" xmi:id="_clqZ04r_EeKlbfFjmI1K-A" type="4010"/>

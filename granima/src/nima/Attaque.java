@@ -17,8 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link nima.Attaque#getCible <em>Cible</em>}</li>
- *   <li>{@link nima.Attaque#getBonus <em>Bonus</em>}</li>
+ *   <li>{@link nima.Attaque#getBonusAtt <em>Bonus Att</em>}</li>
  *   <li>{@link nima.Attaque#getAttaquant <em>Attaquant</em>}</li>
+ *   <li>{@link nima.Attaque#getBonusDef <em>Bonus Def</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,30 +55,30 @@ public interface Attaque extends EObject {
 	void setCible(Archetype value);
 
 	/**
-	 * Returns the value of the '<em><b>Bonus</b></em>' attribute.
+	 * Returns the value of the '<em><b>Bonus Att</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Bonus</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Bonus Att</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bonus</em>' attribute.
-	 * @see #setBonus(int)
-	 * @see nima.NimaPackage#getAttaque_Bonus()
+	 * @return the value of the '<em>Bonus Att</em>' attribute.
+	 * @see #setBonusAtt(int)
+	 * @see nima.NimaPackage#getAttaque_BonusAtt()
 	 * @model
 	 * @generated
 	 */
-	int getBonus();
+	int getBonusAtt();
 
 	/**
-	 * Sets the value of the '{@link nima.Attaque#getBonus <em>Bonus</em>}' attribute.
+	 * Sets the value of the '{@link nima.Attaque#getBonusAtt <em>Bonus Att</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bonus</em>' attribute.
-	 * @see #getBonus()
+	 * @param value the new value of the '<em>Bonus Att</em>' attribute.
+	 * @see #getBonusAtt()
 	 * @generated
 	 */
-	void setBonus(int value);
+	void setBonusAtt(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Attaquant</b></em>' reference.
@@ -104,6 +105,32 @@ public interface Attaque extends EObject {
 	 * @generated
 	 */
 	void setAttaquant(Config value);
+
+	/**
+	 * Returns the value of the '<em><b>Bonus Def</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bonus Def</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bonus Def</em>' attribute.
+	 * @see #setBonusDef(int)
+	 * @see nima.NimaPackage#getAttaque_BonusDef()
+	 * @model
+	 * @generated
+	 */
+	int getBonusDef();
+
+	/**
+	 * Sets the value of the '{@link nima.Attaque#getBonusDef <em>Bonus Def</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Bonus Def</em>' attribute.
+	 * @see #getBonusDef()
+	 * @generated
+	 */
+	void setBonusDef(int value);
 
 	/**
 	 * <!-- begin-user-doc -->

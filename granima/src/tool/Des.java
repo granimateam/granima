@@ -9,24 +9,41 @@ public class Des {
 
 	public static int openRoll()
 	{
-		int roll,result;
-		result =0;
-		int base = 88;
-		
-		do
-		{
-			roll=simpleRoll();
-			base++;
-			result+=roll;
-		}
-		while( roll>base);
-		return result;
+		return openRoll(0, 90);
 	}
 	
-	public static fullRoll()
+	public static int openRoll(int score, int base)
 	{
-		int roll = 1;
+		
+		int r = simpleRoll();
+		int result = score + r;
+		if(r<base)
+			return result;
+		else
+		{
+			System.out.println(r);
+			return openRoll(result, base+1);
+		}
+			
+	}
+	
+	public static int fullRoll()
+	{
+		int roll = simpleRoll();
+		int result;
+		if (roll <4)
+		{
+			result = roll-simpleRoll();
+			if(roll==1)
+				result -=15;
+			if(roll==3)
+				result +=15;
+			return result;
+		}
+		if(roll>89)
+			return openRoll(roll, 91);
 		return roll;
+		
 	}
 	
 }
