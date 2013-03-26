@@ -55,7 +55,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link nima.impl.ArchetypeImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#getActive <em>Active</em>}</li>
- *   <li>{@link nima.impl.ArchetypeImpl#getEReference0 <em>EReference0</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#getNbDef <em>Nb Def</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#isJoueur <em>Joueur</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#getNbAction <em>Nb Action</em>}</li>
@@ -425,16 +424,6 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	 * @ordered
 	 */
 	protected Config active;
-
-	/**
-	 * The cached value of the '{@link #getEReference0() <em>EReference0</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEReference0()
-	 * @generated
-	 * @ordered
-	 */
-	protected Attaque eReference0;
 
 	/**
 	 * The default value of the '{@link #getNbDef() <em>Nb Def</em>}' attribute.
@@ -947,44 +936,6 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attaque getEReference0() {
-		if (eReference0 != null && eReference0.eIsProxy()) {
-			InternalEObject oldEReference0 = (InternalEObject)eReference0;
-			eReference0 = (Attaque)eResolveProxy(oldEReference0);
-			if (eReference0 != oldEReference0) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NimaPackage.ARCHETYPE__EREFERENCE0, oldEReference0, eReference0));
-			}
-		}
-		return eReference0;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attaque basicGetEReference0() {
-		return eReference0;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEReference0(Attaque newEReference0) {
-		Attaque oldEReference0 = eReference0;
-		eReference0 = newEReference0;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ARCHETYPE__EREFERENCE0, oldEReference0, eReference0));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getNbDef() {
 		return nbDef;
 	}
@@ -1163,9 +1114,6 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 			case NimaPackage.ARCHETYPE__ACTIVE:
 				if (resolve) return getActive();
 				return basicGetActive();
-			case NimaPackage.ARCHETYPE__EREFERENCE0:
-				if (resolve) return getEReference0();
-				return basicGetEReference0();
 			case NimaPackage.ARCHETYPE__NB_DEF:
 				return getNbDef();
 			case NimaPackage.ARCHETYPE__JOUEUR:
@@ -1244,9 +1192,6 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 				return;
 			case NimaPackage.ARCHETYPE__ACTIVE:
 				setActive((Config)newValue);
-				return;
-			case NimaPackage.ARCHETYPE__EREFERENCE0:
-				setEReference0((Attaque)newValue);
 				return;
 			case NimaPackage.ARCHETYPE__NB_DEF:
 				setNbDef((Integer)newValue);
@@ -1329,9 +1274,6 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 			case NimaPackage.ARCHETYPE__ACTIVE:
 				setActive((Config)null);
 				return;
-			case NimaPackage.ARCHETYPE__EREFERENCE0:
-				setEReference0((Attaque)null);
-				return;
 			case NimaPackage.ARCHETYPE__NB_DEF:
 				setNbDef(NB_DEF_EDEFAULT);
 				return;
@@ -1394,8 +1336,6 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case NimaPackage.ARCHETYPE__ACTIVE:
 				return active != null;
-			case NimaPackage.ARCHETYPE__EREFERENCE0:
-				return eReference0 != null;
 			case NimaPackage.ARCHETYPE__NB_DEF:
 				return nbDef != NB_DEF_EDEFAULT;
 			case NimaPackage.ARCHETYPE__JOUEUR:

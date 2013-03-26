@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gmfgen:GenEditorGenerator xmi:version="2.0"
+<gmfgen:GenEditorGenerator
+    xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:gmfgen="http://www.eclipse.org/gmf/2009/GenModel">
@@ -25,6 +26,7 @@
         visualID="3001"
         editPartClassName="ConfigEditPart"
         itemSemanticEditPolicyClassName="ConfigItemSemanticEditPolicy"
+        notationViewFactoryClassName="ConfigViewFactory"
         canonicalEditPolicyClassName="ConfigCanonicalEditPolicy"
         graphicalNodeEditPolicyClassName="ConfigGraphicalNodeEditPolicy"
         createCommandClassName="ConfigCreateCommand"
@@ -38,7 +40,11 @@
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
           className="ConfigFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConfigFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConfigFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ConfigFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ConfigFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;this.setLineStyle(org.eclipse.draw2d.Graphics.LINE_DASH);&#xA;&#x9;this.setBackgroundColor(THIS_BACK&#xA;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_BACK = new org.eclipse.swt.graphics.Color(null, 120, 140, 160);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedBackground="true"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="nima.genmodel#//nima/Config"/>
@@ -66,7 +72,11 @@
           xsi:type="gmfgen:InnerClassViewmap"
           layoutType="FLOW_LAYOUT"
           className="ArchetypeFigure"
-          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ArchetypeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureArchetypeHpFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureArchetypeNomFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ArchetypeFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureArchetypeHpFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureArchetypeHpFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureArchetypeHpFigure);&#xA;&#xA;&#xA;&#xA;fFigureArchetypeNomFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureArchetypeNomFigure.setText(&quot;&lt;...>&quot;);&#xA;&#xA;this.add(fFigureArchetypeNomFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureArchetypeHpFigure() {&#xA;&#x9;&#x9;return fFigureArchetypeHpFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureArchetypeNomFigure() {&#xA;&#x9;&#x9;return fFigureArchetypeNomFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+          classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ArchetypeFigure extends org.eclipse.draw2d.RectangleFigure {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureArchetypeHpFigure; &#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureArchetypeNomFigure; &#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ArchetypeFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;org.eclipse.draw2d.FlowLayout layoutThis = new org.eclipse.draw2d.FlowLayout();&#xA;&#x9;layoutThis.setStretchMinorAxis(false);&#xA;&#x9;layoutThis.setMinorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#xA;&#x9;layoutThis.setMajorAlignment(org.eclipse.draw2d.FlowLayout.ALIGN_LEFTTOP&#xA;);&#xA;&#x9;layoutThis.setMajorSpacing(5);&#xA;&#x9;layoutThis.setMinorSpacing(5);&#xA;&#x9;layoutThis.setHorizontal(true);&#xA;&#xA;&#x9;this.setLayoutManager(layoutThis);&#xA;&#xA;&#x9;&#x9;&#x9;this.setForegroundColor(THIS_FORE&#xA;);&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureArchetypeNomFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureArchetypeNomFigure.setText(&quot;Boby&quot;);&#xA;&#xA;this.add(fFigureArchetypeNomFigure);&#xA;&#xA;&#xA;&#xA;fFigureArchetypeHpFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureArchetypeHpFigure.setText(&quot;80&quot;);&#xA;&#xA;this.add(fFigureArchetypeHpFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureArchetypeHpFigure() {&#xA;&#x9;&#x9;return fFigureArchetypeHpFigure;&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureArchetypeNomFigure() {&#xA;&#x9;&#x9;return fFigureArchetypeNomFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;/**&#xA; * @generated&#xA; */&#xA;static final org.eclipse.swt.graphics.Color THIS_FORE = new org.eclipse.swt.graphics.Color(null, 150, 140, 130);&#xA;&#xA;">
+        <attributes
+            xsi:type="gmfgen:StyleAttributes"
+            fixedForeground="true"/>
+      </viewmap>
       <modelFacet>
         <metaClass
             href="nima.genmodel#//nima/Archetype"/>
@@ -85,7 +95,7 @@
             href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap
             xsi:type="gmfgen:ParentAssignedViewmap"
-            getterName="getFigureArchetypeHpFigure"
+            getterName="getFigureArchetypeNomFigure"
             figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet
             xsi:type="gmfgen:FeatureLabelModelFacet"
@@ -93,6 +103,22 @@
           <metaFeatures
               href="nima.genmodel#//nima/Archetype/nom"/>
         </modelFacet>
+      </labels>
+      <labels
+          visualID="5002"
+          editPartClassName="ArchetypeHpEditPart"
+          itemSemanticEditPolicyClassName="ArchetypeHpItemSemanticEditPolicy"
+          notationViewFactoryClassName="ArchetypeHpViewFactory"
+          elementIcon="true">
+        <diagramRunTimeClass
+            href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
+        <viewmap
+            xsi:type="gmfgen:ParentAssignedViewmap"
+            getterName="getFigureArchetypeHpFigure"
+            figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <modelFacet
+            xsi:type="gmfgen:ExpressionLabelModelFacet"
+            parser="//@labelParsers/@implementations.1"/>
       </labels>
     </topLevelNodes>
     <links
@@ -192,246 +218,31 @@
           xsi:type="gmfgen:TypeTabFilter">
         <types>org.eclipse.gmf.runtime.notation.View</types>
         <types>org.eclipse.gef.EditPart</types>
+        <generatedTypes>abstractNavigatorItem</generatedTypes>
       </filter>
     </tabs>
   </propertySheet>
-  <application>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="CLOSE"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="CLOSE_ALL"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="SAVE"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="SAVE_AS"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="SAVE_ALL"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="QUIT"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="UNDO"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="REDO"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="CUT"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="COPY"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="PASTE"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="DELETE"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="SELECT_ALL"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="OPEN_NEW_WINDOW"/>
-    <sharedContributionItems
-        xsi:type="gmfgen:GenActionFactoryContributionItem"
-        name="PRINT"/>
-    <mainMenu>
-      <items
-          xsi:type="gmfgen:GenMenuManager"
-          iD="org.eclipse.ui.IWorkbenchActionConstants.M_FILE"
-          name="&amp;File">
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.FILE_START"/>
-        <items
-            xsi:type="gmfgen:GenMenuManager"
-            iD="&quot;new&quot;"
-            name="&amp;New">
-          <items
-              xsi:type="gmfgen:GenGroupMarker"
-              groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
-        </items>
-        <items
-            xsi:type="gmfgen:GenSeparator"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
-        <items
-            xsi:type="gmfgen:GenSeparator"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.0"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.1"/>
-        <items
-            xsi:type="gmfgen:GenSeparator"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.2"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.3"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.4"/>
-        <items
-            xsi:type="gmfgen:GenSeparator"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.5"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.FILE_END"/>
-      </items>
-      <items
-          xsi:type="gmfgen:GenMenuManager"
-          iD="org.eclipse.ui.IWorkbenchActionConstants.M_EDIT"
-          name="&amp;Edit">
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.EDIT_START"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.6"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.7"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.UNDO_EXT"/>
-        <items
-            xsi:type="gmfgen:GenSeparator"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.8"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.9"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.10"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.CUT_EXT"/>
-        <items
-            xsi:type="gmfgen:GenSeparator"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.11"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.12"/>
-        <items
-            xsi:type="gmfgen:GenSeparator"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.ADD_EXT"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.EDIT_END"/>
-        <items
-            xsi:type="gmfgen:GenSeparator"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
-      </items>
-      <items
-          xsi:type="gmfgen:GenGroupMarker"
-          groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
-      <items
-          xsi:type="gmfgen:GenMenuManager"
-          iD="org.eclipse.ui.IWorkbenchActionConstants.M_WINDOW"
-          name="&amp;Window">
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.13"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
-      </items>
-      <items
-          xsi:type="gmfgen:GenMenuManager"
-          iD="org.eclipse.ui.IWorkbenchActionConstants.M_HELP"
-          name="&amp;Help">
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.HELP_START"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.HELP_END"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
-      </items>
-    </mainMenu>
-    <mainToolBar>
-      <items
-          xsi:type="gmfgen:GenGroupMarker"
-          groupName="&quot;group.file&quot;"/>
-      <items
-          xsi:type="gmfgen:GenToolBarManager"
-          iD="org.eclipse.ui.IWorkbenchActionConstants.TOOLBAR_FILE">
-        <items
-            xsi:type="gmfgen:GenSeparator"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.NEW_GROUP"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.NEW_EXT"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.SAVE_GROUP"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.2"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.SAVE_EXT"/>
-        <items
-            xsi:type="gmfgen:GenSharedContributionItem"
-            actualItem="//@application/@sharedContributionItems.14"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.PRINT_EXT"/>
-        <items
-            xsi:type="gmfgen:GenSeparator"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
-      </items>
-      <items
-          xsi:type="gmfgen:GenGroupMarker"
-          groupName="org.eclipse.ui.IWorkbenchActionConstants.MB_ADDITIONS"/>
-      <items
-          xsi:type="gmfgen:GenGroupMarker"
-          groupName="&quot;group.nav&quot;"/>
-      <items
-          xsi:type="gmfgen:GenGroupMarker"
-          groupName="org.eclipse.ui.IWorkbenchActionConstants.GROUP_EDITOR"/>
-      <items
-          xsi:type="gmfgen:GenGroupMarker"
-          groupName="org.eclipse.ui.IWorkbenchActionConstants.GROUP_HELP"/>
-      <items
-          xsi:type="gmfgen:GenToolBarManager"
-          iD="org.eclipse.ui.IWorkbenchActionConstants.TOOLBAR_HELP">
-        <items
-            xsi:type="gmfgen:GenSeparator"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.GROUP_HELP"/>
-        <items
-            xsi:type="gmfgen:GenGroupMarker"
-            groupName="org.eclipse.ui.IWorkbenchActionConstants.GROUP_APP"/>
-      </items>
-    </mainToolBar>
-  </application>
   <domainGenModel
       href="nima.genmodel#/"/>
+  <expressionProviders>
+    <providers
+        xsi:type="gmfgen:GenExpressionInterpreter">
+      <expressions
+          body="self.hp"/>
+    </providers>
+  </expressionProviders>
   <labelParsers
       extensibleViaService="true">
     <implementations
         xsi:type="gmfgen:PredefinedParser"
         uses="//@diagram/@topLevelNodes.0/@labels.0/@modelFacet"/>
+    <implementations
+        xsi:type="gmfgen:ExpressionLabelParser"
+        uses="//@diagram/@topLevelNodes.0/@labels.1/@modelFacet"
+        viewExpression="//@expressionProviders/@providers.0/@expressions.0">
+      <expressionContext
+          href="nima.genmodel#//nima/Archetype"/>
+    </implementations>
   </labelParsers>
   <contextMenus
       context="//@diagram">

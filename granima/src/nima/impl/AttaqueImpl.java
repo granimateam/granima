@@ -256,7 +256,7 @@ public class AttaqueImpl extends EObjectImpl implements Attaque {
 				attaqueTotale = attaqueTotale + (-25 *nbatt);
 				this.getAttaquant().getOwner().setNbAction(nbatt+1);
 				int defenseTotale = this.getBonusDef();
-				defenseTotale+= defense.getDefense();
+				defenseTotale+= defenseur.getActive().getDefense();
 				defenseTotale+=Des.fullRoll();
 				int def = defenseur.getNbDef();
 				if(def ==1) defenseTotale=defenseTotale-30;

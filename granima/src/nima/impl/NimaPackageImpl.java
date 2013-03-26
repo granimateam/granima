@@ -367,17 +367,8 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArchetype_EReference0() {
-		return (EReference)archetypeEClass.getEStructuralFeatures().get(19);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getArchetype_NbDef() {
-		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(20);
+		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
@@ -386,7 +377,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * @generated
 	 */
 	public EAttribute getArchetype_Joueur() {
-		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(21);
+		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
@@ -395,7 +386,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * @generated
 	 */
 	public EAttribute getArchetype_NbAction() {
-		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(22);
+		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
@@ -404,7 +395,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * @generated
 	 */
 	public EAttribute getArchetype_PeutAgir() {
-		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(23);
+		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -761,7 +752,6 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		createEAttribute(archetypeEClass, ARCHETYPE__NOM);
 		createEAttribute(archetypeEClass, ARCHETYPE__DESCRIPTION);
 		createEReference(archetypeEClass, ARCHETYPE__ACTIVE);
-		createEReference(archetypeEClass, ARCHETYPE__EREFERENCE0);
 		createEAttribute(archetypeEClass, ARCHETYPE__NB_DEF);
 		createEAttribute(archetypeEClass, ARCHETYPE__JOUEUR);
 		createEAttribute(archetypeEClass, ARCHETYPE__NB_ACTION);
@@ -868,7 +858,6 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		initEAttribute(getArchetype_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchetype_Description(), ecorePackage.getEString(), "description", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArchetype_Active(), this.getConfig(), null, "active", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArchetype_EReference0(), this.getAttaque(), null, "EReference0", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchetype_NbDef(), ecorePackage.getEInt(), "nbDef", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchetype_Joueur(), ecorePackage.getEBoolean(), "joueur", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchetype_NbAction(), ecorePackage.getEInt(), "nbAction", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -39,7 +39,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/nom"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/description"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nima.ecore#//Archetype/active"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nima.ecore#//Archetype/EReference0"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/nbDef"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/joueur"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/nbAction"/>

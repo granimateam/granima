@@ -242,22 +242,13 @@ public interface NimaPackage extends EPackage {
 	int ARCHETYPE__ACTIVE = 18;
 
 	/**
-	 * The feature id for the '<em><b>EReference0</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARCHETYPE__EREFERENCE0 = 19;
-
-	/**
 	 * The feature id for the '<em><b>Nb Def</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHETYPE__NB_DEF = 20;
+	int ARCHETYPE__NB_DEF = 19;
 
 	/**
 	 * The feature id for the '<em><b>Joueur</b></em>' attribute.
@@ -266,7 +257,7 @@ public interface NimaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHETYPE__JOUEUR = 21;
+	int ARCHETYPE__JOUEUR = 20;
 
 	/**
 	 * The feature id for the '<em><b>Nb Action</b></em>' attribute.
@@ -275,7 +266,7 @@ public interface NimaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHETYPE__NB_ACTION = 22;
+	int ARCHETYPE__NB_ACTION = 21;
 
 	/**
 	 * The feature id for the '<em><b>Peut Agir</b></em>' attribute.
@@ -284,7 +275,7 @@ public interface NimaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHETYPE__PEUT_AGIR = 23;
+	int ARCHETYPE__PEUT_AGIR = 22;
 
 	/**
 	 * The number of structural features of the '<em>Archetype</em>' class.
@@ -293,7 +284,7 @@ public interface NimaPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHETYPE_FEATURE_COUNT = 24;
+	int ARCHETYPE_FEATURE_COUNT = 23;
 
 	/**
 	 * The meta object id for the '{@link nima.impl.ConfigImpl <em>Config</em>}' class.
@@ -1274,17 +1265,6 @@ public interface NimaPackage extends EPackage {
 	EReference getArchetype_Active();
 
 	/**
-	 * Returns the meta object for the reference '{@link nima.Archetype#getEReference0 <em>EReference0</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>EReference0</em>'.
-	 * @see nima.Archetype#getEReference0()
-	 * @see #getArchetype()
-	 * @generated
-	 */
-	EReference getArchetype_EReference0();
-
-	/**
 	 * Returns the meta object for the attribute '{@link nima.Archetype#getNbDef <em>Nb Def</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1874,14 +1854,6 @@ public interface NimaPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARCHETYPE__ACTIVE = eINSTANCE.getArchetype_Active();
-
-		/**
-		 * The meta object literal for the '<em><b>EReference0</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARCHETYPE__EREFERENCE0 = eINSTANCE.getArchetype_EReference0();
 
 		/**
 		 * The meta object literal for the '<em><b>Nb Def</b></em>' attribute feature.

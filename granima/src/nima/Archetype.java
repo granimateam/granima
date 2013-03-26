@@ -37,7 +37,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link nima.Archetype#getNom <em>Nom</em>}</li>
  *   <li>{@link nima.Archetype#getDescription <em>Description</em>}</li>
  *   <li>{@link nima.Archetype#getActive <em>Active</em>}</li>
- *   <li>{@link nima.Archetype#getEReference0 <em>EReference0</em>}</li>
  *   <li>{@link nima.Archetype#getNbDef <em>Nb Def</em>}</li>
  *   <li>{@link nima.Archetype#isJoueur <em>Joueur</em>}</li>
  *   <li>{@link nima.Archetype#getNbAction <em>Nb Action</em>}</li>
@@ -538,32 +537,6 @@ public interface Archetype extends EObject {
 	 * @generated
 	 */
 	void setActive(Config value);
-
-	/**
-	 * Returns the value of the '<em><b>EReference0</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>EReference0</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>EReference0</em>' reference.
-	 * @see #setEReference0(Attaque)
-	 * @see nima.NimaPackage#getArchetype_EReference0()
-	 * @model
-	 * @generated
-	 */
-	Attaque getEReference0();
-
-	/**
-	 * Sets the value of the '{@link nima.Archetype#getEReference0 <em>EReference0</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>EReference0</em>' reference.
-	 * @see #getEReference0()
-	 * @generated
-	 */
-	void setEReference0(Attaque value);
 
 	/**
 	 * Returns the value of the '<em><b>Nb Def</b></em>' attribute.
