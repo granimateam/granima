@@ -423,6 +423,45 @@
       </menu>
    </objectContribution>
 </extension>
+<extension
+      id="round-command"
+      point="org.eclipse.ui.commands">
+   <command
+         categoryId="org.eclipse.gmf.category.sim"
+         description="Passe au round suivant"
+         id="Sim-ria.diagram.round"
+         name="Reset Round">
+   </command>
+   <category
+         description="Cat"
+         id="org.eclipse.gmf.category.sim"
+         name="Ho">
+   </category>
+</extension>
+<extension
+      id="MenuReset"
+      point="org.eclipse.ui.popupMenus">
+   <objectContribution
+         adaptable="false"
+         id="nima.diagram.ui.objectContribution.CombatEditPart1"
+         objectClass="nima.diagram.edit.parts.CombatEditPart">
+      <action
+            class="nima.diagram.part.StartRoundAction"
+            definitionId="Sim-ria.diagram.start"
+            enablesFor="1"
+            id="Sim-ria.diagram.popup.StartRoundActionID"
+            label="Reset"
+            menubarPath="SimStart/group1">
+      </action>
+      <menu
+            id="SimStart"
+            label="Actions">
+         <separator
+               name="group1">
+         </separator>
+      </menu>
+   </objectContribution>
+</extension>
    
    
 </plugin>
