@@ -255,7 +255,7 @@ public class AttaqueImpl extends EObjectImpl implements Attaque {
 		this.getAttaquant().getOwner().setNbAction(nbatt+1);
 		int defenseTotale = this.getBonusDef();
 		defenseTotale+= defenseur.getActive().getDefense();
-
+		
 		int def = defenseur.getNbDef();
 		if(def ==1) defenseTotale=defenseTotale-30;
 		if(def ==2) defenseTotale=defenseTotale-50;
@@ -281,8 +281,7 @@ public class AttaqueImpl extends EObjectImpl implements Attaque {
 				MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
 				d.open();
 			}
-		}else if (marge<-10)
-		{
+		}else if (marge<-10) {
 			int result = marge/10;
 			result *=-5;
 			String tab[] ={"Ok"}; 

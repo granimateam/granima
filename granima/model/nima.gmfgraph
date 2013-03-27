@@ -10,8 +10,7 @@
     <descriptors
         name="ArchetypeFigure">
       <actualFigure
-          xsi:type="gmfgraph:Rectangle"
-          name="ArchetypeFigure">
+          xsi:type="gmfgraph:RoundedRectangle">
         <layout
             xsi:type="gmfgraph:FlowLayout"/>
         <foregroundColor
@@ -19,6 +18,11 @@
             red="150"
             green="140"
             blue="130"/>
+        <backgroundColor
+            xsi:type="gmfgraph:RGBColor"
+            red="90"
+            green="70"
+            blue="70"/>
         <children
             xsi:type="gmfgraph:Label"
             name="ArchetypeNomFigure"
@@ -46,6 +50,15 @@
             red="120"
             green="140"
             blue="160"/>
+        <maximumSize
+            dx="20"
+            dy="20"/>
+        <minimumSize
+            dx="20"
+            dy="20"/>
+        <preferredSize
+            dx="20"
+            dy="20"/>
       </actualFigure>
     </descriptors>
   </figures>
