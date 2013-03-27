@@ -87,6 +87,10 @@
         <element xmi:type="ecore:EAttribute" href="nima.ecore#//Archetype/peutAgir"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_K1HKYYyhEeKDB6d7eoU5qg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_Bph14Ja4EeKins859QLmcg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="nima.ecore#//Archetype/rolledInit"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Bph14Za4EeKins859QLmcg"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="__fvB8or9EeKlbfFjmI1K-A"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="__fvB84r9EeKlbfFjmI1K-A"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="__fvB9Ir9EeKlbfFjmI1K-A"/>
@@ -96,13 +100,17 @@
         <element xmi:type="ecore:EOperation" href="nima.ecore#//Archetype/getIP"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_A2UJgYyiEeKDB6d7eoU5qg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_4vcFMJa2EeKins859QLmcg" type="2002">
+        <element xmi:type="ecore:EOperation" href="nima.ecore#//Archetype/resetRound"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_4vcFMZa2EeKins859QLmcg"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="__fvB9or9EeKlbfFjmI1K-A"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="__fvB94r9EeKlbfFjmI1K-A"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="__fvB-Ir9EeKlbfFjmI1K-A"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="__flQ8Yr9EeKlbfFjmI1K-A" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="nima.ecore#//Archetype"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__flQ8or9EeKlbfFjmI1K-A" x="5" y="30" height="378"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__flQ8or9EeKlbfFjmI1K-A" x="5" y="30" height="428"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_AcrLUIr-EeKlbfFjmI1K-A" type="1001">
     <children xmi:type="notation:Node" xmi:id="_Ac08UIr-EeKlbfFjmI1K-A" type="4001"/>
@@ -211,7 +219,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_MQMnQYr_EeKlbfFjmI1K-A" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EEnum" href="nima.ecore#//TypeDef"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MQMnQor_EeKlbfFjmI1K-A" x="25" y="415"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MQMnQor_EeKlbfFjmI1K-A" x="15" y="495"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_clqZ0Ir_EeKlbfFjmI1K-A" type="1005">
     <children xmi:type="notation:Node" xmi:id="_clqZ04r_EeKlbfFjmI1K-A" type="4010"/>

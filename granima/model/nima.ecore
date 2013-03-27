@@ -5,6 +5,11 @@
     <eOperations name="getIP" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
       <eParameters name="type" eType="#//typeAtt"/>
     </eOperations>
+    <eOperations name="resetRound">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="this.setPeutAgir(true);&#xD;&#xA;this.setNbAction(0);&#xD;&#xA;this.setNbDef(0);&#xD;&#xA;int init = this.getInit() + this.getActive().getInit();&#xD;&#xA;init+= Des.fullRoll();&#xD;&#xA;this.setRolledInit(init);"/>
+      </eAnnotations>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="configs" upperBound="-1"
         eType="#//Config" containment="true" eOpposite="#//Config/owner"/>
@@ -29,6 +34,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="joueur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="peutAgir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolledInit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Config">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -76,7 +82,11 @@
         eType="#//Combat" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Combat">
-    <eOperations name="resetRound"/>
+    <eOperations name="resetRound">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="setNbRound(nbRound+1);&#xD;&#xA;EList&lt;Archetype> l = this.getArchetypes();&#xD;&#xA;for(Archetype arch : l )&#xD;&#xA;{&#xD;&#xA;&#x9;arch.resetRound();&#xD;&#xA;}"/>
+      </eAnnotations>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="archetypes" upperBound="-1"
         eType="#//Archetype" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attaques" upperBound="-1"

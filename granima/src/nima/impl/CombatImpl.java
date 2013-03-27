@@ -153,9 +153,11 @@ public class CombatImpl extends EObjectImpl implements Combat {
 	 * @generated
 	 */
 	public void resetRound() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		setNbRound(nbRound+1);
+		EList<Archetype> l = this.getArchetypes();
+		for(Archetype arch : l ) {
+			arch.resetRound();
+		}
 	}
 
 	/**

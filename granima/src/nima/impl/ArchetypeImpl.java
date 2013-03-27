@@ -29,6 +29,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import tool.Des;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Archetype</b></em>'.
@@ -59,6 +61,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link nima.impl.ArchetypeImpl#isJoueur <em>Joueur</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#getNbAction <em>Nb Action</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#isPeutAgir <em>Peut Agir</em>}</li>
+ *   <li>{@link nima.impl.ArchetypeImpl#getRolledInit <em>Rolled Init</em>}</li>
  * </ul>
  * </p>
  *
@@ -504,6 +507,26 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	 * @ordered
 	 */
 	protected boolean peutAgir = PEUT_AGIR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getRolledInit() <em>Rolled Init</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRolledInit()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ROLLED_INIT_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getRolledInit() <em>Rolled Init</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRolledInit()
+	 * @generated
+	 * @ordered
+	 */
+	protected int rolledInit = ROLLED_INIT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1018,6 +1041,27 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getRolledInit() {
+		return rolledInit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRolledInit(int newRolledInit) {
+		int oldRolledInit = rolledInit;
+		rolledInit = newRolledInit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ARCHETYPE__ROLLED_INIT, oldRolledInit, rolledInit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public int getIP(typeAtt type) {
@@ -1036,6 +1080,20 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 		if(typeAtt.ENERGIE == type)
 			return ener;
 		return 0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void resetRound() {
+		this.setPeutAgir(true);
+		this.setNbAction(0);
+		this.setNbDef(0);
+		int init = this.getInit() + this.getActive().getInit();
+		init+= Des.fullRoll();
+		this.setRolledInit(init);
 	}
 
 	/**
@@ -1122,6 +1180,8 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 				return getNbAction();
 			case NimaPackage.ARCHETYPE__PEUT_AGIR:
 				return isPeutAgir();
+			case NimaPackage.ARCHETYPE__ROLLED_INIT:
+				return getRolledInit();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1205,6 +1265,9 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 			case NimaPackage.ARCHETYPE__PEUT_AGIR:
 				setPeutAgir((Boolean)newValue);
 				return;
+			case NimaPackage.ARCHETYPE__ROLLED_INIT:
+				setRolledInit((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1286,6 +1349,9 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 			case NimaPackage.ARCHETYPE__PEUT_AGIR:
 				setPeutAgir(PEUT_AGIR_EDEFAULT);
 				return;
+			case NimaPackage.ARCHETYPE__ROLLED_INIT:
+				setRolledInit(ROLLED_INIT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1344,6 +1410,8 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 				return nbAction != NB_ACTION_EDEFAULT;
 			case NimaPackage.ARCHETYPE__PEUT_AGIR:
 				return peutAgir != PEUT_AGIR_EDEFAULT;
+			case NimaPackage.ARCHETYPE__ROLLED_INIT:
+				return rolledInit != ROLLED_INIT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1400,6 +1468,8 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 		result.append(nbAction);
 		result.append(", peutAgir: ");
 		result.append(peutAgir);
+		result.append(", rolledInit: ");
+		result.append(rolledInit);
 		result.append(')');
 		return result.toString();
 	}

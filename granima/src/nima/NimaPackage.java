@@ -278,13 +278,22 @@ public interface NimaPackage extends EPackage {
 	int ARCHETYPE__PEUT_AGIR = 22;
 
 	/**
+	 * The feature id for the '<em><b>Rolled Init</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHETYPE__ROLLED_INIT = 23;
+
+	/**
 	 * The number of structural features of the '<em>Archetype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHETYPE_FEATURE_COUNT = 23;
+	int ARCHETYPE_FEATURE_COUNT = 24;
 
 	/**
 	 * The meta object id for the '{@link nima.impl.ConfigImpl <em>Config</em>}' class.
@@ -1309,6 +1318,17 @@ public interface NimaPackage extends EPackage {
 	EAttribute getArchetype_PeutAgir();
 
 	/**
+	 * Returns the meta object for the attribute '{@link nima.Archetype#getRolledInit <em>Rolled Init</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Rolled Init</em>'.
+	 * @see nima.Archetype#getRolledInit()
+	 * @see #getArchetype()
+	 * @generated
+	 */
+	EAttribute getArchetype_RolledInit();
+
+	/**
 	 * Returns the meta object for class '{@link nima.Config <em>Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1886,6 +1906,14 @@ public interface NimaPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ARCHETYPE__PEUT_AGIR = eINSTANCE.getArchetype_PeutAgir();
+
+		/**
+		 * The meta object literal for the '<em><b>Rolled Init</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHETYPE__ROLLED_INIT = eINSTANCE.getArchetype_RolledInit();
 
 		/**
 		 * The meta object literal for the '{@link nima.impl.ConfigImpl <em>Config</em>}' class.

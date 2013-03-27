@@ -41,6 +41,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link nima.Archetype#isJoueur <em>Joueur</em>}</li>
  *   <li>{@link nima.Archetype#getNbAction <em>Nb Action</em>}</li>
  *   <li>{@link nima.Archetype#isPeutAgir <em>Peut Agir</em>}</li>
+ *   <li>{@link nima.Archetype#getRolledInit <em>Rolled Init</em>}</li>
  * </ul>
  * </p>
  *
@@ -643,11 +644,45 @@ public interface Archetype extends EObject {
 	void setPeutAgir(boolean value);
 
 	/**
+	 * Returns the value of the '<em><b>Rolled Init</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rolled Init</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rolled Init</em>' attribute.
+	 * @see #setRolledInit(int)
+	 * @see nima.NimaPackage#getArchetype_RolledInit()
+	 * @model
+	 * @generated
+	 */
+	int getRolledInit();
+
+	/**
+	 * Sets the value of the '{@link nima.Archetype#getRolledInit <em>Rolled Init</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rolled Init</em>' attribute.
+	 * @see #getRolledInit()
+	 * @generated
+	 */
+	void setRolledInit(int value);
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model
 	 * @generated
 	 */
 	int getIP(typeAtt type);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='this.setPeutAgir(true);\r\nthis.setNbAction(0);\r\nthis.setNbDef(0);\r\nint init = this.getInit() + this.getActive().getInit();\r\ninit+= Des.fullRoll();\r\nthis.setRolledInit(init);'"
+	 * @generated
+	 */
+	void resetRound();
 
 } // Archetype

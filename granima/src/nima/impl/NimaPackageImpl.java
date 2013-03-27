@@ -403,6 +403,15 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getArchetype_RolledInit() {
+		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(23);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConfig() {
 		return configEClass;
 	}
@@ -756,6 +765,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		createEAttribute(archetypeEClass, ARCHETYPE__JOUEUR);
 		createEAttribute(archetypeEClass, ARCHETYPE__NB_ACTION);
 		createEAttribute(archetypeEClass, ARCHETYPE__PEUT_AGIR);
+		createEAttribute(archetypeEClass, ARCHETYPE__ROLLED_INIT);
 
 		configEClass = createEClass(CONFIG);
 		createEAttribute(configEClass, CONFIG__INIT);
@@ -862,9 +872,12 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		initEAttribute(getArchetype_Joueur(), ecorePackage.getEBoolean(), "joueur", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchetype_NbAction(), ecorePackage.getEInt(), "nbAction", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchetype_PeutAgir(), ecorePackage.getEBoolean(), "peutAgir", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArchetype_RolledInit(), ecorePackage.getEInt(), "rolledInit", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(archetypeEClass, ecorePackage.getEInt(), "getIP", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.gettypeAtt(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(archetypeEClass, null, "resetRound", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(configEClass, Config.class, "Config", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConfig_Init(), ecorePackage.getEInt(), "init", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -43,9 +43,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/joueur"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/nbAction"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/peutAgir"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/rolledInit"/>
       <genOperations ecoreOperation="nima.ecore#//Archetype/getIP">
         <genParameters ecoreParameter="nima.ecore#//Archetype/getIP/type"/>
       </genOperations>
+      <genOperations ecoreOperation="nima.ecore#//Archetype/resetRound"/>
     </genClasses>
     <genClasses ecoreClass="nima.ecore#//Config">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Config/init"/>

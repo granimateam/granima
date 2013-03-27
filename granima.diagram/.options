@@ -1,0 +1,7 @@
+# Tracing options for the granima.diagram plug-in
+
+# Common issues
+granima.diagram/debug=false
+
+# Visual IDs
+granima.diagram/debug/visualID=false

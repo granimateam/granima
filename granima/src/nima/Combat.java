@@ -90,7 +90,7 @@ public interface Combat extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='setNbRound(nbRound+1);\r\nEList<Archetype> l = this.getArchetypes();\r\nfor(Archetype arch : l )\r\n{\r\n\tarch.resetRound();\r\n}'"
 	 * @generated
 	 */
 	void resetRound();
