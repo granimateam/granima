@@ -12,14 +12,12 @@ import nima.Config;
 import nima.NimaPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
-import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory.Default;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.widgets.Shell;
 
 import tool.Des;
 
@@ -243,42 +241,60 @@ public class AttaqueImpl extends EObjectImpl implements Attaque {
 	 * @generated
 	 */
 	public void resolve() {
-				Archetype attaquant, defenseur;
-				Config attaque, defense;
-				attaque = this.getAttaquant();
-				defense = this.getCible().getActive();
-				attaquant=this.getAttaquant().getOwner();
-				defenseur = this.getCible();
-				int attaqueTotale = this.getAttaquant().getAttaque();
-				attaqueTotale+= this.getBonusAtt();
-				attaqueTotale+=Des.fullRoll();
-				int nbatt = attaquant.getNbAction();
-				attaqueTotale = attaqueTotale + (-25 *nbatt);
-				this.getAttaquant().getOwner().setNbAction(nbatt+1);
-				int defenseTotale = this.getBonusDef();
-				defenseTotale+= defenseur.getActive().getDefense();
-				defenseTotale+=Des.fullRoll();
-				int def = defenseur.getNbDef();
-				if(def ==1) defenseTotale=defenseTotale-30;
-				if(def ==2) defenseTotale=defenseTotale-50;
-				if(def ==3) defenseTotale=defenseTotale-70;
-				if(def >3) defenseTotale=defenseTotale-90;
-				this.getCible().setNbDef(def+1);
-				
-				int marge = attaqueTotale - defenseTotale;
-				System.out.println(marge);
-				if(marge>10) {
-					defenseur.setPeutAgir(false);
-					int absorption = 2 + defenseur.getIP(attaque.getTypeDegat());
-					marge -= absorption * 10;
-					if(marge>10) {
-						int degat = attaque.getDegats()* marge /100;
-						int hp = defenseur.getHp()- degat;
-						defenseur.setHp(hp);
-						
-					}
-				}
-				//TODO contre attaque
+		Archetype attaquant, defenseur;
+		Config attaque, defense;
+		attaque = this.getAttaquant();
+		defense = this.getCible().getActive();
+		attaquant=this.getAttaquant().getOwner();
+		defenseur = this.getCible();
+		int attaqueTotale = this.getAttaquant().getAttaque();
+		attaqueTotale+= this.getBonusAtt();
+		
+		int nbatt = attaquant.getNbAction();
+		attaqueTotale = attaqueTotale + (-25 *nbatt);
+		this.getAttaquant().getOwner().setNbAction(nbatt+1);
+		int defenseTotale = this.getBonusDef();
+		defenseTotale+= defenseur.getActive().getDefense();
+
+		int def = defenseur.getNbDef();
+		if(def ==1) defenseTotale=defenseTotale-30;
+		if(def ==2) defenseTotale=defenseTotale-50;
+		if(def ==3) defenseTotale=defenseTotale-70;
+		if(def >3) defenseTotale=defenseTotale-90;
+		this.getCible().setNbDef(def+1);
+		System.out.println("att :"+attaqueTotale+ " def :"+defenseTotale);
+		defenseTotale+=Des.fullRoll();
+		attaqueTotale+=Des.fullRoll();
+		
+		int marge = attaqueTotale - defenseTotale;
+		System.out.println("marge : "+marge);
+		if(marge>10) {
+			defenseur.setPeutAgir(false);
+			int absorption = 2 + defenseur.getIP(attaque.getTypeDegat());
+			marge -= absorption * 10;
+			if(marge>10) {
+				int degat = attaque.getDegats()* marge /100;
+				int hp = defenseur.getHp()- degat;
+				defenseur.setHp(hp);
+				String tab[] ={"Ok"}; 
+				String info = "La cible encaisse "+degat+" points de dégats. Restant : "+hp;
+				MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+				d.open();
+			}
+		}else if (marge<-10)
+		{
+			int result = marge/10;
+			result *=-5;
+			String tab[] ={"Ok"}; 
+			String info = "Défense réussi, contre attaque possible avec un bonus de "+result;
+			MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+			d.open();
+		}else{
+			String tab[] ={"Ok"}; 
+			String info = "défense réussi, pas de contre attaque possible";
+			MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+			d.open();
+		}
 	}
 
 	/**
