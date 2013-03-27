@@ -38,7 +38,7 @@ public class NimaOCLFactory {
 	 */
 	protected NimaOCLFactory() {
 		this.expressions = new NimaAbstractExpression[1];
-		this.expressionBodies = new String[] { "self.hp", //$NON-NLS-1$
+		this.expressionBodies = new String[] { "self.nom", //$NON-NLS-1$
 		};
 	}
 

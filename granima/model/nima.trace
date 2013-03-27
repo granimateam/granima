@@ -9,9 +9,6 @@
     <nodeLabelTraces
         visualID="5001"
         queryText="true"/>
-    <nodeLabelTraces
-        visualID="5002"
-        queryText="true"/>
   </nodeTraces>
   <childNodeTraces
       visualID="3001"

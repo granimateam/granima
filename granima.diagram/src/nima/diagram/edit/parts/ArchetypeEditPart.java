@@ -138,11 +138,6 @@ public class ArchetypeEditPart extends AbstractBorderedShapeEditPart {
 					.getFigureArchetypeNomFigure());
 			return true;
 		}
-		if (childEditPart instanceof ArchetypeHpEditPart) {
-			((ArchetypeHpEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getFigureArchetypeHpFigure());
-			return true;
-		}
 		if (childEditPart instanceof ConfigEditPart) {
 			BorderItemLocator locator = new BorderItemLocator(getMainFigure(),
 					PositionConstants.NONE);
@@ -158,9 +153,6 @@ public class ArchetypeEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ArchetypeNomEditPart) {
-			return true;
-		}
-		if (childEditPart instanceof ArchetypeHpEditPart) {
 			return true;
 		}
 		if (childEditPart instanceof ConfigEditPart) {
@@ -323,10 +315,6 @@ public class ArchetypeEditPart extends AbstractBorderedShapeEditPart {
 		/**
 		 * @generated
 		 */
-		private WrappingLabel fFigureArchetypeHpFigure;
-		/**
-		 * @generated
-		 */
 		private WrappingLabel fFigureArchetypeNomFigure;
 
 		/**
@@ -360,19 +348,6 @@ public class ArchetypeEditPart extends AbstractBorderedShapeEditPart {
 
 			this.add(fFigureArchetypeNomFigure);
 
-			fFigureArchetypeHpFigure = new WrappingLabel();
-
-			fFigureArchetypeHpFigure.setText("80");
-
-			this.add(fFigureArchetypeHpFigure);
-
-		}
-
-		/**
-		 * @generated
-		 */
-		public WrappingLabel getFigureArchetypeHpFigure() {
-			return fFigureArchetypeHpFigure;
 		}
 
 		/**

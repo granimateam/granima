@@ -23,13 +23,7 @@
             xsi:type="gmfgraph:Label"
             name="ArchetypeNomFigure"
             text="Boby"/>
-        <children
-            xsi:type="gmfgraph:Label"
-            name="ArchetypeHpFigure"
-            text="80"/>
       </actualFigure>
-      <accessors
-          figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
       <accessors
           figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
@@ -66,11 +60,7 @@
       name="Attaque"
       figure="AttaqueFigure"/>
   <labels
-      name="ArchetypeHp"
-      figure="ArchetypeFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels
       name="ArchetypeNom"
       figure="ArchetypeFigure"
-      accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

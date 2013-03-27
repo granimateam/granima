@@ -169,9 +169,6 @@ public class NimaVisualIDRegistry {
 			if (ArchetypeNomEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ArchetypeHpEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (ConfigEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}

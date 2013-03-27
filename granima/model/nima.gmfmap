@@ -13,18 +13,12 @@
       <domainMetaElement
           href="nima.ecore#//Archetype"/>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
+          xsi:type="gmfmap:ExpressionLabelMapping"
+          readOnly="true">
         <diagramLabel
             href="nima.gmfgraph#ArchetypeNom"/>
-        <features
-            href="nima.ecore#//Archetype/nom"/>
-      </labelMappings>
-      <labelMappings
-          xsi:type="gmfmap:ExpressionLabelMapping">
-        <diagramLabel
-            href="nima.gmfgraph#ArchetypeHp"/>
         <viewExpression
-            body="self.hp"/>
+            body="self.nom"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"

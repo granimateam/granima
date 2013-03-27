@@ -4,7 +4,6 @@ import nima.NimaPackage;
 import nima.diagram.edit.parts.ArchetypeHpEditPart;
 import nima.diagram.edit.parts.ArchetypeNomEditPart;
 import nima.diagram.parsers.ArchetypeLabelExpressionLabelParser;
-import nima.diagram.parsers.MessageFormatParser;
 import nima.diagram.part.NimaVisualIDRegistry;
 
 import org.eclipse.core.runtime.IAdaptable;
@@ -29,25 +28,7 @@ public class NimaParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	private IParser archetypeNom_5001Parser;
-
-	/**
-	 * @generated
-	 */
-	private IParser getArchetypeNom_5001Parser() {
-		if (archetypeNom_5001Parser == null) {
-			EAttribute[] features = new EAttribute[] { NimaPackage.eINSTANCE
-					.getArchetype_Nom() };
-			MessageFormatParser parser = new MessageFormatParser(features);
-			archetypeNom_5001Parser = parser;
-		}
-		return archetypeNom_5001Parser;
-	}
-
-	/**
-	 * @generated
-	 */
-	private IParser getArchetypeLabel_5002Parser() {
+	private IParser getArchetypeLabel_5001Parser() {
 		return new ArchetypeLabelExpressionLabelParser();
 	}
 
@@ -57,9 +38,7 @@ public class NimaParserProvider extends AbstractProvider implements
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case ArchetypeNomEditPart.VISUAL_ID:
-			return getArchetypeNom_5001Parser();
-		case ArchetypeHpEditPart.VISUAL_ID:
-			return getArchetypeLabel_5002Parser();
+			return getArchetypeLabel_5001Parser();
 		}
 		return null;
 	}

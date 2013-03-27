@@ -276,8 +276,6 @@ public class NimaViewProvider extends AbstractProvider implements IViewProvider 
 				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5001 = createLabel(node,
 				NimaVisualIDRegistry.getType(ArchetypeNomEditPart.VISUAL_ID));
-		Node label5002 = createLabel(node,
-				NimaVisualIDRegistry.getType(ArchetypeHpEditPart.VISUAL_ID));
 		return node;
 	}
 

@@ -31,9 +31,6 @@ public class NimaEditPartFactory implements EditPartFactory {
 			case ArchetypeNomEditPart.VISUAL_ID:
 				return new ArchetypeNomEditPart(view);
 
-			case ArchetypeHpEditPart.VISUAL_ID:
-				return new ArchetypeHpEditPart(view);
-
 			case ConfigEditPart.VISUAL_ID:
 				return new ConfigEditPart(view);
 
