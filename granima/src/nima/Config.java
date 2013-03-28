@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link nima.Config#getDescription <em>Description</em>}</li>
  *   <li>{@link nima.Config#getOwner <em>Owner</em>}</li>
  *   <li>{@link nima.Config#getAttaque <em>Attaque</em>}</li>
+ *   <li>{@link nima.Config#getAttack <em>Attack</em>}</li>
  * </ul>
  * </p>
  *
@@ -216,6 +217,34 @@ public interface Config extends EObject {
 	 * @generated
 	 */
 	void setAttaque(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Attack</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link nima.Attaque#getAttaquant <em>Attaquant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Attack</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Attack</em>' reference.
+	 * @see #setAttack(Attaque)
+	 * @see nima.NimaPackage#getConfig_Attack()
+	 * @see nima.Attaque#getAttaquant
+	 * @model opposite="attaquant"
+	 * @generated
+	 */
+	Attaque getAttack();
+
+	/**
+	 * Sets the value of the '{@link nima.Config#getAttack <em>Attack</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Attack</em>' reference.
+	 * @see #getAttack()
+	 * @generated
+	 */
+	void setAttack(Attaque value);
 
 	/**
 	 * Returns the value of the '<em><b>Owner</b></em>' container reference.

@@ -246,7 +246,6 @@ public class NimaViewProvider extends AbstractProvider implements IViewProvider 
 		node.getStyles()
 				.add(NotationFactory.eINSTANCE.createDescriptionStyle());
 		node.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
-		node.getStyles().add(NotationFactory.eINSTANCE.createFillStyle());
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
 		node.setType(NimaVisualIDRegistry.getType(ArchetypeEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
@@ -269,11 +268,6 @@ public class NimaViewProvider extends AbstractProvider implements IViewProvider 
 			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
 					.intValue());
 		}
-		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
-				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
-		ViewUtil.setStructuralFeatureValue(node,
-				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
-				FigureUtilities.RGBToInteger(fillRGB));
 		Node label5001 = createLabel(node,
 				NimaVisualIDRegistry.getType(ArchetypeNomEditPart.VISUAL_ID));
 		return node;

@@ -484,6 +484,15 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getConfig_Attack() {
+		return (EReference)configEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getConfig_Owner() {
 		return (EReference)configEClass.getEStructuralFeatures().get(6);
 	}
@@ -776,6 +785,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		createEAttribute(configEClass, CONFIG__DESCRIPTION);
 		createEReference(configEClass, CONFIG__OWNER);
 		createEAttribute(configEClass, CONFIG__ATTAQUE);
+		createEReference(configEClass, CONFIG__ATTACK);
 
 		dualHandConfigEClass = createEClass(DUAL_HAND_CONFIG);
 		createEAttribute(dualHandConfigEClass, DUAL_HAND_CONFIG__INIT_GAUCHE);
@@ -888,6 +898,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		initEAttribute(getConfig_Description(), ecorePackage.getEString(), "description", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConfig_Owner(), this.getArchetype(), this.getArchetype_Configs(), "owner", null, 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfig_Attaque(), ecorePackage.getEInt(), "attaque", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConfig_Attack(), this.getAttaque(), this.getAttaque_Attaquant(), "attack", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dualHandConfigEClass, DualHandConfig.class, "DualHandConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDualHandConfig_InitGauche(), ecorePackage.getEInt(), "initGauche", null, 0, 1, DualHandConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -916,10 +927,12 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 
 		addEOperation(combatEClass, null, "resetRound", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(combatEClass, null, "resetAndRun", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(attaqueEClass, Attaque.class, "Attaque", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttaque_Cible(), this.getArchetype(), null, "cible", null, 1, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttaque_BonusAtt(), ecorePackage.getEInt(), "bonusAtt", null, 0, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttaque_Attaquant(), this.getConfig(), null, "attaquant", null, 1, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttaque_Attaquant(), this.getConfig(), this.getConfig_Attack(), "attaquant", null, 1, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttaque_BonusDef(), ecorePackage.getEInt(), "bonusDef", null, 0, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(attaqueEClass, null, "resolve", 0, 1, IS_UNIQUE, IS_ORDERED);

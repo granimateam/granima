@@ -13,6 +13,7 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.commands.Command;
@@ -110,7 +111,7 @@ public class ConfigEditPart extends AbstractBorderItemEditPart {
 	 * @generated
 	 */
 	protected NodeFigure createNodePlate() {
-		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(40, 40);
+		DefaultSizeNodeFigure result = new DefaultSizeNodeFigure(20, 20);
 
 		//FIXME: workaround for #154536
 		result.getBounds().setSize(result.getPreferredSize());
@@ -245,6 +246,12 @@ public class ConfigEditPart extends AbstractBorderItemEditPart {
 
 			this.setLineStyle(Graphics.LINE_DASH);
 			this.setBackgroundColor(THIS_BACK);
+			this.setPreferredSize(new Dimension(getMapMode().DPtoLP(20),
+					getMapMode().DPtoLP(20)));
+			this.setMaximumSize(new Dimension(getMapMode().DPtoLP(20),
+					getMapMode().DPtoLP(20)));
+			this.setMinimumSize(new Dimension(getMapMode().DPtoLP(20),
+					getMapMode().DPtoLP(20)));
 		}
 
 	}

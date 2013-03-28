@@ -364,6 +364,10 @@
         <element xmi:type="ecore:EOperation" href="nima.ecore#//Combat/resetRound"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_VOnW8YsDEeKlbfFjmI1K-A"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_6gmusJekEeKaiJFKbhZGZA" type="2002">
+        <element xmi:type="ecore:EOperation" href="nima.ecore#//Combat/resetAndRun"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_6gmusZekEeKaiJFKbhZGZA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_sQuSmYsBEeKlbfFjmI1K-A"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_sQuSmosBEeKlbfFjmI1K-A"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_sQuSm4sBEeKlbfFjmI1K-A"/>
@@ -398,7 +402,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_ZN1bAYsCEeKlbfFjmI1K-A" fontColor="4210752" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="nima.ecore#//Attaque"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZN1bAosCEeKlbfFjmI1K-A" x="310" y="45"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZN1bAosCEeKlbfFjmI1K-A" x="345" y="45"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_--f9IYr9EeKlbfFjmI1K-A"/>
   <element xmi:type="ecore:EPackage" href="nima.ecore#/"/>
@@ -546,5 +550,19 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2BJY44sDEeKlbfFjmI1K-A" points="[-2, 7, 19, -59]$[-19, 61, 2, -5]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2BSi0IsDEeKlbfFjmI1K-A" id="(0.4339622641509434,0.8571428571428571)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2BSi0YsDEeKlbfFjmI1K-A" id="(0.5098039215686274,0.10714285714285714)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_BdSiEJenEeKaiJFKbhZGZA" type="3002" source="_AcrLUIr-EeKlbfFjmI1K-A" target="_ZN1bAIsCEeKlbfFjmI1K-A">
+    <children xmi:type="notation:Node" xmi:id="_BdSiFJenEeKaiJFKbhZGZA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BdSiFZenEeKaiJFKbhZGZA" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_BdSiFpenEeKaiJFKbhZGZA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BdSiF5enEeKaiJFKbhZGZA" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_BdSiEZenEeKaiJFKbhZGZA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_BdSiEpenEeKaiJFKbhZGZA" fontColor="4210752" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="nima.ecore#//Config/attack"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BdSiE5enEeKaiJFKbhZGZA" points="[-5, -7, 2, 48]$[-5, -42, 2, 13]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BdbsAJenEeKaiJFKbhZGZA" id="(0.7355769230769231,0.046242774566473986)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BdbsAZenEeKaiJFKbhZGZA" id="(0.7583333333333333,0.8194444444444444)"/>
   </edges>
 </notation:Diagram>

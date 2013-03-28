@@ -11,7 +11,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: nima,
  nima.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.jface
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.jface.dialogs,
  org.eclipse.swt,

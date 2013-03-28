@@ -378,13 +378,22 @@ public interface NimaPackage extends EPackage {
 	int CONFIG__ATTAQUE = 7;
 
 	/**
+	 * The feature id for the '<em><b>Attack</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG__ATTACK = 8;
+
+	/**
 	 * The number of structural features of the '<em>Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_FEATURE_COUNT = 8;
+	int CONFIG_FEATURE_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link nima.impl.ConfigCacImpl <em>Config Cac</em>}' class.
@@ -467,6 +476,15 @@ public interface NimaPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONFIG_CAC__ATTAQUE = CONFIG__ATTAQUE;
+
+	/**
+	 * The feature id for the '<em><b>Attack</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_CAC__ATTACK = CONFIG__ATTACK;
 
 	/**
 	 * The number of structural features of the '<em>Config Cac</em>' class.
@@ -558,6 +576,15 @@ public interface NimaPackage extends EPackage {
 	 * @ordered
 	 */
 	int DUAL_HAND_CONFIG__ATTAQUE = CONFIG_CAC__ATTAQUE;
+
+	/**
+	 * The feature id for the '<em><b>Attack</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DUAL_HAND_CONFIG__ATTACK = CONFIG_CAC__ATTACK;
 
 	/**
 	 * The feature id for the '<em><b>Init Gauche</b></em>' attribute.
@@ -696,6 +723,15 @@ public interface NimaPackage extends EPackage {
 	int CONFIG_LANCE__ATTAQUE = CONFIG__ATTAQUE;
 
 	/**
+	 * The feature id for the '<em><b>Attack</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_LANCE__ATTACK = CONFIG__ATTACK;
+
+	/**
 	 * The number of structural features of the '<em>Config Lance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -787,6 +823,15 @@ public interface NimaPackage extends EPackage {
 	int CONFIG_TIR__ATTAQUE = CONFIG__ATTAQUE;
 
 	/**
+	 * The feature id for the '<em><b>Attack</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_TIR__ATTACK = CONFIG__ATTACK;
+
+	/**
 	 * The number of structural features of the '<em>Config Tir</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -876,6 +921,15 @@ public interface NimaPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONFIG_AOE__ATTAQUE = CONFIG__ATTAQUE;
+
+	/**
+	 * The feature id for the '<em><b>Attack</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG_AOE__ATTACK = CONFIG__ATTACK;
 
 	/**
 	 * The feature id for the '<em><b>Rayon</b></em>' attribute.
@@ -1414,6 +1468,17 @@ public interface NimaPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getConfig_Attaque();
+
+	/**
+	 * Returns the meta object for the reference '{@link nima.Config#getAttack <em>Attack</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attack</em>'.
+	 * @see nima.Config#getAttack()
+	 * @see #getConfig()
+	 * @generated
+	 */
+	EReference getConfig_Attack();
 
 	/**
 	 * Returns the meta object for the container reference '{@link nima.Config#getOwner <em>Owner</em>}'.
@@ -1980,6 +2045,14 @@ public interface NimaPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONFIG__ATTAQUE = eINSTANCE.getConfig_Attaque();
+
+		/**
+		 * The meta object literal for the '<em><b>Attack</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONFIG__ATTACK = eINSTANCE.getConfig_Attack();
 
 		/**
 		 * The meta object literal for the '<em><b>Owner</b></em>' container reference feature.

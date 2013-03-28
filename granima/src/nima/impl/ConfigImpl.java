@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link nima.impl.ConfigImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link nima.impl.ConfigImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link nima.impl.ConfigImpl#getAttaque <em>Attaque</em>}</li>
+ *   <li>{@link nima.impl.ConfigImpl#getAttack <em>Attack</em>}</li>
  * </ul>
  * </p>
  *
@@ -183,6 +184,16 @@ public class ConfigImpl extends EObjectImpl implements Config {
 	 * @ordered
 	 */
 	protected int attaque = ATTAQUE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getAttack() <em>Attack</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttack()
+	 * @generated
+	 * @ordered
+	 */
+	protected Attaque attack;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -355,6 +366,66 @@ public class ConfigImpl extends EObjectImpl implements Config {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Attaque getAttack() {
+		if (attack != null && attack.eIsProxy()) {
+			InternalEObject oldAttack = (InternalEObject)attack;
+			attack = (Attaque)eResolveProxy(oldAttack);
+			if (attack != oldAttack) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NimaPackage.CONFIG__ATTACK, oldAttack, attack));
+			}
+		}
+		return attack;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Attaque basicGetAttack() {
+		return attack;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAttack(Attaque newAttack, NotificationChain msgs) {
+		Attaque oldAttack = attack;
+		attack = newAttack;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NimaPackage.CONFIG__ATTACK, oldAttack, newAttack);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAttack(Attaque newAttack) {
+		if (newAttack != attack) {
+			NotificationChain msgs = null;
+			if (attack != null)
+				msgs = ((InternalEObject)attack).eInverseRemove(this, NimaPackage.ATTAQUE__ATTAQUANT, Attaque.class, msgs);
+			if (newAttack != null)
+				msgs = ((InternalEObject)newAttack).eInverseAdd(this, NimaPackage.ATTAQUE__ATTAQUANT, Attaque.class, msgs);
+			msgs = basicSetAttack(newAttack, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.CONFIG__ATTACK, newAttack, newAttack));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Archetype getOwner() {
 		if (eContainerFeatureID() != NimaPackage.CONFIG__OWNER) return null;
 		return (Archetype)eContainer();
@@ -403,6 +474,10 @@ public class ConfigImpl extends EObjectImpl implements Config {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetOwner((Archetype)otherEnd, msgs);
+			case NimaPackage.CONFIG__ATTACK:
+				if (attack != null)
+					msgs = ((InternalEObject)attack).eInverseRemove(this, NimaPackage.ATTAQUE__ATTAQUANT, Attaque.class, msgs);
+				return basicSetAttack((Attaque)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -417,6 +492,8 @@ public class ConfigImpl extends EObjectImpl implements Config {
 		switch (featureID) {
 			case NimaPackage.CONFIG__OWNER:
 				return basicSetOwner(null, msgs);
+			case NimaPackage.CONFIG__ATTACK:
+				return basicSetAttack(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -459,6 +536,9 @@ public class ConfigImpl extends EObjectImpl implements Config {
 				return getOwner();
 			case NimaPackage.CONFIG__ATTAQUE:
 				return getAttaque();
+			case NimaPackage.CONFIG__ATTACK:
+				if (resolve) return getAttack();
+				return basicGetAttack();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -494,6 +574,9 @@ public class ConfigImpl extends EObjectImpl implements Config {
 				return;
 			case NimaPackage.CONFIG__ATTAQUE:
 				setAttaque((Integer)newValue);
+				return;
+			case NimaPackage.CONFIG__ATTACK:
+				setAttack((Attaque)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -531,6 +614,9 @@ public class ConfigImpl extends EObjectImpl implements Config {
 			case NimaPackage.CONFIG__ATTAQUE:
 				setAttaque(ATTAQUE_EDEFAULT);
 				return;
+			case NimaPackage.CONFIG__ATTACK:
+				setAttack((Attaque)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -559,6 +645,8 @@ public class ConfigImpl extends EObjectImpl implements Config {
 				return getOwner() != null;
 			case NimaPackage.CONFIG__ATTAQUE:
 				return attaque != ATTAQUE_EDEFAULT;
+			case NimaPackage.CONFIG__ATTACK:
+				return attack != null;
 		}
 		return super.eIsSet(featureID);
 	}

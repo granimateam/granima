@@ -95,4 +95,12 @@ public interface Combat extends EObject {
 	 */
 	void resetRound();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void resetAndRun();
+
 } // Combat

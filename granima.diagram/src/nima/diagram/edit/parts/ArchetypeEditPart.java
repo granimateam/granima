@@ -13,8 +13,10 @@ import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
 import org.eclipse.draw2d.RectangleFigure;
+import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.commands.Command;
@@ -310,7 +312,7 @@ public class ArchetypeEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
-	public class ArchetypeFigure extends RectangleFigure {
+	public class ArchetypeFigure extends RoundedRectangle {
 
 		/**
 		 * @generated
@@ -333,7 +335,10 @@ public class ArchetypeEditPart extends AbstractBorderedShapeEditPart {
 
 			this.setLayoutManager(layoutThis);
 
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
+					getMapMode().DPtoLP(8)));
 			this.setForegroundColor(THIS_FORE);
+			this.setBackgroundColor(THIS_BACK);
 			createContents();
 		}
 
@@ -363,5 +368,10 @@ public class ArchetypeEditPart extends AbstractBorderedShapeEditPart {
 	 * @generated
 	 */
 	static final Color THIS_FORE = new Color(null, 150, 140, 130);
+
+	/**
+	 * @generated
+	 */
+	static final Color THIS_BACK = new Color(null, 90, 70, 70);
 
 }

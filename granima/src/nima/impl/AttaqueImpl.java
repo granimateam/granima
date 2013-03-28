@@ -12,13 +12,16 @@ import nima.Config;
 import nima.NimaPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.jface.dialogs.Dialog;
+import org.eclipse.jface.dialogs.InputDialog;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.swt.widgets.Shell;
-
+import org.eclipse.jface.window.Window;
 import tool.Des;
 
 /**
@@ -207,11 +210,33 @@ public class AttaqueImpl extends EObjectImpl implements Attaque {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAttaquant(Config newAttaquant) {
+	public NotificationChain basicSetAttaquant(Config newAttaquant, NotificationChain msgs) {
 		Config oldAttaquant = attaquant;
 		attaquant = newAttaquant;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ATTAQUE__ATTAQUANT, oldAttaquant, attaquant));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NimaPackage.ATTAQUE__ATTAQUANT, oldAttaquant, newAttaquant);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAttaquant(Config newAttaquant) {
+		if (newAttaquant != attaquant) {
+			NotificationChain msgs = null;
+			if (attaquant != null)
+				msgs = ((InternalEObject)attaquant).eInverseRemove(this, NimaPackage.CONFIG__ATTACK, Config.class, msgs);
+			if (newAttaquant != null)
+				msgs = ((InternalEObject)newAttaquant).eInverseAdd(this, NimaPackage.CONFIG__ATTACK, Config.class, msgs);
+			msgs = basicSetAttaquant(newAttaquant, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ATTAQUE__ATTAQUANT, newAttaquant, newAttaquant));
 	}
 
 	/**
@@ -241,59 +266,121 @@ public class AttaqueImpl extends EObjectImpl implements Attaque {
 	 * @generated
 	 */
 	public void resolve() {
-		Archetype attaquant, defenseur;
-		Config attaque, defense;
-		attaque = this.getAttaquant();
-		defense = this.getCible().getActive();
-		attaquant=this.getAttaquant().getOwner();
-		defenseur = this.getCible();
-		int attaqueTotale = this.getAttaquant().getAttaque();
-		attaqueTotale+= this.getBonusAtt();
-		
-		int nbatt = attaquant.getNbAction();
-		attaqueTotale = attaqueTotale + (-25 *nbatt);
-		this.getAttaquant().getOwner().setNbAction(nbatt+1);
-		int defenseTotale = this.getBonusDef();
-		defenseTotale+= defenseur.getActive().getDefense();
-		
-		int def = defenseur.getNbDef();
-		if(def ==1) defenseTotale=defenseTotale-30;
-		if(def ==2) defenseTotale=defenseTotale-50;
-		if(def ==3) defenseTotale=defenseTotale-70;
-		if(def >3) defenseTotale=defenseTotale-90;
-		this.getCible().setNbDef(def+1);
-		System.out.println("att :"+attaqueTotale+ " def :"+defenseTotale);
-		defenseTotale+=Des.fullRoll();
+Archetype attaquant, defenseur;
+Config attaque, defense;
+attaque = this.getAttaquant();
+defense = this.getCible().getActive();
+attaquant=this.getAttaquant().getOwner();
+defenseur = this.getCible();
+int attaqueTotale = attaque.getAttaque();
+attaqueTotale+= attaquant.getAttaque();
+attaqueTotale+= this.getBonusAtt();
+
+int nbatt = attaquant.getNbAction();
+attaqueTotale = attaqueTotale + (-25 *nbatt);
+this.getAttaquant().getOwner().setNbAction(nbatt+1);
+int defenseTotale = this.getBonusDef();
+defenseTotale+= defense.getDefense();
+defenseTotale+= defenseur.getDefense();
+
+int def = defenseur.getNbDef();
+if(def ==1) defenseTotale=defenseTotale-30;
+if(def ==2) defenseTotale=defenseTotale-50;
+if(def ==3) defenseTotale=defenseTotale-70;
+if(def >3) defenseTotale=defenseTotale-90;
+this.getCible().setNbDef(def+1);
+System.out.println("att :"+attaqueTotale+ " def :"+defenseTotale);
+if(attaquant.isJoueur()){
+	
+	InputDialog d = new InputDialog(new Shell(),"Score du joueur", "Entrez le score d'attaque au dés de "+attaquant.getNom(), "50",null);
+	int choice = d.open();
+	if(choice==Window.OK) {
+		Integer result = Integer.parseInt(d.getValue());
+		attaqueTotale+=result;
+	}else {
 		attaqueTotale+=Des.fullRoll();
-		
-		int marge = attaqueTotale - defenseTotale;
-		System.out.println("marge : "+marge);
-		if(marge>10) {
-			defenseur.setPeutAgir(false);
-			int absorption = 2 + defenseur.getIP(attaque.getTypeDegat());
-			marge -= absorption * 10;
-			if(marge>10) {
-				int degat = attaque.getDegats()* marge /100;
-				int hp = defenseur.getHp()- degat;
-				defenseur.setHp(hp);
-				String tab[] ={"Ok"}; 
-				String info = "La cible encaisse "+degat+" points de dégats. Restant : "+hp;
-				MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
-				d.open();
-			}
-		}else if (marge<-10) {
-			int result = marge/10;
-			result *=-5;
-			String tab[] ={"Ok"}; 
-			String info = "Défense réussi, contre attaque possible avec un bonus de "+result;
-			MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
-			d.open();
-		}else{
-			String tab[] ={"Ok"}; 
-			String info = "défense réussi, pas de contre attaque possible";
-			MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
-			d.open();
+	}
+}else {
+	attaqueTotale+=Des.fullRoll();
+}
+if(defenseur.isJoueur()) {
+	InputDialog d = new InputDialog(new Shell(),"Score du joueur", "Entrez le score de défense au dés de "+attaquant.getNom(), "50",null);
+	int choice = d.open();
+	if(choice==Window.OK) {
+		Integer result = Integer.parseInt(d.getValue());
+		defenseTotale+=result;
+	}else {
+		defenseTotale+=Des.fullRoll();
+	}
+	
+}else {
+	defenseTotale+=Des.fullRoll();		
+}
+if(defenseTotale<0) defenseTotale=0;
+int marge = attaqueTotale - defenseTotale;
+System.out.println("marge : "+marge);
+if(marge>10) {
+	defenseur.setPeutAgir(false);
+	int absorption = 2 + defenseur.getIP(attaque.getTypeDegat());
+	marge -= absorption * 10;
+	if(marge>10) {
+		int degat = attaque.getDegats()* marge /100;
+		int hp = defenseur.getHp()- degat;
+		defenseur.setHp(hp);
+		String tab[] ={"Ok"}; 
+		String info = defenseur.getNom()+" encaisse "+degat+" points de dégats. Restant : "+hp;
+		MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+		d.open();
+	}else
+	{
+		String tab[] ={"Ok"}; 
+		String info = defenseur.getNom()+" se défend de justesse. 0 Dégat, pas d'actions";
+		MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+		d.open();	
+	}
+}else if (marge<-10) {
+	int result = marge/10;
+	result *=-5;
+	String tab[] ={"Ok"}; 
+	String info = "Défense réussi par"+defenseur.getNom()+", contre attaque possible avec un bonus de "+result;
+	MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+	d.open();
+}else{
+	String tab[] ={"Ok"}; 
+	String info = "Défense réussi par"+defenseur.getNom()+", pas de contre attaque possible";
+	MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+	d.open();
+}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case NimaPackage.ATTAQUE__ATTAQUANT:
+				if (attaquant != null)
+					msgs = ((InternalEObject)attaquant).eInverseRemove(this, NimaPackage.CONFIG__ATTACK, Config.class, msgs);
+				return basicSetAttaquant((Config)otherEnd, msgs);
 		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case NimaPackage.ATTAQUE__ATTAQUANT:
+				return basicSetAttaquant(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

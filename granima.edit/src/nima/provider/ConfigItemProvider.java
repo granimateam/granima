@@ -240,12 +240,12 @@ public class ConfigItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public String getText(Object object) {
 		Config config = (Config)object;
-		return getString("_UI_Config_type") + " " + config.getInit();
+		return getString("_UI_Config_type") + " " + config.getNom();
 	}
 
 	/**

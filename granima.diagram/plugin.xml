@@ -453,6 +453,14 @@
             label="Reset"
             menubarPath="SimStart/group1">
       </action>
+      <action
+            class="nima.diagram.part.StartRoundAutoAction"
+            definitionId="Sim-ria.diagram.start"
+            enablesFor="1"
+            id="Sim-ria.diagram.popup.StartRoundAutoActionID"
+            label="Reset And Run"
+            menubarPath="SimStart/group1">
+      </action>
       <menu
             id="SimStart"
             label="Actions">

@@ -6,7 +6,9 @@
  */
 package nima.impl;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 import nima.Archetype;
 import nima.Attaque;
@@ -26,6 +28,8 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import tool.InitComparator;
 
 /**
  * <!-- begin-user-doc -->
@@ -158,6 +162,15 @@ public class CombatImpl extends EObjectImpl implements Combat {
 		for(Archetype arch : l ) {
 			arch.resetRound();
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void resetAndRun() {
+
 	}
 
 	/**
