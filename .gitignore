@@ -1,9 +1,3 @@
-# Eclipse #
-.project
-.settings
-.classpath
-.metadata
-
 # Maven #
 target
 
