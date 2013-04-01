@@ -10,6 +10,7 @@
         <details key="body" value="this.setPeutAgir(true);&#xD;&#xA;this.setNbAction(0);&#xD;&#xA;this.setNbDef(0);&#xD;&#xA;int init = this.getInit() + this.getActive().getInit();&#xD;&#xA;init+= Des.fullRoll();&#xD;&#xA;this.setRolledInit(init);"/>
       </eAnnotations>
     </eOperations>
+    <eOperations name="attaque"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="configs" upperBound="-1"
         eType="#//Config" containment="true" eOpposite="#//Config/owner"/>
@@ -35,9 +36,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbAction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="peutAgir" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolledInit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cible" eType="#//Archetype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hpMax" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="malusCritTemp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bonusAtaque" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bonusDef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Config">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defense" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="degats" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeDegat" eType="#//typeAtt"/>
@@ -48,6 +55,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="attaque" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attack" eType="#//Attaque"
         eOpposite="#//Attaque/attaquant"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbAttaques" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enchaine" eType="#//Config"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeDef" eType="#//TypeDef"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="typeAttaque" eType="#//TypeAttaque"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DualHandConfig" eSuperTypes="#//ConfigCac">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initGauche" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -61,6 +73,7 @@
     <eLiterals name="parade" value="1"/>
     <eLiterals name="bouclier" value="2"/>
     <eLiterals name="encaissement" value="3"/>
+    <eLiterals name="neutre" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="typeAtt">
     <eLiterals name="tranchant"/>
@@ -111,5 +124,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attaquant" lowerBound="1"
         eType="#//Config" eOpposite="#//Config/attack"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bonusDef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeAttaque">
+    <eLiterals name="cac"/>
+    <eLiterals name="lance" value="1"/>
+    <eLiterals name="tir" value="2"/>
+    <eLiterals name="neutre" value="3"/>
   </eClassifiers>
 </ecore:EPackage>
