@@ -63,11 +63,6 @@ public class NimaFactoryImpl extends EFactoryImpl implements NimaFactory {
 		switch (eClass.getClassifierID()) {
 			case NimaPackage.ARCHETYPE: return createArchetype();
 			case NimaPackage.CONFIG: return createConfig();
-			case NimaPackage.DUAL_HAND_CONFIG: return createDualHandConfig();
-			case NimaPackage.CONFIG_CAC: return createConfigCac();
-			case NimaPackage.CONFIG_LANCE: return createConfigLance();
-			case NimaPackage.CONFIG_TIR: return createConfigTir();
-			case NimaPackage.CONFIG_AOE: return createConfigAoe();
 			case NimaPackage.UNIVERS: return createUnivers();
 			case NimaPackage.COMBAT: return createCombat();
 			case NimaPackage.ATTAQUE: return createAttaque();
@@ -88,6 +83,8 @@ public class NimaFactoryImpl extends EFactoryImpl implements NimaFactory {
 				return createTypeDefFromString(eDataType, initialValue);
 			case NimaPackage.TYPE_ATT:
 				return createtypeAttFromString(eDataType, initialValue);
+			case NimaPackage.TYPE_ATTAQUE:
+				return createTypeAttaqueFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -105,6 +102,8 @@ public class NimaFactoryImpl extends EFactoryImpl implements NimaFactory {
 				return convertTypeDefToString(eDataType, instanceValue);
 			case NimaPackage.TYPE_ATT:
 				return converttypeAttToString(eDataType, instanceValue);
+			case NimaPackage.TYPE_ATTAQUE:
+				return convertTypeAttaqueToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -128,56 +127,6 @@ public class NimaFactoryImpl extends EFactoryImpl implements NimaFactory {
 	public Config createConfig() {
 		ConfigImpl config = new ConfigImpl();
 		return config;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DualHandConfig createDualHandConfig() {
-		DualHandConfigImpl dualHandConfig = new DualHandConfigImpl();
-		return dualHandConfig;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConfigCac createConfigCac() {
-		ConfigCacImpl configCac = new ConfigCacImpl();
-		return configCac;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConfigLance createConfigLance() {
-		ConfigLanceImpl configLance = new ConfigLanceImpl();
-		return configLance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConfigTir createConfigTir() {
-		ConfigTirImpl configTir = new ConfigTirImpl();
-		return configTir;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ConfigAoe createConfigAoe() {
-		ConfigAoeImpl configAoe = new ConfigAoeImpl();
-		return configAoe;
 	}
 
 	/**
@@ -247,6 +196,26 @@ public class NimaFactoryImpl extends EFactoryImpl implements NimaFactory {
 	 * @generated
 	 */
 	public String converttypeAttToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeAttaque createTypeAttaqueFromString(EDataType eDataType, String initialValue) {
+		TypeAttaque result = TypeAttaque.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTypeAttaqueToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

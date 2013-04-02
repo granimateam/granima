@@ -98,7 +98,7 @@ public interface Combat extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='setNbRound(nbRound+1);\r\nEList<Archetype> l = this.getArchetypes();\r\nfor(Archetype arch : l ) {\r\n\tarch.resetRound();\r\n\t\r\n}\r\nCollections.sort(l, new InitComparator());\r\n\r\nfor(Archetype arch : l ) {\r\n\tif(arch.isPeutAgir())\r\n\t{\r\n\t\tarch.getActive().getAttack().resolve();\r\n\t}\r\n\t\r\n}'"
 	 * @generated
 	 */
 	void resetAndRun();

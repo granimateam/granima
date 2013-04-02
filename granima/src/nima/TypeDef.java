@@ -60,7 +60,15 @@ public enum TypeDef implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ENCAISSEMENT(3, "encaissement", "encaissement");
+	ENCAISSEMENT(3, "encaissement", "encaissement"), /**
+	 * The '<em><b>Neutre</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NEUTRE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NEUTRE(4, "neutre", "neutre");
 
 	/**
 	 * The '<em><b>Esquive</b></em>' literal value.
@@ -123,6 +131,21 @@ public enum TypeDef implements Enumerator {
 	public static final int ENCAISSEMENT_VALUE = 3;
 
 	/**
+	 * The '<em><b>Neutre</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Neutre</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #NEUTRE
+	 * @model name="neutre"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NEUTRE_VALUE = 4;
+
+	/**
 	 * An array of all the '<em><b>Type Def</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -134,6 +157,7 @@ public enum TypeDef implements Enumerator {
 			PARADE,
 			BOUCLIER,
 			ENCAISSEMENT,
+			NEUTRE,
 		};
 
 	/**
@@ -188,6 +212,7 @@ public enum TypeDef implements Enumerator {
 			case PARADE_VALUE: return PARADE;
 			case BOUCLIER_VALUE: return BOUCLIER;
 			case ENCAISSEMENT_VALUE: return ENCAISSEMENT;
+			case NEUTRE_VALUE: return NEUTRE;
 		}
 		return null;
 	}

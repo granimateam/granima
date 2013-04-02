@@ -287,13 +287,67 @@ public interface NimaPackage extends EPackage {
 	int ARCHETYPE__ROLLED_INIT = 23;
 
 	/**
+	 * The feature id for the '<em><b>Cible</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHETYPE__CIBLE = 24;
+
+	/**
+	 * The feature id for the '<em><b>Hp Max</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHETYPE__HP_MAX = 25;
+
+	/**
+	 * The feature id for the '<em><b>Malus Crit Temp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHETYPE__MALUS_CRIT_TEMP = 26;
+
+	/**
+	 * The feature id for the '<em><b>Bonus Ataque</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHETYPE__BONUS_ATAQUE = 27;
+
+	/**
+	 * The feature id for the '<em><b>Bonus Def</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHETYPE__BONUS_DEF = 28;
+
+	/**
+	 * The feature id for the '<em><b>Current</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARCHETYPE__CURRENT = 29;
+
+	/**
 	 * The number of structural features of the '<em>Archetype</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARCHETYPE_FEATURE_COUNT = 24;
+	int ARCHETYPE_FEATURE_COUNT = 30;
 
 	/**
 	 * The meta object id for the '{@link nima.impl.ConfigImpl <em>Config</em>}' class.
@@ -387,567 +441,49 @@ public interface NimaPackage extends EPackage {
 	int CONFIG__ATTACK = 8;
 
 	/**
+	 * The feature id for the '<em><b>Nb Attaques</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG__NB_ATTAQUES = 9;
+
+	/**
+	 * The feature id for the '<em><b>Enchaine</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG__ENCHAINE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Type Def</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG__TYPE_DEF = 11;
+
+	/**
+	 * The feature id for the '<em><b>Type Attaque</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFIG__TYPE_ATTAQUE = 12;
+
+	/**
 	 * The number of structural features of the '<em>Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFIG_FEATURE_COUNT = 9;
-
-	/**
-	 * The meta object id for the '{@link nima.impl.ConfigCacImpl <em>Config Cac</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see nima.impl.ConfigCacImpl
-	 * @see nima.impl.NimaPackageImpl#getConfigCac()
-	 * @generated
-	 */
-	int CONFIG_CAC = 3;
-
-	/**
-	 * The feature id for the '<em><b>Init</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_CAC__INIT = CONFIG__INIT;
-
-	/**
-	 * The feature id for the '<em><b>Defense</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_CAC__DEFENSE = CONFIG__DEFENSE;
-
-	/**
-	 * The feature id for the '<em><b>Degats</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_CAC__DEGATS = CONFIG__DEGATS;
-
-	/**
-	 * The feature id for the '<em><b>Type Degat</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_CAC__TYPE_DEGAT = CONFIG__TYPE_DEGAT;
-
-	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_CAC__NOM = CONFIG__NOM;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_CAC__DESCRIPTION = CONFIG__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_CAC__OWNER = CONFIG__OWNER;
-
-	/**
-	 * The feature id for the '<em><b>Attaque</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_CAC__ATTAQUE = CONFIG__ATTAQUE;
-
-	/**
-	 * The feature id for the '<em><b>Attack</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_CAC__ATTACK = CONFIG__ATTACK;
-
-	/**
-	 * The number of structural features of the '<em>Config Cac</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_CAC_FEATURE_COUNT = CONFIG_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link nima.impl.DualHandConfigImpl <em>Dual Hand Config</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see nima.impl.DualHandConfigImpl
-	 * @see nima.impl.NimaPackageImpl#getDualHandConfig()
-	 * @generated
-	 */
-	int DUAL_HAND_CONFIG = 2;
-
-	/**
-	 * The feature id for the '<em><b>Init</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__INIT = CONFIG_CAC__INIT;
-
-	/**
-	 * The feature id for the '<em><b>Defense</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__DEFENSE = CONFIG_CAC__DEFENSE;
-
-	/**
-	 * The feature id for the '<em><b>Degats</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__DEGATS = CONFIG_CAC__DEGATS;
-
-	/**
-	 * The feature id for the '<em><b>Type Degat</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__TYPE_DEGAT = CONFIG_CAC__TYPE_DEGAT;
-
-	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__NOM = CONFIG_CAC__NOM;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__DESCRIPTION = CONFIG_CAC__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__OWNER = CONFIG_CAC__OWNER;
-
-	/**
-	 * The feature id for the '<em><b>Attaque</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__ATTAQUE = CONFIG_CAC__ATTAQUE;
-
-	/**
-	 * The feature id for the '<em><b>Attack</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__ATTACK = CONFIG_CAC__ATTACK;
-
-	/**
-	 * The feature id for the '<em><b>Init Gauche</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__INIT_GAUCHE = CONFIG_CAC_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Attaque Gauche</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__ATTAQUE_GAUCHE = CONFIG_CAC_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Def Gauche</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__DEF_GAUCHE = CONFIG_CAC_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Degats Gauche</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__DEGATS_GAUCHE = CONFIG_CAC_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Type Degat Guche</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG__TYPE_DEGAT_GUCHE = CONFIG_CAC_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of structural features of the '<em>Dual Hand Config</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DUAL_HAND_CONFIG_FEATURE_COUNT = CONFIG_CAC_FEATURE_COUNT + 5;
-
-	/**
-	 * The meta object id for the '{@link nima.impl.ConfigLanceImpl <em>Config Lance</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see nima.impl.ConfigLanceImpl
-	 * @see nima.impl.NimaPackageImpl#getConfigLance()
-	 * @generated
-	 */
-	int CONFIG_LANCE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Init</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_LANCE__INIT = CONFIG__INIT;
-
-	/**
-	 * The feature id for the '<em><b>Defense</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_LANCE__DEFENSE = CONFIG__DEFENSE;
-
-	/**
-	 * The feature id for the '<em><b>Degats</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_LANCE__DEGATS = CONFIG__DEGATS;
-
-	/**
-	 * The feature id for the '<em><b>Type Degat</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_LANCE__TYPE_DEGAT = CONFIG__TYPE_DEGAT;
-
-	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_LANCE__NOM = CONFIG__NOM;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_LANCE__DESCRIPTION = CONFIG__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_LANCE__OWNER = CONFIG__OWNER;
-
-	/**
-	 * The feature id for the '<em><b>Attaque</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_LANCE__ATTAQUE = CONFIG__ATTAQUE;
-
-	/**
-	 * The feature id for the '<em><b>Attack</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_LANCE__ATTACK = CONFIG__ATTACK;
-
-	/**
-	 * The number of structural features of the '<em>Config Lance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_LANCE_FEATURE_COUNT = CONFIG_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link nima.impl.ConfigTirImpl <em>Config Tir</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see nima.impl.ConfigTirImpl
-	 * @see nima.impl.NimaPackageImpl#getConfigTir()
-	 * @generated
-	 */
-	int CONFIG_TIR = 5;
-
-	/**
-	 * The feature id for the '<em><b>Init</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_TIR__INIT = CONFIG__INIT;
-
-	/**
-	 * The feature id for the '<em><b>Defense</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_TIR__DEFENSE = CONFIG__DEFENSE;
-
-	/**
-	 * The feature id for the '<em><b>Degats</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_TIR__DEGATS = CONFIG__DEGATS;
-
-	/**
-	 * The feature id for the '<em><b>Type Degat</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_TIR__TYPE_DEGAT = CONFIG__TYPE_DEGAT;
-
-	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_TIR__NOM = CONFIG__NOM;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_TIR__DESCRIPTION = CONFIG__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_TIR__OWNER = CONFIG__OWNER;
-
-	/**
-	 * The feature id for the '<em><b>Attaque</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_TIR__ATTAQUE = CONFIG__ATTAQUE;
-
-	/**
-	 * The feature id for the '<em><b>Attack</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_TIR__ATTACK = CONFIG__ATTACK;
-
-	/**
-	 * The number of structural features of the '<em>Config Tir</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_TIR_FEATURE_COUNT = CONFIG_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link nima.impl.ConfigAoeImpl <em>Config Aoe</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see nima.impl.ConfigAoeImpl
-	 * @see nima.impl.NimaPackageImpl#getConfigAoe()
-	 * @generated
-	 */
-	int CONFIG_AOE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Init</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_AOE__INIT = CONFIG__INIT;
-
-	/**
-	 * The feature id for the '<em><b>Defense</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_AOE__DEFENSE = CONFIG__DEFENSE;
-
-	/**
-	 * The feature id for the '<em><b>Degats</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_AOE__DEGATS = CONFIG__DEGATS;
-
-	/**
-	 * The feature id for the '<em><b>Type Degat</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_AOE__TYPE_DEGAT = CONFIG__TYPE_DEGAT;
-
-	/**
-	 * The feature id for the '<em><b>Nom</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_AOE__NOM = CONFIG__NOM;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_AOE__DESCRIPTION = CONFIG__DESCRIPTION;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_AOE__OWNER = CONFIG__OWNER;
-
-	/**
-	 * The feature id for the '<em><b>Attaque</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_AOE__ATTAQUE = CONFIG__ATTAQUE;
-
-	/**
-	 * The feature id for the '<em><b>Attack</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_AOE__ATTACK = CONFIG__ATTACK;
-
-	/**
-	 * The feature id for the '<em><b>Rayon</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_AOE__RAYON = CONFIG_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Config Aoe</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONFIG_AOE_FEATURE_COUNT = CONFIG_FEATURE_COUNT + 1;
+	int CONFIG_FEATURE_COUNT = 13;
 
 	/**
 	 * The meta object id for the '{@link nima.impl.UniversImpl <em>Univers</em>}' class.
@@ -957,7 +493,7 @@ public interface NimaPackage extends EPackage {
 	 * @see nima.impl.NimaPackageImpl#getUnivers()
 	 * @generated
 	 */
-	int UNIVERS = 7;
+	int UNIVERS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Archetypes</b></em>' containment reference list.
@@ -994,7 +530,7 @@ public interface NimaPackage extends EPackage {
 	 * @see nima.impl.NimaPackageImpl#getCombat()
 	 * @generated
 	 */
-	int COMBAT = 8;
+	int COMBAT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Archetypes</b></em>' containment reference list.
@@ -1040,7 +576,7 @@ public interface NimaPackage extends EPackage {
 	 * @see nima.impl.NimaPackageImpl#getAttaque()
 	 * @generated
 	 */
-	int ATTAQUE = 9;
+	int ATTAQUE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Cible</b></em>' reference.
@@ -1095,7 +631,7 @@ public interface NimaPackage extends EPackage {
 	 * @see nima.impl.NimaPackageImpl#getTypeDef()
 	 * @generated
 	 */
-	int TYPE_DEF = 10;
+	int TYPE_DEF = 5;
 
 	/**
 	 * The meta object id for the '{@link nima.typeAtt <em>type Att</em>}' enum.
@@ -1105,7 +641,18 @@ public interface NimaPackage extends EPackage {
 	 * @see nima.impl.NimaPackageImpl#gettypeAtt()
 	 * @generated
 	 */
-	int TYPE_ATT = 11;
+	int TYPE_ATT = 6;
+
+
+	/**
+	 * The meta object id for the '{@link nima.TypeAttaque <em>Type Attaque</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see nima.TypeAttaque
+	 * @see nima.impl.NimaPackageImpl#getTypeAttaque()
+	 * @generated
+	 */
+	int TYPE_ATTAQUE = 7;
 
 
 	/**
@@ -1383,6 +930,72 @@ public interface NimaPackage extends EPackage {
 	EAttribute getArchetype_RolledInit();
 
 	/**
+	 * Returns the meta object for the reference '{@link nima.Archetype#getCible <em>Cible</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Cible</em>'.
+	 * @see nima.Archetype#getCible()
+	 * @see #getArchetype()
+	 * @generated
+	 */
+	EReference getArchetype_Cible();
+
+	/**
+	 * Returns the meta object for the attribute '{@link nima.Archetype#getHpMax <em>Hp Max</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hp Max</em>'.
+	 * @see nima.Archetype#getHpMax()
+	 * @see #getArchetype()
+	 * @generated
+	 */
+	EAttribute getArchetype_HpMax();
+
+	/**
+	 * Returns the meta object for the attribute '{@link nima.Archetype#getMalusCritTemp <em>Malus Crit Temp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Malus Crit Temp</em>'.
+	 * @see nima.Archetype#getMalusCritTemp()
+	 * @see #getArchetype()
+	 * @generated
+	 */
+	EAttribute getArchetype_MalusCritTemp();
+
+	/**
+	 * Returns the meta object for the attribute '{@link nima.Archetype#getBonusAtaque <em>Bonus Ataque</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Bonus Ataque</em>'.
+	 * @see nima.Archetype#getBonusAtaque()
+	 * @see #getArchetype()
+	 * @generated
+	 */
+	EAttribute getArchetype_BonusAtaque();
+
+	/**
+	 * Returns the meta object for the attribute '{@link nima.Archetype#getBonusDef <em>Bonus Def</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Bonus Def</em>'.
+	 * @see nima.Archetype#getBonusDef()
+	 * @see #getArchetype()
+	 * @generated
+	 */
+	EAttribute getArchetype_BonusDef();
+
+	/**
+	 * Returns the meta object for the reference '{@link nima.Archetype#getCurrent <em>Current</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Current</em>'.
+	 * @see nima.Archetype#getCurrent()
+	 * @see #getArchetype()
+	 * @generated
+	 */
+	EReference getArchetype_Current();
+
+	/**
 	 * Returns the meta object for class '{@link nima.Config <em>Config</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1481,6 +1094,50 @@ public interface NimaPackage extends EPackage {
 	EReference getConfig_Attack();
 
 	/**
+	 * Returns the meta object for the attribute '{@link nima.Config#getNbAttaques <em>Nb Attaques</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nb Attaques</em>'.
+	 * @see nima.Config#getNbAttaques()
+	 * @see #getConfig()
+	 * @generated
+	 */
+	EAttribute getConfig_NbAttaques();
+
+	/**
+	 * Returns the meta object for the reference '{@link nima.Config#getEnchaine <em>Enchaine</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Enchaine</em>'.
+	 * @see nima.Config#getEnchaine()
+	 * @see #getConfig()
+	 * @generated
+	 */
+	EReference getConfig_Enchaine();
+
+	/**
+	 * Returns the meta object for the attribute '{@link nima.Config#getTypeDef <em>Type Def</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type Def</em>'.
+	 * @see nima.Config#getTypeDef()
+	 * @see #getConfig()
+	 * @generated
+	 */
+	EAttribute getConfig_TypeDef();
+
+	/**
+	 * Returns the meta object for the attribute '{@link nima.Config#getTypeAttaque <em>Type Attaque</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type Attaque</em>'.
+	 * @see nima.Config#getTypeAttaque()
+	 * @see #getConfig()
+	 * @generated
+	 */
+	EAttribute getConfig_TypeAttaque();
+
+	/**
 	 * Returns the meta object for the container reference '{@link nima.Config#getOwner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1490,122 +1147,6 @@ public interface NimaPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConfig_Owner();
-
-	/**
-	 * Returns the meta object for class '{@link nima.DualHandConfig <em>Dual Hand Config</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Dual Hand Config</em>'.
-	 * @see nima.DualHandConfig
-	 * @generated
-	 */
-	EClass getDualHandConfig();
-
-	/**
-	 * Returns the meta object for the attribute '{@link nima.DualHandConfig#getInitGauche <em>Init Gauche</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Init Gauche</em>'.
-	 * @see nima.DualHandConfig#getInitGauche()
-	 * @see #getDualHandConfig()
-	 * @generated
-	 */
-	EAttribute getDualHandConfig_InitGauche();
-
-	/**
-	 * Returns the meta object for the attribute '{@link nima.DualHandConfig#getAttaqueGauche <em>Attaque Gauche</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Attaque Gauche</em>'.
-	 * @see nima.DualHandConfig#getAttaqueGauche()
-	 * @see #getDualHandConfig()
-	 * @generated
-	 */
-	EAttribute getDualHandConfig_AttaqueGauche();
-
-	/**
-	 * Returns the meta object for the attribute '{@link nima.DualHandConfig#getDefGauche <em>Def Gauche</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Def Gauche</em>'.
-	 * @see nima.DualHandConfig#getDefGauche()
-	 * @see #getDualHandConfig()
-	 * @generated
-	 */
-	EAttribute getDualHandConfig_DefGauche();
-
-	/**
-	 * Returns the meta object for the attribute '{@link nima.DualHandConfig#getDegatsGauche <em>Degats Gauche</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Degats Gauche</em>'.
-	 * @see nima.DualHandConfig#getDegatsGauche()
-	 * @see #getDualHandConfig()
-	 * @generated
-	 */
-	EAttribute getDualHandConfig_DegatsGauche();
-
-	/**
-	 * Returns the meta object for the attribute '{@link nima.DualHandConfig#getTypeDegatGuche <em>Type Degat Guche</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type Degat Guche</em>'.
-	 * @see nima.DualHandConfig#getTypeDegatGuche()
-	 * @see #getDualHandConfig()
-	 * @generated
-	 */
-	EAttribute getDualHandConfig_TypeDegatGuche();
-
-	/**
-	 * Returns the meta object for class '{@link nima.ConfigCac <em>Config Cac</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Config Cac</em>'.
-	 * @see nima.ConfigCac
-	 * @generated
-	 */
-	EClass getConfigCac();
-
-	/**
-	 * Returns the meta object for class '{@link nima.ConfigLance <em>Config Lance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Config Lance</em>'.
-	 * @see nima.ConfigLance
-	 * @generated
-	 */
-	EClass getConfigLance();
-
-	/**
-	 * Returns the meta object for class '{@link nima.ConfigTir <em>Config Tir</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Config Tir</em>'.
-	 * @see nima.ConfigTir
-	 * @generated
-	 */
-	EClass getConfigTir();
-
-	/**
-	 * Returns the meta object for class '{@link nima.ConfigAoe <em>Config Aoe</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Config Aoe</em>'.
-	 * @see nima.ConfigAoe
-	 * @generated
-	 */
-	EClass getConfigAoe();
-
-	/**
-	 * Returns the meta object for the attribute '{@link nima.ConfigAoe#getRayon <em>Rayon</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Rayon</em>'.
-	 * @see nima.ConfigAoe#getRayon()
-	 * @see #getConfigAoe()
-	 * @generated
-	 */
-	EAttribute getConfigAoe_Rayon();
 
 	/**
 	 * Returns the meta object for class '{@link nima.Univers <em>Univers</em>}'.
@@ -1755,6 +1296,16 @@ public interface NimaPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum gettypeAtt();
+
+	/**
+	 * Returns the meta object for enum '{@link nima.TypeAttaque <em>Type Attaque</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Type Attaque</em>'.
+	 * @see nima.TypeAttaque
+	 * @generated
+	 */
+	EEnum getTypeAttaque();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1981,6 +1532,54 @@ public interface NimaPackage extends EPackage {
 		EAttribute ARCHETYPE__ROLLED_INIT = eINSTANCE.getArchetype_RolledInit();
 
 		/**
+		 * The meta object literal for the '<em><b>Cible</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARCHETYPE__CIBLE = eINSTANCE.getArchetype_Cible();
+
+		/**
+		 * The meta object literal for the '<em><b>Hp Max</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHETYPE__HP_MAX = eINSTANCE.getArchetype_HpMax();
+
+		/**
+		 * The meta object literal for the '<em><b>Malus Crit Temp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHETYPE__MALUS_CRIT_TEMP = eINSTANCE.getArchetype_MalusCritTemp();
+
+		/**
+		 * The meta object literal for the '<em><b>Bonus Ataque</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHETYPE__BONUS_ATAQUE = eINSTANCE.getArchetype_BonusAtaque();
+
+		/**
+		 * The meta object literal for the '<em><b>Bonus Def</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARCHETYPE__BONUS_DEF = eINSTANCE.getArchetype_BonusDef();
+
+		/**
+		 * The meta object literal for the '<em><b>Current</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARCHETYPE__CURRENT = eINSTANCE.getArchetype_Current();
+
+		/**
 		 * The meta object literal for the '{@link nima.impl.ConfigImpl <em>Config</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2055,110 +1654,44 @@ public interface NimaPackage extends EPackage {
 		EReference CONFIG__ATTACK = eINSTANCE.getConfig_Attack();
 
 		/**
+		 * The meta object literal for the '<em><b>Nb Attaques</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONFIG__NB_ATTAQUES = eINSTANCE.getConfig_NbAttaques();
+
+		/**
+		 * The meta object literal for the '<em><b>Enchaine</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONFIG__ENCHAINE = eINSTANCE.getConfig_Enchaine();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Def</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONFIG__TYPE_DEF = eINSTANCE.getConfig_TypeDef();
+
+		/**
+		 * The meta object literal for the '<em><b>Type Attaque</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONFIG__TYPE_ATTAQUE = eINSTANCE.getConfig_TypeAttaque();
+
+		/**
 		 * The meta object literal for the '<em><b>Owner</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CONFIG__OWNER = eINSTANCE.getConfig_Owner();
-
-		/**
-		 * The meta object literal for the '{@link nima.impl.DualHandConfigImpl <em>Dual Hand Config</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see nima.impl.DualHandConfigImpl
-		 * @see nima.impl.NimaPackageImpl#getDualHandConfig()
-		 * @generated
-		 */
-		EClass DUAL_HAND_CONFIG = eINSTANCE.getDualHandConfig();
-
-		/**
-		 * The meta object literal for the '<em><b>Init Gauche</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DUAL_HAND_CONFIG__INIT_GAUCHE = eINSTANCE.getDualHandConfig_InitGauche();
-
-		/**
-		 * The meta object literal for the '<em><b>Attaque Gauche</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DUAL_HAND_CONFIG__ATTAQUE_GAUCHE = eINSTANCE.getDualHandConfig_AttaqueGauche();
-
-		/**
-		 * The meta object literal for the '<em><b>Def Gauche</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DUAL_HAND_CONFIG__DEF_GAUCHE = eINSTANCE.getDualHandConfig_DefGauche();
-
-		/**
-		 * The meta object literal for the '<em><b>Degats Gauche</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DUAL_HAND_CONFIG__DEGATS_GAUCHE = eINSTANCE.getDualHandConfig_DegatsGauche();
-
-		/**
-		 * The meta object literal for the '<em><b>Type Degat Guche</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DUAL_HAND_CONFIG__TYPE_DEGAT_GUCHE = eINSTANCE.getDualHandConfig_TypeDegatGuche();
-
-		/**
-		 * The meta object literal for the '{@link nima.impl.ConfigCacImpl <em>Config Cac</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see nima.impl.ConfigCacImpl
-		 * @see nima.impl.NimaPackageImpl#getConfigCac()
-		 * @generated
-		 */
-		EClass CONFIG_CAC = eINSTANCE.getConfigCac();
-
-		/**
-		 * The meta object literal for the '{@link nima.impl.ConfigLanceImpl <em>Config Lance</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see nima.impl.ConfigLanceImpl
-		 * @see nima.impl.NimaPackageImpl#getConfigLance()
-		 * @generated
-		 */
-		EClass CONFIG_LANCE = eINSTANCE.getConfigLance();
-
-		/**
-		 * The meta object literal for the '{@link nima.impl.ConfigTirImpl <em>Config Tir</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see nima.impl.ConfigTirImpl
-		 * @see nima.impl.NimaPackageImpl#getConfigTir()
-		 * @generated
-		 */
-		EClass CONFIG_TIR = eINSTANCE.getConfigTir();
-
-		/**
-		 * The meta object literal for the '{@link nima.impl.ConfigAoeImpl <em>Config Aoe</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see nima.impl.ConfigAoeImpl
-		 * @see nima.impl.NimaPackageImpl#getConfigAoe()
-		 * @generated
-		 */
-		EClass CONFIG_AOE = eINSTANCE.getConfigAoe();
-
-		/**
-		 * The meta object literal for the '<em><b>Rayon</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONFIG_AOE__RAYON = eINSTANCE.getConfigAoe_Rayon();
 
 		/**
 		 * The meta object literal for the '{@link nima.impl.UniversImpl <em>Univers</em>}' class.
@@ -2281,6 +1814,16 @@ public interface NimaPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum TYPE_ATT = eINSTANCE.gettypeAtt();
+
+		/**
+		 * The meta object literal for the '{@link nima.TypeAttaque <em>Type Attaque</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see nima.TypeAttaque
+		 * @see nima.impl.NimaPackageImpl#getTypeAttaque()
+		 * @generated
+		 */
+		EEnum TYPE_ATTAQUE = eINSTANCE.getTypeAttaque();
 
 	}
 

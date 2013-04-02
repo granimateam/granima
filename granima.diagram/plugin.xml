@@ -217,7 +217,7 @@
          <Priority name="Lowest"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Nima"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,3001"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4003,4004"/>
       </viewProvider>
    </extension>
 
@@ -232,7 +232,7 @@
             <method name="getType()" value="2001,3001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001"/>
+            <method name="getType()" value="4003,4004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5001"/>
@@ -302,14 +302,22 @@
          </metamodelType>
       </metamodel>
       <metamodel nsURI="http://nima/1.0">
-         <metamodelType
-               id="granima.diagram.Attaque_4001"
-               name="%metatype.name.Attaque_4001"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Attaque"
-               edithelper="nima.diagram.edit.helpers.AttaqueEditHelper">
-            <param name="semanticHint" value="4001"/>
-         </metamodelType>
+         <specializationType
+               id="granima.diagram.ArchetypeCible_4003"
+               name="%metatype.name.ArchetypeCible_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4003"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://nima/1.0">
+         <specializationType
+               id="granima.diagram.ConfigEnchaine_4004"
+               name="%metatype.name.ConfigEnchaine_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4004"/>
+         </specializationType>
       </metamodel>
    </extension>
 
@@ -326,7 +334,8 @@
          <elementType ref="granima.diagram.Combat_1000"/>
          <elementType ref="granima.diagram.Archetype_2001"/>
          <elementType ref="granima.diagram.Config_3001"/>
-         <elementType ref="granima.diagram.Attaque_4001"/>
+         <elementType ref="granima.diagram.ArchetypeCible_4003"/>
+         <elementType ref="granima.diagram.ConfigEnchaine_4004"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -405,7 +414,7 @@
    <objectContribution
          adaptable="false"
          id="nima.diagram.ui.objectContribution.RouteEditPart1"
-         objectClass="nima.diagram.edit.parts.AttaqueEditPart">
+         objectClass="nima.diagram.edit.parts.ArchetypeEditPart">
       <action
             class="nima.diagram.part.StartSimAction"
             definitionId="Sim-ria.diagram.start"

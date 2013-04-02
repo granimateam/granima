@@ -6,10 +6,11 @@ import java.util.Map;
 import java.util.Set;
 
 import nima.NimaPackage;
+import nima.diagram.edit.parts.ArchetypeCibleEditPart;
 import nima.diagram.edit.parts.ArchetypeEditPart;
-import nima.diagram.edit.parts.AttaqueEditPart;
 import nima.diagram.edit.parts.CombatEditPart;
 import nima.diagram.edit.parts.ConfigEditPart;
+import nima.diagram.edit.parts.ConfigEnchaineEditPart;
 import nima.diagram.part.NimaDiagramEditorPlugin;
 
 import org.eclipse.core.runtime.IAdaptable;
@@ -64,7 +65,12 @@ public class NimaElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType Attaque_4001 = getElementType("granima.diagram.Attaque_4001"); //$NON-NLS-1$
+	public static final IElementType ArchetypeCible_4003 = getElementType("granima.diagram.ArchetypeCible_4003"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ConfigEnchaine_4004 = getElementType("granima.diagram.ConfigEnchaine_4004"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -183,7 +189,11 @@ public class NimaElementTypes {
 
 			elements.put(Config_3001, NimaPackage.eINSTANCE.getConfig());
 
-			elements.put(Attaque_4001, NimaPackage.eINSTANCE.getAttaque());
+			elements.put(ArchetypeCible_4003,
+					NimaPackage.eINSTANCE.getArchetype_Cible());
+
+			elements.put(ConfigEnchaine_4004,
+					NimaPackage.eINSTANCE.getConfig_Enchaine());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -204,7 +214,8 @@ public class NimaElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Combat_1000);
 			KNOWN_ELEMENT_TYPES.add(Archetype_2001);
 			KNOWN_ELEMENT_TYPES.add(Config_3001);
-			KNOWN_ELEMENT_TYPES.add(Attaque_4001);
+			KNOWN_ELEMENT_TYPES.add(ArchetypeCible_4003);
+			KNOWN_ELEMENT_TYPES.add(ConfigEnchaine_4004);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -220,8 +231,10 @@ public class NimaElementTypes {
 			return Archetype_2001;
 		case ConfigEditPart.VISUAL_ID:
 			return Config_3001;
-		case AttaqueEditPart.VISUAL_ID:
-			return Attaque_4001;
+		case ArchetypeCibleEditPart.VISUAL_ID:
+			return ArchetypeCible_4003;
+		case ConfigEnchaineEditPart.VISUAL_ID:
+			return ConfigEnchaine_4004;
 		}
 		return null;
 	}

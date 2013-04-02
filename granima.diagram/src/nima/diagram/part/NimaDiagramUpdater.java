@@ -8,14 +8,14 @@ import java.util.List;
 import java.util.Map;
 
 import nima.Archetype;
-import nima.Attaque;
 import nima.Combat;
 import nima.Config;
 import nima.NimaPackage;
+import nima.diagram.edit.parts.ArchetypeCibleEditPart;
 import nima.diagram.edit.parts.ArchetypeEditPart;
-import nima.diagram.edit.parts.AttaqueEditPart;
 import nima.diagram.edit.parts.CombatEditPart;
 import nima.diagram.edit.parts.ConfigEditPart;
+import nima.diagram.edit.parts.ConfigEnchaineEditPart;
 import nima.diagram.providers.NimaElementTypes;
 
 import org.eclipse.emf.ecore.EObject;
@@ -99,8 +99,6 @@ public class NimaDiagramUpdater {
 			return getArchetype_2001ContainedLinks(view);
 		case ConfigEditPart.VISUAL_ID:
 			return getConfig_3001ContainedLinks(view);
-		case AttaqueEditPart.VISUAL_ID:
-			return getAttaque_4001ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -114,8 +112,6 @@ public class NimaDiagramUpdater {
 			return getArchetype_2001IncomingLinks(view);
 		case ConfigEditPart.VISUAL_ID:
 			return getConfig_3001IncomingLinks(view);
-		case AttaqueEditPart.VISUAL_ID:
-			return getAttaque_4001IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -129,8 +125,6 @@ public class NimaDiagramUpdater {
 			return getArchetype_2001OutgoingLinks(view);
 		case ConfigEditPart.VISUAL_ID:
 			return getConfig_3001OutgoingLinks(view);
-		case AttaqueEditPart.VISUAL_ID:
-			return getAttaque_4001OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -140,10 +134,7 @@ public class NimaDiagramUpdater {
 	 */
 	public static List<NimaLinkDescriptor> getCombat_1000ContainedLinks(
 			View view) {
-		Combat modelElement = (Combat) view.getElement();
-		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
-		result.addAll(getContainedTypeModelFacetLinks_Attaque_4001(modelElement));
-		return result;
+		return Collections.emptyList();
 	}
 
 	/**
@@ -151,7 +142,10 @@ public class NimaDiagramUpdater {
 	 */
 	public static List<NimaLinkDescriptor> getArchetype_2001ContainedLinks(
 			View view) {
-		return Collections.emptyList();
+		Archetype modelElement = (Archetype) view.getElement();
+		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Archetype_Cible_4003(modelElement));
+		return result;
 	}
 
 	/**
@@ -159,15 +153,10 @@ public class NimaDiagramUpdater {
 	 */
 	public static List<NimaLinkDescriptor> getConfig_3001ContainedLinks(
 			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<NimaLinkDescriptor> getAttaque_4001ContainedLinks(
-			View view) {
-		return Collections.emptyList();
+		Config modelElement = (Config) view.getElement();
+		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Config_Enchaine_4004(modelElement));
+		return result;
 	}
 
 	/**
@@ -179,8 +168,8 @@ public class NimaDiagramUpdater {
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Attaque_4001(modelElement,
-				crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Archetype_Cible_4003(
+				modelElement, crossReferences));
 		return result;
 	}
 
@@ -188,15 +177,13 @@ public class NimaDiagramUpdater {
 	 * @generated
 	 */
 	public static List<NimaLinkDescriptor> getConfig_3001IncomingLinks(View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	public static List<NimaLinkDescriptor> getAttaque_4001IncomingLinks(
-			View view) {
-		return Collections.emptyList();
+		Config modelElement = (Config) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_Config_Enchaine_4004(
+				modelElement, crossReferences));
+		return result;
 	}
 
 	/**
@@ -204,7 +191,10 @@ public class NimaDiagramUpdater {
 	 */
 	public static List<NimaLinkDescriptor> getArchetype_2001OutgoingLinks(
 			View view) {
-		return Collections.emptyList();
+		Archetype modelElement = (Archetype) view.getElement();
+		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_Archetype_Cible_4003(modelElement));
+		return result;
 	}
 
 	/**
@@ -213,66 +203,26 @@ public class NimaDiagramUpdater {
 	public static List<NimaLinkDescriptor> getConfig_3001OutgoingLinks(View view) {
 		Config modelElement = (Config) view.getElement();
 		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_Attaque_4001(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_Config_Enchaine_4004(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<NimaLinkDescriptor> getAttaque_4001OutgoingLinks(
-			View view) {
-		return Collections.emptyList();
-	}
-
-	/**
-	 * @generated
-	 */
-	private static Collection<NimaLinkDescriptor> getContainedTypeModelFacetLinks_Attaque_4001(
-			Combat container) {
-		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
-		for (Iterator<?> links = container.getAttaques().iterator(); links
-				.hasNext();) {
-			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof Attaque) {
-				continue;
-			}
-			Attaque link = (Attaque) linkObject;
-			if (AttaqueEditPart.VISUAL_ID != NimaVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
-				continue;
-			}
-			Archetype dst = link.getCible();
-			Config src = link.getAttaquant();
-			result.add(new NimaLinkDescriptor(src, dst, link,
-					NimaElementTypes.Attaque_4001, AttaqueEditPart.VISUAL_ID));
-		}
-		return result;
-	}
-
-	/**
-	 * @generated
-	 */
-	private static Collection<NimaLinkDescriptor> getIncomingTypeModelFacetLinks_Attaque_4001(
+	private static Collection<NimaLinkDescriptor> getIncomingFeatureModelFacetLinks_Archetype_Cible_4003(
 			Archetype target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences
 				.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != NimaPackage.eINSTANCE
-					.getAttaque_Cible()
-					|| false == setting.getEObject() instanceof Attaque) {
-				continue;
+			if (setting.getEStructuralFeature() == NimaPackage.eINSTANCE
+					.getArchetype_Cible()) {
+				result.add(new NimaLinkDescriptor(setting.getEObject(), target,
+						NimaElementTypes.ArchetypeCible_4003,
+						ArchetypeCibleEditPart.VISUAL_ID));
 			}
-			Attaque link = (Attaque) setting.getEObject();
-			if (AttaqueEditPart.VISUAL_ID != NimaVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
-				continue;
-			}
-			Config src = link.getAttaquant();
-			result.add(new NimaLinkDescriptor(src, target, link,
-					NimaElementTypes.Attaque_4001, AttaqueEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -280,41 +230,52 @@ public class NimaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<NimaLinkDescriptor> getOutgoingTypeModelFacetLinks_Attaque_4001(
-			Config source) {
-		Combat container = null;
-		// Find container element for the link.
-		// Climb up by containment hierarchy starting from the source
-		// and return the first element that is instance of the container class.
-		for (EObject element = source; element != null && container == null; element = element
-				.eContainer()) {
-			if (element instanceof Combat) {
-				container = (Combat) element;
-			}
-		}
-		if (container == null) {
-			return Collections.emptyList();
-		}
+	private static Collection<NimaLinkDescriptor> getIncomingFeatureModelFacetLinks_Config_Enchaine_4004(
+			Config target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
-		for (Iterator<?> links = container.getAttaques().iterator(); links
-				.hasNext();) {
-			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof Attaque) {
-				continue;
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == NimaPackage.eINSTANCE
+					.getConfig_Enchaine()) {
+				result.add(new NimaLinkDescriptor(setting.getEObject(), target,
+						NimaElementTypes.ConfigEnchaine_4004,
+						ConfigEnchaineEditPart.VISUAL_ID));
 			}
-			Attaque link = (Attaque) linkObject;
-			if (AttaqueEditPart.VISUAL_ID != NimaVisualIDRegistry
-					.getLinkWithClassVisualID(link)) {
-				continue;
-			}
-			Archetype dst = link.getCible();
-			Config src = link.getAttaquant();
-			if (src != source) {
-				continue;
-			}
-			result.add(new NimaLinkDescriptor(src, dst, link,
-					NimaElementTypes.Attaque_4001, AttaqueEditPart.VISUAL_ID));
 		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<NimaLinkDescriptor> getOutgoingFeatureModelFacetLinks_Archetype_Cible_4003(
+			Archetype source) {
+		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
+		Archetype destination = source.getCible();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new NimaLinkDescriptor(source, destination,
+				NimaElementTypes.ArchetypeCible_4003,
+				ArchetypeCibleEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<NimaLinkDescriptor> getOutgoingFeatureModelFacetLinks_Config_Enchaine_4004(
+			Config source) {
+		LinkedList<NimaLinkDescriptor> result = new LinkedList<NimaLinkDescriptor>();
+		Config destination = source.getEnchaine();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new NimaLinkDescriptor(source, destination,
+				NimaElementTypes.ConfigEnchaine_4004,
+				ConfigEnchaineEditPart.VISUAL_ID));
 		return result;
 	}
 

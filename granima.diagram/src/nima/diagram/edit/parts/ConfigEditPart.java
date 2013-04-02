@@ -3,10 +3,9 @@ package nima.diagram.edit.parts;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
 import nima.diagram.edit.policies.ConfigItemSemanticEditPolicy;
-import nima.diagram.providers.NimaElementTypes;
 
+import nima.diagram.providers.NimaElementTypes;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.IFigure;
@@ -196,7 +195,7 @@ public class ConfigEditPart extends AbstractBorderItemEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(NimaElementTypes.Attaque_4001);
+		types.add(NimaElementTypes.ConfigEnchaine_4004);
 		return types;
 	}
 
@@ -206,8 +205,8 @@ public class ConfigEditPart extends AbstractBorderItemEditPart {
 	public List<IElementType> getMARelTypesOnSourceAndTarget(
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof ArchetypeEditPart) {
-			types.add(NimaElementTypes.Attaque_4001);
+		if (targetEditPart instanceof nima.diagram.edit.parts.ConfigEditPart) {
+			types.add(NimaElementTypes.ConfigEnchaine_4004);
 		}
 		return types;
 	}
@@ -217,8 +216,28 @@ public class ConfigEditPart extends AbstractBorderItemEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == NimaElementTypes.Attaque_4001) {
-			types.add(NimaElementTypes.Archetype_2001);
+		if (relationshipType == NimaElementTypes.ConfigEnchaine_4004) {
+			types.add(NimaElementTypes.Config_3001);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMARelTypesOnTarget() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(NimaElementTypes.ConfigEnchaine_4004);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (relationshipType == NimaElementTypes.ConfigEnchaine_4004) {
+			types.add(NimaElementTypes.Config_3001);
 		}
 		return types;
 	}

@@ -1,13 +1,10 @@
 package nima.diagram.providers;
 
-import nima.NimaPackage;
-import nima.diagram.edit.parts.ArchetypeHpEditPart;
 import nima.diagram.edit.parts.ArchetypeNomEditPart;
 import nima.diagram.parsers.ArchetypeLabelExpressionLabelParser;
 import nima.diagram.part.NimaVisualIDRegistry;
 
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.common.core.service.AbstractProvider;
 import org.eclipse.gmf.runtime.common.core.service.IOperation;

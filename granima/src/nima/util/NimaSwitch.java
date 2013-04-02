@@ -82,42 +82,6 @@ public class NimaSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case NimaPackage.DUAL_HAND_CONFIG: {
-				DualHandConfig dualHandConfig = (DualHandConfig)theEObject;
-				T result = caseDualHandConfig(dualHandConfig);
-				if (result == null) result = caseConfigCac(dualHandConfig);
-				if (result == null) result = caseConfig(dualHandConfig);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case NimaPackage.CONFIG_CAC: {
-				ConfigCac configCac = (ConfigCac)theEObject;
-				T result = caseConfigCac(configCac);
-				if (result == null) result = caseConfig(configCac);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case NimaPackage.CONFIG_LANCE: {
-				ConfigLance configLance = (ConfigLance)theEObject;
-				T result = caseConfigLance(configLance);
-				if (result == null) result = caseConfig(configLance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case NimaPackage.CONFIG_TIR: {
-				ConfigTir configTir = (ConfigTir)theEObject;
-				T result = caseConfigTir(configTir);
-				if (result == null) result = caseConfig(configTir);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case NimaPackage.CONFIG_AOE: {
-				ConfigAoe configAoe = (ConfigAoe)theEObject;
-				T result = caseConfigAoe(configAoe);
-				if (result == null) result = caseConfig(configAoe);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case NimaPackage.UNIVERS: {
 				Univers univers = (Univers)theEObject;
 				T result = caseUnivers(univers);
@@ -167,81 +131,6 @@ public class NimaSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConfig(Config object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Dual Hand Config</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Dual Hand Config</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDualHandConfig(DualHandConfig object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Config Cac</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Config Cac</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConfigCac(ConfigCac object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Config Lance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Config Lance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConfigLance(ConfigLance object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Config Tir</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Config Tir</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConfigTir(ConfigTir object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Config Aoe</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Config Aoe</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseConfigAoe(ConfigAoe object) {
 		return null;
 	}
 

@@ -57,6 +57,9 @@ public class NimaModelingAssistantProvider extends ModelingAssistantProvider {
 	public List getRelTypesOnSource(IAdaptable source) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
 				.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ArchetypeEditPart) {
+			return ((ArchetypeEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof ConfigEditPart) {
 			return ((ConfigEditPart) sourceEditPart).getMARelTypesOnSource();
 		}
@@ -72,6 +75,9 @@ public class NimaModelingAssistantProvider extends ModelingAssistantProvider {
 		if (targetEditPart instanceof ArchetypeEditPart) {
 			return ((ArchetypeEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
+		if (targetEditPart instanceof ConfigEditPart) {
+			return ((ConfigEditPart) targetEditPart).getMARelTypesOnTarget();
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -84,6 +90,10 @@ public class NimaModelingAssistantProvider extends ModelingAssistantProvider {
 				.getAdapter(IGraphicalEditPart.class);
 		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target
 				.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ArchetypeEditPart) {
+			return ((ArchetypeEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof ConfigEditPart) {
 			return ((ConfigEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
@@ -102,6 +112,10 @@ public class NimaModelingAssistantProvider extends ModelingAssistantProvider {
 			return ((ArchetypeEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
+		if (targetEditPart instanceof ConfigEditPart) {
+			return ((ConfigEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -112,6 +126,10 @@ public class NimaModelingAssistantProvider extends ModelingAssistantProvider {
 			IElementType relationshipType) {
 		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source
 				.getAdapter(IGraphicalEditPart.class);
+		if (sourceEditPart instanceof ArchetypeEditPart) {
+			return ((ArchetypeEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
 		if (sourceEditPart instanceof ConfigEditPart) {
 			return ((ConfigEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);

@@ -44,51 +44,6 @@ public interface NimaFactory extends EFactory {
 	Config createConfig();
 
 	/**
-	 * Returns a new object of class '<em>Dual Hand Config</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Dual Hand Config</em>'.
-	 * @generated
-	 */
-	DualHandConfig createDualHandConfig();
-
-	/**
-	 * Returns a new object of class '<em>Config Cac</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Config Cac</em>'.
-	 * @generated
-	 */
-	ConfigCac createConfigCac();
-
-	/**
-	 * Returns a new object of class '<em>Config Lance</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Config Lance</em>'.
-	 * @generated
-	 */
-	ConfigLance createConfigLance();
-
-	/**
-	 * Returns a new object of class '<em>Config Tir</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Config Tir</em>'.
-	 * @generated
-	 */
-	ConfigTir createConfigTir();
-
-	/**
-	 * Returns a new object of class '<em>Config Aoe</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Config Aoe</em>'.
-	 * @generated
-	 */
-	ConfigAoe createConfigAoe();
-
-	/**
 	 * Returns a new object of class '<em>Univers</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

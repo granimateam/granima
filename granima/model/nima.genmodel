@@ -9,6 +9,7 @@
       <genEnumLiterals ecoreEnumLiteral="nima.ecore#//TypeDef/parade"/>
       <genEnumLiterals ecoreEnumLiteral="nima.ecore#//TypeDef/bouclier"/>
       <genEnumLiterals ecoreEnumLiteral="nima.ecore#//TypeDef/encaissement"/>
+      <genEnumLiterals ecoreEnumLiteral="nima.ecore#//TypeDef/neutre"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="nima.ecore#//typeAtt">
       <genEnumLiterals ecoreEnumLiteral="nima.ecore#//typeAtt/tranchant"/>
@@ -19,11 +20,17 @@
       <genEnumLiterals ecoreEnumLiteral="nima.ecore#//typeAtt/electricite"/>
       <genEnumLiterals ecoreEnumLiteral="nima.ecore#//typeAtt/energie"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="nima.ecore#//TypeAttaque">
+      <genEnumLiterals ecoreEnumLiteral="nima.ecore#//TypeAttaque/cac"/>
+      <genEnumLiterals ecoreEnumLiteral="nima.ecore#//TypeAttaque/lance"/>
+      <genEnumLiterals ecoreEnumLiteral="nima.ecore#//TypeAttaque/tir"/>
+      <genEnumLiterals ecoreEnumLiteral="nima.ecore#//TypeAttaque/neutre"/>
+    </genEnums>
     <genClasses ecoreClass="nima.ecore#//Archetype">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/hp"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nima.ecore#//Archetype/configs"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/init"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/attaque"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/attaque.1"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/defense"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/typeDef"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/rphy"/>
@@ -44,10 +51,24 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/nbAction"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/peutAgir"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/rolledInit"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nima.ecore#//Archetype/cible"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/hpMax"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/malusCritTemp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/bonusAtaque"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Archetype/bonusDef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nima.ecore#//Archetype/current"/>
       <genOperations ecoreOperation="nima.ecore#//Archetype/getIP">
         <genParameters ecoreParameter="nima.ecore#//Archetype/getIP/type"/>
       </genOperations>
       <genOperations ecoreOperation="nima.ecore#//Archetype/resetRound"/>
+      <genOperations ecoreOperation="nima.ecore#//Archetype/attaque">
+        <genParameters ecoreParameter="nima.ecore#//Archetype/attaque/bonus"/>
+      </genOperations>
+      <genOperations ecoreOperation="nima.ecore#//Archetype/getTotalAttaque"/>
+      <genOperations ecoreOperation="nima.ecore#//Archetype/getTotalDefense"/>
+      <genOperations ecoreOperation="nima.ecore#//Archetype/baston">
+        <genParameters ecoreParameter="nima.ecore#//Archetype/baston/bonus"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="nima.ecore#//Config">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Config/init"/>
@@ -59,19 +80,13 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference nima.ecore#//Config/owner"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Config/attaque"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nima.ecore#//Config/attack"/>
-    </genClasses>
-    <genClasses ecoreClass="nima.ecore#//DualHandConfig">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//DualHandConfig/initGauche"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//DualHandConfig/attaqueGauche"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//DualHandConfig/defGauche"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//DualHandConfig/degatsGauche"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//DualHandConfig/typeDegatGuche"/>
-    </genClasses>
-    <genClasses ecoreClass="nima.ecore#//ConfigCac"/>
-    <genClasses ecoreClass="nima.ecore#//ConfigLance"/>
-    <genClasses ecoreClass="nima.ecore#//ConfigTir"/>
-    <genClasses ecoreClass="nima.ecore#//ConfigAoe">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//ConfigAoe/rayon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Config/nbAttaques"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference nima.ecore#//Config/enchaine"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Config/typeDef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute nima.ecore#//Config/typeAttaque"/>
+      <genOperations ecoreOperation="nima.ecore#//Config/calcMalusDef">
+        <genParameters ecoreParameter="nima.ecore#//Config/calcMalusDef/attaquand"/>
+      </genOperations>
     </genClasses>
     <genClasses ecoreClass="nima.ecore#//Univers">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference nima.ecore#//Univers/archetypes"/>

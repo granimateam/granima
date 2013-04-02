@@ -4,7 +4,6 @@ import java.util.Iterator;
 
 import nima.Archetype;
 import nima.Attaque;
-import nima.Combat;
 import nima.Config;
 import nima.diagram.part.NimaDiagramEditorPlugin;
 import nima.diagram.part.NimaVisualIDRegistry;
@@ -326,16 +325,42 @@ public class NimaBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateAttaque_4001(Combat container, Config source,
+		public boolean canCreateArchetypeCible_4003(Archetype source,
 				Archetype target) {
-			return canExistAttaque_4001(container, null, source, target);
+			if (source != null) {
+				if (source.getCible() != null) {
+					return false;
+				}
+			}
+
+			return canExistArchetypeCible_4003(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistAttaque_4001(Combat container,
-				Attaque linkInstance, Config source, Archetype target) {
+		public boolean canCreateConfigEnchaine_4004(Config source, Config target) {
+			if (source != null) {
+				if (source.getEnchaine() != null) {
+					return false;
+				}
+			}
+
+			return canExistConfigEnchaine_4004(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistArchetypeCible_4003(Archetype source,
+				Archetype target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistConfigEnchaine_4004(Config source, Config target) {
 			return true;
 		}
 	}

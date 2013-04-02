@@ -67,6 +67,11 @@ public class ConfigItemProvider
 			addNomPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addAttaquePropertyDescriptor(object);
+			addAttackPropertyDescriptor(object);
+			addNbAttaquesPropertyDescriptor(object);
+			addEnchainePropertyDescriptor(object);
+			addTypeDefPropertyDescriptor(object);
+			addTypeAttaquePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -226,6 +231,116 @@ public class ConfigItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Attack feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAttackPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Config_attack_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Config_attack_feature", "_UI_Config_type"),
+				 NimaPackage.Literals.CONFIG__ATTACK,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Nb Attaques feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNbAttaquesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Config_nbAttaques_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Config_nbAttaques_feature", "_UI_Config_type"),
+				 NimaPackage.Literals.CONFIG__NB_ATTAQUES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Enchaine feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEnchainePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Config_enchaine_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Config_enchaine_feature", "_UI_Config_type"),
+				 NimaPackage.Literals.CONFIG__ENCHAINE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type Def feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypeDefPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Config_typeDef_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Config_typeDef_feature", "_UI_Config_type"),
+				 NimaPackage.Literals.CONFIG__TYPE_DEF,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type Attaque feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypeAttaquePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Config_typeAttaque_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Config_typeAttaque_feature", "_UI_Config_type"),
+				 NimaPackage.Literals.CONFIG__TYPE_ATTAQUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Config.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -267,6 +382,9 @@ public class ConfigItemProvider
 			case NimaPackage.CONFIG__NOM:
 			case NimaPackage.CONFIG__DESCRIPTION:
 			case NimaPackage.CONFIG__ATTAQUE:
+			case NimaPackage.CONFIG__NB_ATTAQUES:
+			case NimaPackage.CONFIG__TYPE_DEF:
+			case NimaPackage.CONFIG__TYPE_ATTAQUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -118,121 +118,6 @@ public class NimaItemProviderAdapterFactory extends NimaAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link nima.DualHandConfig} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DualHandConfigItemProvider dualHandConfigItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link nima.DualHandConfig}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDualHandConfigAdapter() {
-		if (dualHandConfigItemProvider == null) {
-			dualHandConfigItemProvider = new DualHandConfigItemProvider(this);
-		}
-
-		return dualHandConfigItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link nima.ConfigCac} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConfigCacItemProvider configCacItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link nima.ConfigCac}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConfigCacAdapter() {
-		if (configCacItemProvider == null) {
-			configCacItemProvider = new ConfigCacItemProvider(this);
-		}
-
-		return configCacItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link nima.ConfigLance} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConfigLanceItemProvider configLanceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link nima.ConfigLance}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConfigLanceAdapter() {
-		if (configLanceItemProvider == null) {
-			configLanceItemProvider = new ConfigLanceItemProvider(this);
-		}
-
-		return configLanceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link nima.ConfigTir} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConfigTirItemProvider configTirItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link nima.ConfigTir}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConfigTirAdapter() {
-		if (configTirItemProvider == null) {
-			configTirItemProvider = new ConfigTirItemProvider(this);
-		}
-
-		return configTirItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link nima.ConfigAoe} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ConfigAoeItemProvider configAoeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link nima.ConfigAoe}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createConfigAoeAdapter() {
-		if (configAoeItemProvider == null) {
-			configAoeItemProvider = new ConfigAoeItemProvider(this);
-		}
-
-		return configAoeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link nima.Univers} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -402,11 +287,6 @@ public class NimaItemProviderAdapterFactory extends NimaAdapterFactory implement
 	public void dispose() {
 		if (archetypeItemProvider != null) archetypeItemProvider.dispose();
 		if (configItemProvider != null) configItemProvider.dispose();
-		if (dualHandConfigItemProvider != null) dualHandConfigItemProvider.dispose();
-		if (configCacItemProvider != null) configCacItemProvider.dispose();
-		if (configLanceItemProvider != null) configLanceItemProvider.dispose();
-		if (configTirItemProvider != null) configTirItemProvider.dispose();
-		if (configAoeItemProvider != null) configAoeItemProvider.dispose();
 		if (universItemProvider != null) universItemProvider.dispose();
 		if (combatItemProvider != null) combatItemProvider.dispose();
 		if (attaqueItemProvider != null) attaqueItemProvider.dispose();

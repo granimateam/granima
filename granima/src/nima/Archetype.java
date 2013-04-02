@@ -42,6 +42,12 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link nima.Archetype#getNbAction <em>Nb Action</em>}</li>
  *   <li>{@link nima.Archetype#isPeutAgir <em>Peut Agir</em>}</li>
  *   <li>{@link nima.Archetype#getRolledInit <em>Rolled Init</em>}</li>
+ *   <li>{@link nima.Archetype#getCible <em>Cible</em>}</li>
+ *   <li>{@link nima.Archetype#getHpMax <em>Hp Max</em>}</li>
+ *   <li>{@link nima.Archetype#getMalusCritTemp <em>Malus Crit Temp</em>}</li>
+ *   <li>{@link nima.Archetype#getBonusAtaque <em>Bonus Ataque</em>}</li>
+ *   <li>{@link nima.Archetype#getBonusDef <em>Bonus Def</em>}</li>
+ *   <li>{@link nima.Archetype#getCurrent <em>Current</em>}</li>
  * </ul>
  * </p>
  *
@@ -670,9 +676,165 @@ public interface Archetype extends EObject {
 	void setRolledInit(int value);
 
 	/**
+	 * Returns the value of the '<em><b>Cible</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Cible</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cible</em>' reference.
+	 * @see #setCible(Archetype)
+	 * @see nima.NimaPackage#getArchetype_Cible()
+	 * @model
+	 * @generated
+	 */
+	Archetype getCible();
+
+	/**
+	 * Sets the value of the '{@link nima.Archetype#getCible <em>Cible</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cible</em>' reference.
+	 * @see #getCible()
+	 * @generated
+	 */
+	void setCible(Archetype value);
+
+	/**
+	 * Returns the value of the '<em><b>Hp Max</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Hp Max</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hp Max</em>' attribute.
+	 * @see #setHpMax(int)
+	 * @see nima.NimaPackage#getArchetype_HpMax()
 	 * @model
+	 * @generated
+	 */
+	int getHpMax();
+
+	/**
+	 * Sets the value of the '{@link nima.Archetype#getHpMax <em>Hp Max</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hp Max</em>' attribute.
+	 * @see #getHpMax()
+	 * @generated
+	 */
+	void setHpMax(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Malus Crit Temp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Malus Crit Temp</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Malus Crit Temp</em>' attribute.
+	 * @see #setMalusCritTemp(int)
+	 * @see nima.NimaPackage#getArchetype_MalusCritTemp()
+	 * @model
+	 * @generated
+	 */
+	int getMalusCritTemp();
+
+	/**
+	 * Sets the value of the '{@link nima.Archetype#getMalusCritTemp <em>Malus Crit Temp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Malus Crit Temp</em>' attribute.
+	 * @see #getMalusCritTemp()
+	 * @generated
+	 */
+	void setMalusCritTemp(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Bonus Ataque</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bonus Ataque</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bonus Ataque</em>' attribute.
+	 * @see #setBonusAtaque(int)
+	 * @see nima.NimaPackage#getArchetype_BonusAtaque()
+	 * @model
+	 * @generated
+	 */
+	int getBonusAtaque();
+
+	/**
+	 * Sets the value of the '{@link nima.Archetype#getBonusAtaque <em>Bonus Ataque</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Bonus Ataque</em>' attribute.
+	 * @see #getBonusAtaque()
+	 * @generated
+	 */
+	void setBonusAtaque(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Bonus Def</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Bonus Def</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Bonus Def</em>' attribute.
+	 * @see #setBonusDef(int)
+	 * @see nima.NimaPackage#getArchetype_BonusDef()
+	 * @model
+	 * @generated
+	 */
+	int getBonusDef();
+
+	/**
+	 * Sets the value of the '{@link nima.Archetype#getBonusDef <em>Bonus Def</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Bonus Def</em>' attribute.
+	 * @see #getBonusDef()
+	 * @generated
+	 */
+	void setBonusDef(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Current</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Current</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Current</em>' reference.
+	 * @see #setCurrent(Config)
+	 * @see nima.NimaPackage#getArchetype_Current()
+	 * @model
+	 * @generated
+	 */
+	Config getCurrent();
+
+	/**
+	 * Sets the value of the '{@link nima.Archetype#getCurrent <em>Current</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Current</em>' reference.
+	 * @see #getCurrent()
+	 * @generated
+	 */
+	void setCurrent(Config value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='if(typeAtt.CHALEUR == type)\r\n\treturn cha;\r\nif(typeAtt.ELECTRICITE == type)\r\n\treturn elec;\r\nif(typeAtt.FROID == type)\r\n\treturn cha;\r\nif(typeAtt.TRANCHANT == type)\r\n\treturn tran;\r\nif(typeAtt.CONTONDANT == type)\r\n\treturn con;\r\nif(typeAtt.PERFORANT == type)\r\n\treturn perf;\r\nif(typeAtt.ENERGIE == type)\r\n\treturn ener;\r\nreturn 0;'"
 	 * @generated
 	 */
 	int getIP(typeAtt type);
@@ -684,5 +846,39 @@ public interface Archetype extends EObject {
 	 * @generated
 	 */
 	void resetRound();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='Archetype attaquant, defenseur;\r\nConfig attaque, defense;\r\nattaquant=this;\r\nattaque=this.getActive();\r\ndefenseur=this.getCible();\r\ndefense = defenseur.getActive();\r\n\r\n//Score de base\r\nint attaqueTotale =attaquant.getTotalAttaque();\r\nint defenseTotale=defenseur.getTotalDefense();\r\n\r\n//bonus config\r\n\r\nattaqueTotale+=attaque.getAttaque();\r\ndefenseTotale+=defense.getDefense();\r\n\t\t\r\n//bonus malus contexte\r\nif(defense.getTypeDef()==TypeDef.ESQUIVE\r\n\t\t|| defense.getTypeDef()==TypeDef.PARADE){\r\n\tint def = defenseur.getNbDef();\r\n\tif(def ==1) defenseTotale=defenseTotale-30;\r\n\tif(def ==2) defenseTotale=defenseTotale-50;\r\n\tif(def ==3) defenseTotale=defenseTotale-70;\r\n\tif(def >3) defenseTotale=defenseTotale-90;\r\n\tthis.getCible().setNbDef(def+1);\r\n}\r\n//roll\r\nSystem.out.println(\"att :\"+attaqueTotale+ \" def :\"+defenseTotale);\r\nif(attaquant.isJoueur()){\r\n\t\r\n\tInputDialog d = new InputDialog(new Shell(),\"Score du joueur\", \"Entrez le score d\'attaque au d\351s de \"+attaquant.getNom(), \"50\",null);\r\n\tint choice = d.open();\r\n\tif(choice==Window.OK) {\r\n\t\tInteger result = Integer.parseInt(d.getValue());\r\n\t\tattaqueTotale+=result;\r\n\t}else {\r\n\t\tattaqueTotale+=Des.fullRoll();\r\n\t}\r\n}else {\r\n\tattaqueTotale+=Des.fullRoll();\r\n}\r\nif(defenseur.isJoueur()) {\r\n\tInputDialog d = new InputDialog(new Shell(),\"Score du joueur\", \"Entrez le score de d\351fense au d\351s de \"+attaquant.getNom(), \"50\",null);\r\n\tint choice = d.open();\r\n\tif(choice==Window.OK) {\r\n\t\tInteger result = Integer.parseInt(d.getValue());\r\n\t\tdefenseTotale+=result;\r\n\t}else {\r\n\t\tdefenseTotale+=Des.fullRoll();\r\n\t}\r\n\t\r\n}else {\r\n\tdefenseTotale+=Des.fullRoll();\t\t\r\n}\r\nif(defenseTotale<0) defenseTotale=0;\r\nint marge = attaqueTotale - defenseTotale;\r\nSystem.out.println(\"marge : \"+marge);\r\nif(marge>0) {\r\n\tdefenseur.setPeutAgir(false);\r\n\tint absorption = 2 + defenseur.getIP(attaque.getTypeDegat());\r\n\tmarge -= absorption * 10;\r\n\tif(marge>10) {\r\n\t\tint degat = attaque.getDegats()* marge /100;\r\n\t\tint hp = defenseur.getHp()- degat;\r\n\t\tdefenseur.setHp(hp);\r\n\t\tString tab[] ={\"Ok\"}; \r\n\t\tString info = defenseur.getNom()+\" encaisse \"+degat+\" points de d\351gats. Restant : \"+hp;\r\n\t\tMessageDialog d = new MessageDialog(new Shell(), \"R\351sultat\", null, info, 0, tab, 0);\r\n\t\td.open();\r\n\t}else {\r\n\t\tString tab[] ={\"Ok\"}; \r\n\t\tString info = defenseur.getNom()+\" se d\351fend de justesse. 0 D\351gat, pas d\'actions\";\r\n\t\tMessageDialog d = new MessageDialog(new Shell(), \"R\351sultat\", null, info, 0, tab, 0);\r\n\t\td.open();\t\r\n\t}\r\n}else if (marge<0) {\r\n\tint result = Des.getContre(marge);\r\n\tString tab[] ={\"Ok\"}; \r\n\tString info = \"D\351fense r\351ussi par\"+defenseur.getNom()+\", contre attaque possible avec un bonus de \"+result;\r\n\tMessageDialog d = new MessageDialog(new Shell(), \"R\351sultat\", null, info, 0, tab, 0);\r\n\td.open();\r\n\treturn result;\r\n}else{\r\n\tString tab[] ={\"Ok\"}; \r\n\tString info = \"D\351fense r\351ussi par\"+defenseur.getNom()+\", pas de contre attaque possible\";\r\n\tMessageDialog d = new MessageDialog(new Shell(), \"R\351sultat\", null, info, 0, tab, 0);\r\n\td.open();\r\n\treturn -1;\r\n}\r\nreturn-1;'"
+	 * @generated
+	 */
+	int attaque(int bonus);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='int total = 0;\r\ntotal+=this.getAttaque();\r\ntotal+=this.getBonusAtaque();\r\ntotal+=this.getMalusCritTemp();\r\nreturn total;'"
+	 * @generated
+	 */
+	int getTotalAttaque();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 *        annotation="http://www.eclipse.org/emf/2002/GenModel body='int total = 0;\r\ntotal+=this.getDefense();\r\ntotal+=this.getBonusDef();\r\ntotal+=this.getMalusCritTemp();\r\nreturn total;'"
+	 * @generated
+	 */
+	int getTotalDefense();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='Config attaque = this.getActive();\r\nint nb  = attaque.getNbAttaques();\r\nint superbonus = bonus;\r\nwhile(nb>0){\r\n\tnb--;\r\n\tint r =attaque(superbonus);\r\n\tsuperbonus=0;\r\n\tif(r>=0){\r\n\t\tcible.baston(r);\r\n\t}\r\n\t\r\n}\r\nif(attaque.getEnchaine()!=null)\r\n{\r\n\tthis.setActive(attaque.getEnchaine());\r\n\tbaston(0);\r\n}\t'"
+	 * @generated
+	 */
+	void baston(int bonus);
 
 } // Archetype

@@ -3,16 +3,14 @@ package nima.diagram.edit.parts;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
 import nima.diagram.edit.policies.ArchetypeCanonicalEditPolicy;
 import nima.diagram.edit.policies.ArchetypeItemSemanticEditPolicy;
 import nima.diagram.part.NimaVisualIDRegistry;
-import nima.diagram.providers.NimaElementTypes;
 
+import nima.diagram.providers.NimaElementTypes;
 import org.eclipse.draw2d.FlowLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.PositionConstants;
-import org.eclipse.draw2d.RectangleFigure;
 import org.eclipse.draw2d.RoundedRectangle;
 import org.eclipse.draw2d.Shape;
 import org.eclipse.draw2d.StackLayout;
@@ -292,9 +290,41 @@ public class ArchetypeEditPart extends AbstractBorderedShapeEditPart {
 	/**
 	 * @generated
 	 */
+	public List<IElementType> getMARelTypesOnSource() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(NimaElementTypes.ArchetypeCible_4003);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMARelTypesOnSourceAndTarget(
+			IGraphicalEditPart targetEditPart) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (targetEditPart instanceof nima.diagram.edit.parts.ArchetypeEditPart) {
+			types.add(NimaElementTypes.ArchetypeCible_4003);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (relationshipType == NimaElementTypes.ArchetypeCible_4003) {
+			types.add(NimaElementTypes.Archetype_2001);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(NimaElementTypes.Attaque_4001);
+		types.add(NimaElementTypes.ArchetypeCible_4003);
 		return types;
 	}
 
@@ -303,8 +333,8 @@ public class ArchetypeEditPart extends AbstractBorderedShapeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == NimaElementTypes.Attaque_4001) {
-			types.add(NimaElementTypes.Config_3001);
+		if (relationshipType == NimaElementTypes.ArchetypeCible_4003) {
+			types.add(NimaElementTypes.Archetype_2001);
 		}
 		return types;
 	}

@@ -266,91 +266,90 @@ public class AttaqueImpl extends EObjectImpl implements Attaque {
 	 * @generated
 	 */
 	public void resolve() {
-Archetype attaquant, defenseur;
-Config attaque, defense;
-attaque = this.getAttaquant();
-defense = this.getCible().getActive();
-attaquant=this.getAttaquant().getOwner();
-defenseur = this.getCible();
-int attaqueTotale = attaque.getAttaque();
-attaqueTotale+= attaquant.getAttaque();
-attaqueTotale+= this.getBonusAtt();
-
-int nbatt = attaquant.getNbAction();
-attaqueTotale = attaqueTotale + (-25 *nbatt);
-this.getAttaquant().getOwner().setNbAction(nbatt+1);
-int defenseTotale = this.getBonusDef();
-defenseTotale+= defense.getDefense();
-defenseTotale+= defenseur.getDefense();
-
-int def = defenseur.getNbDef();
-if(def ==1) defenseTotale=defenseTotale-30;
-if(def ==2) defenseTotale=defenseTotale-50;
-if(def ==3) defenseTotale=defenseTotale-70;
-if(def >3) defenseTotale=defenseTotale-90;
-this.getCible().setNbDef(def+1);
-System.out.println("att :"+attaqueTotale+ " def :"+defenseTotale);
-if(attaquant.isJoueur()){
-	
-	InputDialog d = new InputDialog(new Shell(),"Score du joueur", "Entrez le score d'attaque au dés de "+attaquant.getNom(), "50",null);
-	int choice = d.open();
-	if(choice==Window.OK) {
-		Integer result = Integer.parseInt(d.getValue());
-		attaqueTotale+=result;
-	}else {
-		attaqueTotale+=Des.fullRoll();
-	}
-}else {
-	attaqueTotale+=Des.fullRoll();
-}
-if(defenseur.isJoueur()) {
-	InputDialog d = new InputDialog(new Shell(),"Score du joueur", "Entrez le score de défense au dés de "+attaquant.getNom(), "50",null);
-	int choice = d.open();
-	if(choice==Window.OK) {
-		Integer result = Integer.parseInt(d.getValue());
-		defenseTotale+=result;
-	}else {
-		defenseTotale+=Des.fullRoll();
-	}
-	
-}else {
-	defenseTotale+=Des.fullRoll();		
-}
-if(defenseTotale<0) defenseTotale=0;
-int marge = attaqueTotale - defenseTotale;
-System.out.println("marge : "+marge);
-if(marge>10) {
-	defenseur.setPeutAgir(false);
-	int absorption = 2 + defenseur.getIP(attaque.getTypeDegat());
-	marge -= absorption * 10;
-	if(marge>10) {
-		int degat = attaque.getDegats()* marge /100;
-		int hp = defenseur.getHp()- degat;
-		defenseur.setHp(hp);
-		String tab[] ={"Ok"}; 
-		String info = defenseur.getNom()+" encaisse "+degat+" points de dégats. Restant : "+hp;
-		MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
-		d.open();
-	}else
-	{
-		String tab[] ={"Ok"}; 
-		String info = defenseur.getNom()+" se défend de justesse. 0 Dégat, pas d'actions";
-		MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
-		d.open();	
-	}
-}else if (marge<-10) {
-	int result = marge/10;
-	result *=-5;
-	String tab[] ={"Ok"}; 
-	String info = "Défense réussi par"+defenseur.getNom()+", contre attaque possible avec un bonus de "+result;
-	MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
-	d.open();
-}else{
-	String tab[] ={"Ok"}; 
-	String info = "Défense réussi par"+defenseur.getNom()+", pas de contre attaque possible";
-	MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
-	d.open();
-}
+		Archetype attaquant, defenseur;
+		Config attaque, defense;
+		attaque = this.getAttaquant();
+		defense = this.getCible().getActive();
+		attaquant=this.getAttaquant().getOwner();
+		defenseur = this.getCible();
+		int attaqueTotale = attaque.getAttaque();
+		attaqueTotale+= attaquant.getAttaque();
+		attaqueTotale+= this.getBonusAtt();
+		
+		int nbatt = attaquant.getNbAction();
+		attaqueTotale = attaqueTotale + (-25 *nbatt);
+		this.getAttaquant().getOwner().setNbAction(nbatt+1);
+		int defenseTotale = this.getBonusDef();
+		defenseTotale+= defense.getDefense();
+		defenseTotale+= defenseur.getDefense();
+		
+		int def = defenseur.getNbDef();
+		if(def ==1) defenseTotale=defenseTotale-30;
+		if(def ==2) defenseTotale=defenseTotale-50;
+		if(def ==3) defenseTotale=defenseTotale-70;
+		if(def >3) defenseTotale=defenseTotale-90;
+		this.getCible().setNbDef(def+1);
+		System.out.println("att :"+attaqueTotale+ " def :"+defenseTotale);
+		if(attaquant.isJoueur()){
+			
+			InputDialog d = new InputDialog(new Shell(),"Score du joueur", "Entrez le score d'attaque au dés de "+attaquant.getNom(), "50",null);
+			int choice = d.open();
+			if(choice==Window.OK) {
+				Integer result = Integer.parseInt(d.getValue());
+				attaqueTotale+=result;
+			}else {
+				attaqueTotale+=Des.fullRoll();
+			}
+		}else {
+			attaqueTotale+=Des.fullRoll();
+		}
+		if(defenseur.isJoueur()) {
+			InputDialog d = new InputDialog(new Shell(),"Score du joueur", "Entrez le score de défense au dés de "+attaquant.getNom(), "50",null);
+			int choice = d.open();
+			if(choice==Window.OK) {
+				Integer result = Integer.parseInt(d.getValue());
+				defenseTotale+=result;
+			}else {
+				defenseTotale+=Des.fullRoll();
+			}
+			
+		}else {
+			defenseTotale+=Des.fullRoll();		
+		}
+		if(defenseTotale<0) defenseTotale=0;
+		int marge = attaqueTotale - defenseTotale;
+		System.out.println("marge : "+marge);
+		if(marge>10) {
+			defenseur.setPeutAgir(false);
+			int absorption = 2 + defenseur.getIP(attaque.getTypeDegat());
+			marge -= absorption * 10;
+			if(marge>10) {
+				int degat = attaque.getDegats()* marge /100;
+				int hp = defenseur.getHp()- degat;
+				defenseur.setHp(hp);
+				String tab[] ={"Ok"}; 
+				String info = defenseur.getNom()+" encaisse "+degat+" points de dégats. Restant : "+hp;
+				MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+				d.open();
+			}else {
+				String tab[] ={"Ok"}; 
+				String info = defenseur.getNom()+" se défend de justesse. 0 Dégat, pas d'actions";
+				MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+				d.open();	
+			}
+		}else if (marge<-10) {
+			int result = marge/10;
+			result *=-5;
+			String tab[] ={"Ok"}; 
+			String info = "Défense réussi par"+defenseur.getNom()+", contre attaque possible avec un bonus de "+result;
+			MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+			d.open();
+		}else{
+			String tab[] ={"Ok"}; 
+			String info = "Défense réussi par"+defenseur.getNom()+", pas de contre attaque possible";
+			MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+			d.open();
+		}
 	}
 
 	/**

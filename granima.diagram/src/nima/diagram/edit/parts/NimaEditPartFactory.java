@@ -34,8 +34,11 @@ public class NimaEditPartFactory implements EditPartFactory {
 			case ConfigEditPart.VISUAL_ID:
 				return new ConfigEditPart(view);
 
-			case AttaqueEditPart.VISUAL_ID:
-				return new AttaqueEditPart(view);
+			case ArchetypeCibleEditPart.VISUAL_ID:
+				return new ArchetypeCibleEditPart(view);
+
+			case ConfigEnchaineEditPart.VISUAL_ID:
+				return new ConfigEnchaineEditPart(view);
 
 			}
 		}

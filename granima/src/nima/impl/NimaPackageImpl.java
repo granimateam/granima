@@ -17,6 +17,7 @@ import nima.ConfigTir;
 import nima.DualHandConfig;
 import nima.NimaFactory;
 import nima.NimaPackage;
+import nima.TypeAttaque;
 import nima.TypeDef;
 import nima.Univers;
 import nima.typeAtt;
@@ -56,41 +57,6 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dualHandConfigEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass configCacEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass configLanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass configTirEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass configAoeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass universEClass = null;
 
 	/**
@@ -120,6 +86,13 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * @generated
 	 */
 	private EEnum typeAttEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum typeAttaqueEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -412,6 +385,60 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getArchetype_Cible() {
+		return (EReference)archetypeEClass.getEStructuralFeatures().get(24);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArchetype_HpMax() {
+		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(25);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArchetype_MalusCritTemp() {
+		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(26);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArchetype_BonusAtaque() {
+		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(27);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArchetype_BonusDef() {
+		return (EAttribute)archetypeEClass.getEStructuralFeatures().get(28);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getArchetype_Current() {
+		return (EReference)archetypeEClass.getEStructuralFeatures().get(29);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConfig() {
 		return configEClass;
 	}
@@ -493,107 +520,44 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getConfig_NbAttaques() {
+		return (EAttribute)configEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConfig_Enchaine() {
+		return (EReference)configEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConfig_TypeDef() {
+		return (EAttribute)configEClass.getEStructuralFeatures().get(11);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConfig_TypeAttaque() {
+		return (EAttribute)configEClass.getEStructuralFeatures().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getConfig_Owner() {
 		return (EReference)configEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDualHandConfig() {
-		return dualHandConfigEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDualHandConfig_InitGauche() {
-		return (EAttribute)dualHandConfigEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDualHandConfig_AttaqueGauche() {
-		return (EAttribute)dualHandConfigEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDualHandConfig_DefGauche() {
-		return (EAttribute)dualHandConfigEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDualHandConfig_DegatsGauche() {
-		return (EAttribute)dualHandConfigEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDualHandConfig_TypeDegatGuche() {
-		return (EAttribute)dualHandConfigEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getConfigCac() {
-		return configCacEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getConfigLance() {
-		return configLanceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getConfigTir() {
-		return configTirEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getConfigAoe() {
-		return configAoeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getConfigAoe_Rayon() {
-		return (EAttribute)configAoeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -727,6 +691,15 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getTypeAttaque() {
+		return typeAttaqueEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public NimaFactory getNimaFactory() {
 		return (NimaFactory)getEFactoryInstance();
 	}
@@ -775,6 +748,12 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		createEAttribute(archetypeEClass, ARCHETYPE__NB_ACTION);
 		createEAttribute(archetypeEClass, ARCHETYPE__PEUT_AGIR);
 		createEAttribute(archetypeEClass, ARCHETYPE__ROLLED_INIT);
+		createEReference(archetypeEClass, ARCHETYPE__CIBLE);
+		createEAttribute(archetypeEClass, ARCHETYPE__HP_MAX);
+		createEAttribute(archetypeEClass, ARCHETYPE__MALUS_CRIT_TEMP);
+		createEAttribute(archetypeEClass, ARCHETYPE__BONUS_ATAQUE);
+		createEAttribute(archetypeEClass, ARCHETYPE__BONUS_DEF);
+		createEReference(archetypeEClass, ARCHETYPE__CURRENT);
 
 		configEClass = createEClass(CONFIG);
 		createEAttribute(configEClass, CONFIG__INIT);
@@ -786,22 +765,10 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		createEReference(configEClass, CONFIG__OWNER);
 		createEAttribute(configEClass, CONFIG__ATTAQUE);
 		createEReference(configEClass, CONFIG__ATTACK);
-
-		dualHandConfigEClass = createEClass(DUAL_HAND_CONFIG);
-		createEAttribute(dualHandConfigEClass, DUAL_HAND_CONFIG__INIT_GAUCHE);
-		createEAttribute(dualHandConfigEClass, DUAL_HAND_CONFIG__ATTAQUE_GAUCHE);
-		createEAttribute(dualHandConfigEClass, DUAL_HAND_CONFIG__DEF_GAUCHE);
-		createEAttribute(dualHandConfigEClass, DUAL_HAND_CONFIG__DEGATS_GAUCHE);
-		createEAttribute(dualHandConfigEClass, DUAL_HAND_CONFIG__TYPE_DEGAT_GUCHE);
-
-		configCacEClass = createEClass(CONFIG_CAC);
-
-		configLanceEClass = createEClass(CONFIG_LANCE);
-
-		configTirEClass = createEClass(CONFIG_TIR);
-
-		configAoeEClass = createEClass(CONFIG_AOE);
-		createEAttribute(configAoeEClass, CONFIG_AOE__RAYON);
+		createEAttribute(configEClass, CONFIG__NB_ATTAQUES);
+		createEReference(configEClass, CONFIG__ENCHAINE);
+		createEAttribute(configEClass, CONFIG__TYPE_DEF);
+		createEAttribute(configEClass, CONFIG__TYPE_ATTAQUE);
 
 		universEClass = createEClass(UNIVERS);
 		createEReference(universEClass, UNIVERS__ARCHETYPES);
@@ -821,6 +788,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		// Create enums
 		typeDefEEnum = createEEnum(TYPE_DEF);
 		typeAttEEnum = createEEnum(TYPE_ATT);
+		typeAttaqueEEnum = createEEnum(TYPE_ATTAQUE);
 	}
 
 	/**
@@ -851,11 +819,6 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		dualHandConfigEClass.getESuperTypes().add(this.getConfigCac());
-		configCacEClass.getESuperTypes().add(this.getConfig());
-		configLanceEClass.getESuperTypes().add(this.getConfig());
-		configTirEClass.getESuperTypes().add(this.getConfig());
-		configAoeEClass.getESuperTypes().add(this.getConfig());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(archetypeEClass, Archetype.class, "Archetype", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -883,14 +846,30 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		initEAttribute(getArchetype_NbAction(), ecorePackage.getEInt(), "nbAction", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchetype_PeutAgir(), ecorePackage.getEBoolean(), "peutAgir", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchetype_RolledInit(), ecorePackage.getEInt(), "rolledInit", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArchetype_Cible(), this.getArchetype(), null, "cible", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArchetype_HpMax(), ecorePackage.getEInt(), "hpMax", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArchetype_MalusCritTemp(), ecorePackage.getEInt(), "malusCritTemp", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArchetype_BonusAtaque(), ecorePackage.getEInt(), "bonusAtaque", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getArchetype_BonusDef(), ecorePackage.getEInt(), "bonusDef", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArchetype_Current(), this.getConfig(), null, "current", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(archetypeEClass, ecorePackage.getEInt(), "getIP", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.gettypeAtt(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(archetypeEClass, null, "resetRound", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(archetypeEClass, ecorePackage.getEInt(), "attaque", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "bonus", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(archetypeEClass, ecorePackage.getEInt(), "getTotalAttaque", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(archetypeEClass, ecorePackage.getEInt(), "getTotalDefense", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(archetypeEClass, null, "baston", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "bonus", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(configEClass, Config.class, "Config", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConfig_Init(), ecorePackage.getEInt(), "init", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConfig_Init(), ecorePackage.getEInt(), "init", "0", 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfig_Defense(), ecorePackage.getEInt(), "defense", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfig_Degats(), ecorePackage.getEInt(), "degats", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfig_TypeDegat(), this.gettypeAtt(), "typeDegat", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -899,22 +878,13 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		initEReference(getConfig_Owner(), this.getArchetype(), this.getArchetype_Configs(), "owner", null, 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfig_Attaque(), ecorePackage.getEInt(), "attaque", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConfig_Attack(), this.getAttaque(), this.getAttaque_Attaquant(), "attack", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConfig_NbAttaques(), ecorePackage.getEInt(), "nbAttaques", "1", 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConfig_Enchaine(), this.getConfig(), null, "enchaine", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConfig_TypeDef(), this.getTypeDef(), "typeDef", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getConfig_TypeAttaque(), this.getTypeAttaque(), "typeAttaque", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(dualHandConfigEClass, DualHandConfig.class, "DualHandConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDualHandConfig_InitGauche(), ecorePackage.getEInt(), "initGauche", null, 0, 1, DualHandConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDualHandConfig_AttaqueGauche(), ecorePackage.getEInt(), "attaqueGauche", null, 0, 1, DualHandConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDualHandConfig_DefGauche(), ecorePackage.getEInt(), "defGauche", null, 0, 1, DualHandConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDualHandConfig_DegatsGauche(), ecorePackage.getEInt(), "degatsGauche", null, 0, 1, DualHandConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDualHandConfig_TypeDegatGuche(), this.gettypeAtt(), "typeDegatGuche", null, 0, 1, DualHandConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(configCacEClass, ConfigCac.class, "ConfigCac", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(configLanceEClass, ConfigLance.class, "ConfigLance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(configTirEClass, ConfigTir.class, "ConfigTir", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(configAoeEClass, ConfigAoe.class, "ConfigAoe", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConfigAoe_Rayon(), ecorePackage.getEInt(), "rayon", null, 0, 1, ConfigAoe.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		op = addEOperation(configEClass, ecorePackage.getEInt(), "calcMalusDef", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getConfig(), "attaquand", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(universEClass, Univers.class, "Univers", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnivers_Archetypes(), this.getArchetype(), null, "archetypes", null, 0, -1, Univers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -943,6 +913,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		addEEnumLiteral(typeDefEEnum, TypeDef.PARADE);
 		addEEnumLiteral(typeDefEEnum, TypeDef.BOUCLIER);
 		addEEnumLiteral(typeDefEEnum, TypeDef.ENCAISSEMENT);
+		addEEnumLiteral(typeDefEEnum, TypeDef.NEUTRE);
 
 		initEEnum(typeAttEEnum, typeAtt.class, "typeAtt");
 		addEEnumLiteral(typeAttEEnum, typeAtt.TRANCHANT);
@@ -952,6 +923,12 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		addEEnumLiteral(typeAttEEnum, typeAtt.FROID);
 		addEEnumLiteral(typeAttEEnum, typeAtt.ELECTRICITE);
 		addEEnumLiteral(typeAttEEnum, typeAtt.ENERGIE);
+
+		initEEnum(typeAttaqueEEnum, TypeAttaque.class, "TypeAttaque");
+		addEEnumLiteral(typeAttaqueEEnum, TypeAttaque.CAC);
+		addEEnumLiteral(typeAttaqueEEnum, TypeAttaque.LANCE);
+		addEEnumLiteral(typeAttaqueEEnum, TypeAttaque.TIR);
+		addEEnumLiteral(typeAttaqueEEnum, TypeAttaque.NEUTRE);
 
 		// Create resource
 		createResource(eNS_URI);

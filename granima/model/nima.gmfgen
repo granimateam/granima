@@ -109,32 +109,43 @@
       </labels>
     </topLevelNodes>
     <links
-        visualID="4001"
-        editPartClassName="AttaqueEditPart"
-        itemSemanticEditPolicyClassName="AttaqueItemSemanticEditPolicy"
-        notationViewFactoryClassName="AttaqueViewFactory"
-        createCommandClassName="AttaqueCreateCommand"
-        reorientCommandClassName="AttaqueReorientCommand">
+        visualID="4003"
+        editPartClassName="ArchetypeCibleEditPart"
+        itemSemanticEditPolicyClassName="ArchetypeCibleItemSemanticEditPolicy"
+        notationViewFactoryClassName="ArchetypeCibleViewFactory"
+        createCommandClassName="ArchetypeCibleCreateCommand"
+        reorientCommandClassName="ArchetypeCibleReorientCommand">
       <diagramRunTimeClass
           href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
       <elementType
-          xsi:type="gmfgen:MetamodelType"
-          editHelperClassName="AttaqueEditHelper"/>
+          xsi:type="gmfgen:SpecializationType"/>
       <viewmap
           xsi:type="gmfgen:FigureViewmap"
           figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
       <modelFacet
-          xsi:type="gmfgen:TypeLinkModelFacet">
-        <metaClass
-            href="nima.genmodel#//nima/Attaque"/>
-        <containmentMetaFeature
-            href="nima.genmodel#//nima/Combat/attaques"/>
-        <childMetaFeature
-            href="nima.genmodel#//nima/Combat/attaques"/>
-        <sourceMetaFeature
-            href="nima.genmodel#//nima/Attaque/attaquant"/>
-        <targetMetaFeature
-            href="nima.genmodel#//nima/Attaque/cible"/>
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="nima.genmodel#//nima/Archetype/cible"/>
+      </modelFacet>
+    </links>
+    <links
+        visualID="4004"
+        editPartClassName="ConfigEnchaineEditPart"
+        itemSemanticEditPolicyClassName="ConfigEnchaineItemSemanticEditPolicy"
+        notationViewFactoryClassName="ConfigEnchaineViewFactory"
+        createCommandClassName="ConfigEnchaineCreateCommand"
+        reorientCommandClassName="ConfigEnchaineReorientCommand">
+      <diagramRunTimeClass
+          href="../../../plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
+      <elementType
+          xsi:type="gmfgen:SpecializationType"/>
+      <viewmap
+          xsi:type="gmfgen:FigureViewmap"
+          figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx"/>
+      <modelFacet
+          xsi:type="gmfgen:FeatureLinkModelFacet">
+        <metaFeature
+            href="nima.genmodel#//nima/Config/enchaine"/>
       </modelFacet>
     </links>
     <palette>
@@ -149,7 +160,7 @@
             xsi:type="gmfgen:ToolEntry"
             title="Attaque"
             description="Create new Attaque"
-            genLinks="//@diagram/@links.0"/>
+            genLinks="//@diagram/@links.0 //@diagram/@links.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Config"

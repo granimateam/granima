@@ -10,7 +10,6 @@ import java.util.List;
 
 import nima.NimaPackage;
 import nima.diagram.edit.parts.ArchetypeEditPart;
-import nima.diagram.edit.parts.AttaqueEditPart;
 import nima.diagram.edit.parts.CombatEditPart;
 import nima.diagram.edit.parts.ConfigEditPart;
 import nima.diagram.part.NimaDiagramUpdater;
@@ -260,14 +259,6 @@ public class CombatCanonicalEditPolicy extends CanonicalEditPolicy {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(NimaDiagramUpdater
 						.getConfig_3001ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case AttaqueEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(NimaDiagramUpdater
-						.getAttaque_4001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

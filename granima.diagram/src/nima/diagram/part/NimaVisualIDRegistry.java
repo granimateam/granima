@@ -3,9 +3,7 @@ package nima.diagram.part;
 import nima.Combat;
 import nima.NimaPackage;
 import nima.diagram.edit.parts.ArchetypeEditPart;
-import nima.diagram.edit.parts.ArchetypeHpEditPart;
 import nima.diagram.edit.parts.ArchetypeNomEditPart;
-import nima.diagram.edit.parts.AttaqueEditPart;
 import nima.diagram.edit.parts.CombatEditPart;
 import nima.diagram.edit.parts.ConfigEditPart;
 
@@ -183,10 +181,6 @@ public class NimaVisualIDRegistry {
 	public static int getLinkWithClassVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
-		}
-		if (NimaPackage.eINSTANCE.getAttaque().isSuperTypeOf(
-				domainElement.eClass())) {
-			return AttaqueEditPart.VISUAL_ID;
 		}
 		return -1;
 	}

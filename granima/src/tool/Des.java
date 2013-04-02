@@ -46,4 +46,11 @@ public class Des {
 		
 	}
 	
+	public static int getContre(int marge)
+	{
+		int i =-1- marge;
+		i = i/10;
+		i = i*5;
+		return i;
+	}
 }

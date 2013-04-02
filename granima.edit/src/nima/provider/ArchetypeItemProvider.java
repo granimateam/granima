@@ -86,6 +86,11 @@ public class ArchetypeItemProvider
 			addNbActionPropertyDescriptor(object);
 			addPeutAgirPropertyDescriptor(object);
 			addRolledInitPropertyDescriptor(object);
+			addCiblePropertyDescriptor(object);
+			addHpMaxPropertyDescriptor(object);
+			addMalusCritTempPropertyDescriptor(object);
+			addBonusAtaquePropertyDescriptor(object);
+			addBonusDefPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -597,6 +602,116 @@ public class ArchetypeItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Cible feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCiblePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Archetype_cible_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Archetype_cible_feature", "_UI_Archetype_type"),
+				 NimaPackage.Literals.ARCHETYPE__CIBLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Hp Max feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addHpMaxPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Archetype_hpMax_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Archetype_hpMax_feature", "_UI_Archetype_type"),
+				 NimaPackage.Literals.ARCHETYPE__HP_MAX,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Malus Crit Temp feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMalusCritTempPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Archetype_malusCritTemp_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Archetype_malusCritTemp_feature", "_UI_Archetype_type"),
+				 NimaPackage.Literals.ARCHETYPE__MALUS_CRIT_TEMP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Bonus Ataque feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBonusAtaquePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Archetype_bonusAtaque_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Archetype_bonusAtaque_feature", "_UI_Archetype_type"),
+				 NimaPackage.Literals.ARCHETYPE__BONUS_ATAQUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Bonus Def feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBonusDefPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Archetype_bonusDef_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Archetype_bonusDef_feature", "_UI_Archetype_type"),
+				 NimaPackage.Literals.ARCHETYPE__BONUS_DEF,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -683,6 +798,10 @@ public class ArchetypeItemProvider
 			case NimaPackage.ARCHETYPE__NB_ACTION:
 			case NimaPackage.ARCHETYPE__PEUT_AGIR:
 			case NimaPackage.ARCHETYPE__ROLLED_INIT:
+			case NimaPackage.ARCHETYPE__HP_MAX:
+			case NimaPackage.ARCHETYPE__MALUS_CRIT_TEMP:
+			case NimaPackage.ARCHETYPE__BONUS_ATAQUE:
+			case NimaPackage.ARCHETYPE__BONUS_DEF:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case NimaPackage.ARCHETYPE__CONFIGS:
@@ -707,31 +826,6 @@ public class ArchetypeItemProvider
 			(createChildParameter
 				(NimaPackage.Literals.ARCHETYPE__CONFIGS,
 				 NimaFactory.eINSTANCE.createConfig()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(NimaPackage.Literals.ARCHETYPE__CONFIGS,
-				 NimaFactory.eINSTANCE.createConfigCac()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(NimaPackage.Literals.ARCHETYPE__CONFIGS,
-				 NimaFactory.eINSTANCE.createDualHandConfig()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(NimaPackage.Literals.ARCHETYPE__CONFIGS,
-				 NimaFactory.eINSTANCE.createConfigLance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(NimaPackage.Literals.ARCHETYPE__CONFIGS,
-				 NimaFactory.eINSTANCE.createConfigTir()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(NimaPackage.Literals.ARCHETYPE__CONFIGS,
-				 NimaFactory.eINSTANCE.createConfigAoe()));
 	}
 
 	/**

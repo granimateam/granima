@@ -80,26 +80,6 @@ public class NimaAdapterFactory extends AdapterFactoryImpl {
 				return createConfigAdapter();
 			}
 			@Override
-			public Adapter caseDualHandConfig(DualHandConfig object) {
-				return createDualHandConfigAdapter();
-			}
-			@Override
-			public Adapter caseConfigCac(ConfigCac object) {
-				return createConfigCacAdapter();
-			}
-			@Override
-			public Adapter caseConfigLance(ConfigLance object) {
-				return createConfigLanceAdapter();
-			}
-			@Override
-			public Adapter caseConfigTir(ConfigTir object) {
-				return createConfigTirAdapter();
-			}
-			@Override
-			public Adapter caseConfigAoe(ConfigAoe object) {
-				return createConfigAoeAdapter();
-			}
-			@Override
 			public Adapter caseUnivers(Univers object) {
 				return createUniversAdapter();
 			}
@@ -156,76 +136,6 @@ public class NimaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConfigAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link nima.DualHandConfig <em>Dual Hand Config</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see nima.DualHandConfig
-	 * @generated
-	 */
-	public Adapter createDualHandConfigAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link nima.ConfigCac <em>Config Cac</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see nima.ConfigCac
-	 * @generated
-	 */
-	public Adapter createConfigCacAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link nima.ConfigLance <em>Config Lance</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see nima.ConfigLance
-	 * @generated
-	 */
-	public Adapter createConfigLanceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link nima.ConfigTir <em>Config Tir</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see nima.ConfigTir
-	 * @generated
-	 */
-	public Adapter createConfigTirAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link nima.ConfigAoe <em>Config Aoe</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see nima.ConfigAoe
-	 * @generated
-	 */
-	public Adapter createConfigAoeAdapter() {
 		return null;
 	}
 

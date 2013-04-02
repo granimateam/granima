@@ -9,6 +9,7 @@ package nima.impl;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedList;
 
 import nima.Archetype;
 import nima.Attaque;
@@ -170,7 +171,20 @@ public class CombatImpl extends EObjectImpl implements Combat {
 	 * @generated
 	 */
 	public void resetAndRun() {
-
+		setNbRound(nbRound+1);
+		LinkedList<Archetype> l =new LinkedList<Archetype>(this.getArchetypes());
+		for(Archetype arch : l ) {
+			arch.resetRound();
+			
+		}
+		Collections.sort(l, new InitComparator());
+		
+		for(Archetype arch : l ) {
+			if(arch.isPeutAgir()) {
+				arch.baston(0);
+			}
+			
+		}
 	}
 
 	/**

@@ -25,6 +25,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link nima.Config#getOwner <em>Owner</em>}</li>
  *   <li>{@link nima.Config#getAttaque <em>Attaque</em>}</li>
  *   <li>{@link nima.Config#getAttack <em>Attack</em>}</li>
+ *   <li>{@link nima.Config#getNbAttaques <em>Nb Attaques</em>}</li>
+ *   <li>{@link nima.Config#getEnchaine <em>Enchaine</em>}</li>
+ *   <li>{@link nima.Config#getTypeDef <em>Type Def</em>}</li>
+ *   <li>{@link nima.Config#getTypeAttaque <em>Type Attaque</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,6 +39,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Config extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Init</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Init</em>' attribute isn't clear,
@@ -44,7 +49,7 @@ public interface Config extends EObject {
 	 * @return the value of the '<em>Init</em>' attribute.
 	 * @see #setInit(int)
 	 * @see nima.NimaPackage#getConfig_Init()
-	 * @model
+	 * @model default="0"
 	 * @generated
 	 */
 	int getInit();
@@ -245,6 +250,125 @@ public interface Config extends EObject {
 	 * @generated
 	 */
 	void setAttack(Attaque value);
+
+	/**
+	 * Returns the value of the '<em><b>Nb Attaques</b></em>' attribute.
+	 * The default value is <code>"1"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Nb Attaques</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nb Attaques</em>' attribute.
+	 * @see #setNbAttaques(int)
+	 * @see nima.NimaPackage#getConfig_NbAttaques()
+	 * @model default="1"
+	 * @generated
+	 */
+	int getNbAttaques();
+
+	/**
+	 * Sets the value of the '{@link nima.Config#getNbAttaques <em>Nb Attaques</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Nb Attaques</em>' attribute.
+	 * @see #getNbAttaques()
+	 * @generated
+	 */
+	void setNbAttaques(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Enchaine</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Enchaine</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Enchaine</em>' reference.
+	 * @see #setEnchaine(Config)
+	 * @see nima.NimaPackage#getConfig_Enchaine()
+	 * @model
+	 * @generated
+	 */
+	Config getEnchaine();
+
+	/**
+	 * Sets the value of the '{@link nima.Config#getEnchaine <em>Enchaine</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Enchaine</em>' reference.
+	 * @see #getEnchaine()
+	 * @generated
+	 */
+	void setEnchaine(Config value);
+
+	/**
+	 * Returns the value of the '<em><b>Type Def</b></em>' attribute.
+	 * The literals are from the enumeration {@link nima.TypeDef}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type Def</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type Def</em>' attribute.
+	 * @see nima.TypeDef
+	 * @see #setTypeDef(TypeDef)
+	 * @see nima.NimaPackage#getConfig_TypeDef()
+	 * @model
+	 * @generated
+	 */
+	TypeDef getTypeDef();
+
+	/**
+	 * Sets the value of the '{@link nima.Config#getTypeDef <em>Type Def</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type Def</em>' attribute.
+	 * @see nima.TypeDef
+	 * @see #getTypeDef()
+	 * @generated
+	 */
+	void setTypeDef(TypeDef value);
+
+	/**
+	 * Returns the value of the '<em><b>Type Attaque</b></em>' attribute.
+	 * The literals are from the enumeration {@link nima.TypeAttaque}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type Attaque</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type Attaque</em>' attribute.
+	 * @see nima.TypeAttaque
+	 * @see #setTypeAttaque(TypeAttaque)
+	 * @see nima.NimaPackage#getConfig_TypeAttaque()
+	 * @model
+	 * @generated
+	 */
+	TypeAttaque getTypeAttaque();
+
+	/**
+	 * Sets the value of the '{@link nima.Config#getTypeAttaque <em>Type Attaque</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type Attaque</em>' attribute.
+	 * @see nima.TypeAttaque
+	 * @see #getTypeAttaque()
+	 * @generated
+	 */
+	void setTypeAttaque(TypeAttaque value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='TypeDef td = this.getTypeDef();\r\nTypeAttaque ta = attaquand.getTypeAttaque();\r\nif(ta==TypeAttaque.TIR){\r\n\tif(td==TypeDef.ESQUIVE)\r\n\t\treturn 30;\r\n\tif(td==TypeDef.PARADE)\r\n\t\treturn 80;\r\n}\r\nif(ta==TypeAttaque.LANCE){\r\n\r\n\tif(td==TypeDef.PARADE)\r\n\t\treturn 50;\r\n}\r\nreturn 0;'"
+	 * @generated
+	 */
+	int calcMalusDef(Config attaquand);
 
 	/**
 	 * Returns the value of the '<em><b>Owner</b></em>' container reference.

@@ -1,5 +1,6 @@
 package nima.diagram.part;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -59,13 +60,15 @@ public class NimaPaletteFactory {
 	 * @generated
 	 */
 	private ToolEntry createAttaque2CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(NimaElementTypes.ArchetypeCible_4003);
+		types.add(NimaElementTypes.ConfigEnchaine_4004);
 		LinkToolEntry entry = new LinkToolEntry(
 				Messages.Attaque2CreationTool_title,
-				Messages.Attaque2CreationTool_desc,
-				Collections.singletonList(NimaElementTypes.Attaque_4001));
+				Messages.Attaque2CreationTool_desc, types);
 		entry.setId("createAttaque2CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(NimaElementTypes
-				.getImageDescriptor(NimaElementTypes.Attaque_4001));
+				.getImageDescriptor(NimaElementTypes.ArchetypeCible_4003));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

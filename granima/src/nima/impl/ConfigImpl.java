@@ -10,6 +10,8 @@ import nima.Archetype;
 import nima.Attaque;
 import nima.Config;
 import nima.NimaPackage;
+import nima.TypeAttaque;
+import nima.TypeDef;
 import nima.typeAtt;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -39,6 +41,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link nima.impl.ConfigImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link nima.impl.ConfigImpl#getAttaque <em>Attaque</em>}</li>
  *   <li>{@link nima.impl.ConfigImpl#getAttack <em>Attack</em>}</li>
+ *   <li>{@link nima.impl.ConfigImpl#getNbAttaques <em>Nb Attaques</em>}</li>
+ *   <li>{@link nima.impl.ConfigImpl#getEnchaine <em>Enchaine</em>}</li>
+ *   <li>{@link nima.impl.ConfigImpl#getTypeDef <em>Type Def</em>}</li>
+ *   <li>{@link nima.impl.ConfigImpl#getTypeAttaque <em>Type Attaque</em>}</li>
  * </ul>
  * </p>
  *
@@ -194,6 +200,76 @@ public class ConfigImpl extends EObjectImpl implements Config {
 	 * @ordered
 	 */
 	protected Attaque attack;
+
+	/**
+	 * The default value of the '{@link #getNbAttaques() <em>Nb Attaques</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbAttaques()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int NB_ATTAQUES_EDEFAULT = 1;
+
+	/**
+	 * The cached value of the '{@link #getNbAttaques() <em>Nb Attaques</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNbAttaques()
+	 * @generated
+	 * @ordered
+	 */
+	protected int nbAttaques = NB_ATTAQUES_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getEnchaine() <em>Enchaine</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnchaine()
+	 * @generated
+	 * @ordered
+	 */
+	protected Config enchaine;
+
+	/**
+	 * The default value of the '{@link #getTypeDef() <em>Type Def</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeDef()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TypeDef TYPE_DEF_EDEFAULT = TypeDef.ESQUIVE;
+
+	/**
+	 * The cached value of the '{@link #getTypeDef() <em>Type Def</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeDef()
+	 * @generated
+	 * @ordered
+	 */
+	protected TypeDef typeDef = TYPE_DEF_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTypeAttaque() <em>Type Attaque</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeAttaque()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TypeAttaque TYPE_ATTAQUE_EDEFAULT = TypeAttaque.CAC;
+
+	/**
+	 * The cached value of the '{@link #getTypeAttaque() <em>Type Attaque</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTypeAttaque()
+	 * @generated
+	 * @ordered
+	 */
+	protected TypeAttaque typeAttaque = TYPE_ATTAQUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -426,6 +502,129 @@ public class ConfigImpl extends EObjectImpl implements Config {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getNbAttaques() {
+		return nbAttaques;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setNbAttaques(int newNbAttaques) {
+		int oldNbAttaques = nbAttaques;
+		nbAttaques = newNbAttaques;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.CONFIG__NB_ATTAQUES, oldNbAttaques, nbAttaques));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Config getEnchaine() {
+		if (enchaine != null && enchaine.eIsProxy()) {
+			InternalEObject oldEnchaine = (InternalEObject)enchaine;
+			enchaine = (Config)eResolveProxy(oldEnchaine);
+			if (enchaine != oldEnchaine) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NimaPackage.CONFIG__ENCHAINE, oldEnchaine, enchaine));
+			}
+		}
+		return enchaine;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Config basicGetEnchaine() {
+		return enchaine;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEnchaine(Config newEnchaine) {
+		Config oldEnchaine = enchaine;
+		enchaine = newEnchaine;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.CONFIG__ENCHAINE, oldEnchaine, enchaine));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeDef getTypeDef() {
+		return typeDef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTypeDef(TypeDef newTypeDef) {
+		TypeDef oldTypeDef = typeDef;
+		typeDef = newTypeDef == null ? TYPE_DEF_EDEFAULT : newTypeDef;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.CONFIG__TYPE_DEF, oldTypeDef, typeDef));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TypeAttaque getTypeAttaque() {
+		return typeAttaque;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTypeAttaque(TypeAttaque newTypeAttaque) {
+		TypeAttaque oldTypeAttaque = typeAttaque;
+		typeAttaque = newTypeAttaque == null ? TYPE_ATTAQUE_EDEFAULT : newTypeAttaque;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.CONFIG__TYPE_ATTAQUE, oldTypeAttaque, typeAttaque));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int calcMalusDef(Config attaquand) {
+		TypeDef td = this.getTypeDef();
+		TypeAttaque ta = attaquand.getTypeAttaque();
+		if(ta==TypeAttaque.TIR){
+			if(td==TypeDef.ESQUIVE)
+				return 30;
+			if(td==TypeDef.PARADE)
+				return 80;
+		}
+		if(ta==TypeAttaque.LANCE){
+		
+			if(td==TypeDef.PARADE)
+				return 50;
+		}
+		return 0;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Archetype getOwner() {
 		if (eContainerFeatureID() != NimaPackage.CONFIG__OWNER) return null;
 		return (Archetype)eContainer();
@@ -539,6 +738,15 @@ public class ConfigImpl extends EObjectImpl implements Config {
 			case NimaPackage.CONFIG__ATTACK:
 				if (resolve) return getAttack();
 				return basicGetAttack();
+			case NimaPackage.CONFIG__NB_ATTAQUES:
+				return getNbAttaques();
+			case NimaPackage.CONFIG__ENCHAINE:
+				if (resolve) return getEnchaine();
+				return basicGetEnchaine();
+			case NimaPackage.CONFIG__TYPE_DEF:
+				return getTypeDef();
+			case NimaPackage.CONFIG__TYPE_ATTAQUE:
+				return getTypeAttaque();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -577,6 +785,18 @@ public class ConfigImpl extends EObjectImpl implements Config {
 				return;
 			case NimaPackage.CONFIG__ATTACK:
 				setAttack((Attaque)newValue);
+				return;
+			case NimaPackage.CONFIG__NB_ATTAQUES:
+				setNbAttaques((Integer)newValue);
+				return;
+			case NimaPackage.CONFIG__ENCHAINE:
+				setEnchaine((Config)newValue);
+				return;
+			case NimaPackage.CONFIG__TYPE_DEF:
+				setTypeDef((TypeDef)newValue);
+				return;
+			case NimaPackage.CONFIG__TYPE_ATTAQUE:
+				setTypeAttaque((TypeAttaque)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -617,6 +837,18 @@ public class ConfigImpl extends EObjectImpl implements Config {
 			case NimaPackage.CONFIG__ATTACK:
 				setAttack((Attaque)null);
 				return;
+			case NimaPackage.CONFIG__NB_ATTAQUES:
+				setNbAttaques(NB_ATTAQUES_EDEFAULT);
+				return;
+			case NimaPackage.CONFIG__ENCHAINE:
+				setEnchaine((Config)null);
+				return;
+			case NimaPackage.CONFIG__TYPE_DEF:
+				setTypeDef(TYPE_DEF_EDEFAULT);
+				return;
+			case NimaPackage.CONFIG__TYPE_ATTAQUE:
+				setTypeAttaque(TYPE_ATTAQUE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -647,6 +879,14 @@ public class ConfigImpl extends EObjectImpl implements Config {
 				return attaque != ATTAQUE_EDEFAULT;
 			case NimaPackage.CONFIG__ATTACK:
 				return attack != null;
+			case NimaPackage.CONFIG__NB_ATTAQUES:
+				return nbAttaques != NB_ATTAQUES_EDEFAULT;
+			case NimaPackage.CONFIG__ENCHAINE:
+				return enchaine != null;
+			case NimaPackage.CONFIG__TYPE_DEF:
+				return typeDef != TYPE_DEF_EDEFAULT;
+			case NimaPackage.CONFIG__TYPE_ATTAQUE:
+				return typeAttaque != TYPE_ATTAQUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -675,6 +915,12 @@ public class ConfigImpl extends EObjectImpl implements Config {
 		result.append(description);
 		result.append(", attaque: ");
 		result.append(attaque);
+		result.append(", nbAttaques: ");
+		result.append(nbAttaques);
+		result.append(", typeDef: ");
+		result.append(typeDef);
+		result.append(", typeAttaque: ");
+		result.append(typeAttaque);
 		result.append(')');
 		return result.toString();
 	}

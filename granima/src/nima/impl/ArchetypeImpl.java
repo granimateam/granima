@@ -28,6 +28,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.jface.dialogs.InputDialog;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.window.Window;
+import org.eclipse.swt.widgets.Shell;
 
 import tool.Des;
 
@@ -62,6 +66,12 @@ import tool.Des;
  *   <li>{@link nima.impl.ArchetypeImpl#getNbAction <em>Nb Action</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#isPeutAgir <em>Peut Agir</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#getRolledInit <em>Rolled Init</em>}</li>
+ *   <li>{@link nima.impl.ArchetypeImpl#getCible <em>Cible</em>}</li>
+ *   <li>{@link nima.impl.ArchetypeImpl#getHpMax <em>Hp Max</em>}</li>
+ *   <li>{@link nima.impl.ArchetypeImpl#getMalusCritTemp <em>Malus Crit Temp</em>}</li>
+ *   <li>{@link nima.impl.ArchetypeImpl#getBonusAtaque <em>Bonus Ataque</em>}</li>
+ *   <li>{@link nima.impl.ArchetypeImpl#getBonusDef <em>Bonus Def</em>}</li>
+ *   <li>{@link nima.impl.ArchetypeImpl#getCurrent <em>Current</em>}</li>
  * </ul>
  * </p>
  *
@@ -527,6 +537,106 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	 * @ordered
 	 */
 	protected int rolledInit = ROLLED_INIT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCible() <em>Cible</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCible()
+	 * @generated
+	 * @ordered
+	 */
+	protected Archetype cible;
+
+	/**
+	 * The default value of the '{@link #getHpMax() <em>Hp Max</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHpMax()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int HP_MAX_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getHpMax() <em>Hp Max</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getHpMax()
+	 * @generated
+	 * @ordered
+	 */
+	protected int hpMax = HP_MAX_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMalusCritTemp() <em>Malus Crit Temp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMalusCritTemp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MALUS_CRIT_TEMP_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getMalusCritTemp() <em>Malus Crit Temp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMalusCritTemp()
+	 * @generated
+	 * @ordered
+	 */
+	protected int malusCritTemp = MALUS_CRIT_TEMP_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getBonusAtaque() <em>Bonus Ataque</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBonusAtaque()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int BONUS_ATAQUE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getBonusAtaque() <em>Bonus Ataque</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBonusAtaque()
+	 * @generated
+	 * @ordered
+	 */
+	protected int bonusAtaque = BONUS_ATAQUE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getBonusDef() <em>Bonus Def</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBonusDef()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int BONUS_DEF_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getBonusDef() <em>Bonus Def</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBonusDef()
+	 * @generated
+	 * @ordered
+	 */
+	protected int bonusDef = BONUS_DEF_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCurrent() <em>Current</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCurrent()
+	 * @generated
+	 * @ordered
+	 */
+	protected Config current;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1062,6 +1172,166 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Archetype getCible() {
+		if (cible != null && cible.eIsProxy()) {
+			InternalEObject oldCible = (InternalEObject)cible;
+			cible = (Archetype)eResolveProxy(oldCible);
+			if (cible != oldCible) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NimaPackage.ARCHETYPE__CIBLE, oldCible, cible));
+			}
+		}
+		return cible;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Archetype basicGetCible() {
+		return cible;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCible(Archetype newCible) {
+		Archetype oldCible = cible;
+		cible = newCible;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ARCHETYPE__CIBLE, oldCible, cible));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getHpMax() {
+		return hpMax;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setHpMax(int newHpMax) {
+		int oldHpMax = hpMax;
+		hpMax = newHpMax;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ARCHETYPE__HP_MAX, oldHpMax, hpMax));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getMalusCritTemp() {
+		return malusCritTemp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMalusCritTemp(int newMalusCritTemp) {
+		int oldMalusCritTemp = malusCritTemp;
+		malusCritTemp = newMalusCritTemp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ARCHETYPE__MALUS_CRIT_TEMP, oldMalusCritTemp, malusCritTemp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getBonusAtaque() {
+		return bonusAtaque;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBonusAtaque(int newBonusAtaque) {
+		int oldBonusAtaque = bonusAtaque;
+		bonusAtaque = newBonusAtaque;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ARCHETYPE__BONUS_ATAQUE, oldBonusAtaque, bonusAtaque));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getBonusDef() {
+		return bonusDef;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBonusDef(int newBonusDef) {
+		int oldBonusDef = bonusDef;
+		bonusDef = newBonusDef;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ARCHETYPE__BONUS_DEF, oldBonusDef, bonusDef));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Config getCurrent() {
+		if (current != null && current.eIsProxy()) {
+			InternalEObject oldCurrent = (InternalEObject)current;
+			current = (Config)eResolveProxy(oldCurrent);
+			if (current != oldCurrent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NimaPackage.ARCHETYPE__CURRENT, oldCurrent, current));
+			}
+		}
+		return current;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Config basicGetCurrent() {
+		return current;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCurrent(Config newCurrent) {
+		Config oldCurrent = current;
+		current = newCurrent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ARCHETYPE__CURRENT, oldCurrent, current));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public int getIP(typeAtt type) {
@@ -1088,12 +1358,167 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	 * @generated
 	 */
 	public void resetRound() {
-		this.setPeutAgir(true);
-		this.setNbAction(0);
-		this.setNbDef(0);
-		int init = this.getInit() + this.getActive().getInit();
-		init+= Des.fullRoll();
-		this.setRolledInit(init);
+this.setPeutAgir(true);
+this.setNbAction(0);
+this.setNbDef(0);
+int init = this.getInit() + this.getActive().getInit();
+init+= Des.fullRoll();
+this.setRolledInit(init);
+this.setCurrent(this.getActive());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int attaque(int bonus) {
+if(!this.isPeutAgir())
+	return -1;
+Archetype attaquant, defenseur;
+Config attaque, defense;
+attaquant=this;
+attaque=this.getActive();
+defenseur=this.getCible();
+defense = defenseur.getActive();
+String attakname = attaque.getNom();
+//Score de base
+int attaqueTotale =attaquant.getTotalAttaque();
+int defenseTotale=defenseur.getTotalDefense();
+
+//bonus config
+
+attaqueTotale+=attaque.getAttaque();
+defenseTotale+=defense.getDefense();
+		
+//bonus malus contexte
+if(defense.getTypeDef()==TypeDef.ESQUIVE
+		|| defense.getTypeDef()==TypeDef.PARADE){
+	int def = defenseur.getNbDef();
+	if(def ==1) defenseTotale=defenseTotale-30;
+	if(def ==2) defenseTotale=defenseTotale-50;
+	if(def ==3) defenseTotale=defenseTotale-70;
+	if(def >3) defenseTotale=defenseTotale-90;
+	this.getCible().setNbDef(def+1);
+}
+//roll
+System.out.println("att :"+attaqueTotale+ " def :"+defenseTotale);
+if(attaquant.isJoueur()){
+	
+	InputDialog d = new InputDialog(new Shell(),"Score du joueur", "Entrez le score d'attaque au dés de "+attaquant.getNom(), "50",null);
+	int choice = d.open();
+	if(choice==Window.OK) {
+		Integer result = Integer.parseInt(d.getValue());
+		attaqueTotale+=result;
+	}else {
+		attaqueTotale+=Des.fullRoll();
+	}
+}else {
+	attaqueTotale+=Des.fullRoll();
+}
+if(defenseur.isJoueur()) {
+	InputDialog d = new InputDialog(new Shell(),"Score du joueur", "Entrez le score de défense au dés de "+attaquant.getNom(), "50",null);
+	int choice = d.open();
+	if(choice==Window.OK) {
+		Integer result = Integer.parseInt(d.getValue());
+		defenseTotale+=result;
+	}else {
+		defenseTotale+=Des.fullRoll();
+	}
+	
+}else {
+	defenseTotale+=Des.fullRoll();		
+}
+if(defenseTotale<0) defenseTotale=0;
+int marge = attaqueTotale - defenseTotale;
+System.out.println("marge : "+marge);
+if(marge>0) {
+	defenseur.setPeutAgir(defense.getTypeDef()==TypeDef.ENCAISSEMENT);
+	int absorption = 2 + defenseur.getIP(attaque.getTypeDegat());
+	marge -= absorption * 10;
+	if(marge>10) {
+		int degat = attaque.getDegats()* marge /100;
+		int hp = defenseur.getHp()- degat;
+		defenseur.setHp(hp);
+		String tab[] ={"Ok"}; 
+		String info = defenseur.getNom()+" encaisse "+degat+" points de dégats sur "+attakname+". Restant : "+hp;
+		MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+		d.open();
+	}else {
+		String tab[] ={"Ok"}; 
+		String info = defenseur.getNom()+" se défend de justesse sur "+attakname+". 0 Dégat, pas d'actions";
+		MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+		d.open();	
+	}
+}else if (marge<0) {
+	int result = Des.getContre(marge);
+	String tab[] ={"Ok"}; 
+	String info = "Défense réussi par"+defenseur.getNom()+", contre attaque contre "+attakname+" possible avec un bonus de "+result;
+	MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+	d.open();
+	return result;
+}else{
+	String tab[] ={"Ok"}; 
+	String info = "Défense réussi par"+defenseur.getNom()+", pas de contre attaque possible contre "+attakname;
+	MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
+	d.open();
+	return -1;
+}
+return-1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getTotalAttaque() {
+		int total = 0;
+		total+=this.getAttaque();
+		total+=this.getBonusAtaque();
+		total+=this.getMalusCritTemp();
+		return total;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getTotalDefense() {
+		int total = 0;
+		total+=this.getDefense();
+		total+=this.getBonusDef();
+		total+=this.getMalusCritTemp();
+		return total;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void baston(int bonus) {
+Config attaque = this.getCurrent();
+if(attaque==null)
+{
+	return;
+}
+int nb  = attaque.getNbAttaques();
+int superbonus = bonus;
+while(nb>0){
+	nb--;
+	int r =attaque(superbonus);
+	superbonus=0;
+	if(r>=0){
+		return;
+	}
+	
+}
+if(attaque.getEnchaine()!=null) {
+	this.setCurrent(attaque.getEnchaine());
+	baston(0);
+}	
 	}
 
 	/**
@@ -1182,6 +1607,20 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 				return isPeutAgir();
 			case NimaPackage.ARCHETYPE__ROLLED_INIT:
 				return getRolledInit();
+			case NimaPackage.ARCHETYPE__CIBLE:
+				if (resolve) return getCible();
+				return basicGetCible();
+			case NimaPackage.ARCHETYPE__HP_MAX:
+				return getHpMax();
+			case NimaPackage.ARCHETYPE__MALUS_CRIT_TEMP:
+				return getMalusCritTemp();
+			case NimaPackage.ARCHETYPE__BONUS_ATAQUE:
+				return getBonusAtaque();
+			case NimaPackage.ARCHETYPE__BONUS_DEF:
+				return getBonusDef();
+			case NimaPackage.ARCHETYPE__CURRENT:
+				if (resolve) return getCurrent();
+				return basicGetCurrent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1268,6 +1707,24 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 			case NimaPackage.ARCHETYPE__ROLLED_INIT:
 				setRolledInit((Integer)newValue);
 				return;
+			case NimaPackage.ARCHETYPE__CIBLE:
+				setCible((Archetype)newValue);
+				return;
+			case NimaPackage.ARCHETYPE__HP_MAX:
+				setHpMax((Integer)newValue);
+				return;
+			case NimaPackage.ARCHETYPE__MALUS_CRIT_TEMP:
+				setMalusCritTemp((Integer)newValue);
+				return;
+			case NimaPackage.ARCHETYPE__BONUS_ATAQUE:
+				setBonusAtaque((Integer)newValue);
+				return;
+			case NimaPackage.ARCHETYPE__BONUS_DEF:
+				setBonusDef((Integer)newValue);
+				return;
+			case NimaPackage.ARCHETYPE__CURRENT:
+				setCurrent((Config)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1352,6 +1809,24 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 			case NimaPackage.ARCHETYPE__ROLLED_INIT:
 				setRolledInit(ROLLED_INIT_EDEFAULT);
 				return;
+			case NimaPackage.ARCHETYPE__CIBLE:
+				setCible((Archetype)null);
+				return;
+			case NimaPackage.ARCHETYPE__HP_MAX:
+				setHpMax(HP_MAX_EDEFAULT);
+				return;
+			case NimaPackage.ARCHETYPE__MALUS_CRIT_TEMP:
+				setMalusCritTemp(MALUS_CRIT_TEMP_EDEFAULT);
+				return;
+			case NimaPackage.ARCHETYPE__BONUS_ATAQUE:
+				setBonusAtaque(BONUS_ATAQUE_EDEFAULT);
+				return;
+			case NimaPackage.ARCHETYPE__BONUS_DEF:
+				setBonusDef(BONUS_DEF_EDEFAULT);
+				return;
+			case NimaPackage.ARCHETYPE__CURRENT:
+				setCurrent((Config)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1412,6 +1887,18 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 				return peutAgir != PEUT_AGIR_EDEFAULT;
 			case NimaPackage.ARCHETYPE__ROLLED_INIT:
 				return rolledInit != ROLLED_INIT_EDEFAULT;
+			case NimaPackage.ARCHETYPE__CIBLE:
+				return cible != null;
+			case NimaPackage.ARCHETYPE__HP_MAX:
+				return hpMax != HP_MAX_EDEFAULT;
+			case NimaPackage.ARCHETYPE__MALUS_CRIT_TEMP:
+				return malusCritTemp != MALUS_CRIT_TEMP_EDEFAULT;
+			case NimaPackage.ARCHETYPE__BONUS_ATAQUE:
+				return bonusAtaque != BONUS_ATAQUE_EDEFAULT;
+			case NimaPackage.ARCHETYPE__BONUS_DEF:
+				return bonusDef != BONUS_DEF_EDEFAULT;
+			case NimaPackage.ARCHETYPE__CURRENT:
+				return current != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1470,6 +1957,14 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 		result.append(peutAgir);
 		result.append(", rolledInit: ");
 		result.append(rolledInit);
+		result.append(", hpMax: ");
+		result.append(hpMax);
+		result.append(", malusCritTemp: ");
+		result.append(malusCritTemp);
+		result.append(", bonusAtaque: ");
+		result.append(bonusAtaque);
+		result.append(", bonusDef: ");
+		result.append(bonusDef);
 		result.append(')');
 		return result.toString();
 	}

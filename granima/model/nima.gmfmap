@@ -43,21 +43,24 @@
     </ownedChild>
   </nodes>
   <links>
-    <domainMetaElement
-        href="nima.ecore#//Attaque"/>
-    <containmentFeature
-        href="nima.ecore#//Combat/attaques"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="nima.gmftool#//@palette/@tools.0/@tools.1"/>
     <diagramLink
         href="nima.gmfgraph#Attaque"/>
-    <sourceMetaFeature
-        xsi:type="ecore:EReference"
-        href="nima.ecore#//Attaque/attaquant"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="nima.ecore#//Attaque/cible"/>
+        href="nima.ecore#//Archetype/cible"/>
+  </links>
+  <links>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="nima.gmftool#//@palette/@tools.0/@tools.1"/>
+    <diagramLink
+        href="nima.gmfgraph#Attaque"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="nima.ecore#//Config/enchaine"/>
   </links>
   <diagram>
     <diagramCanvas

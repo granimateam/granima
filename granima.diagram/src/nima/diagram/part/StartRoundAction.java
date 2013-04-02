@@ -1,19 +1,12 @@
 package nima.diagram.part;
 
-import nima.Attaque;
 import nima.Combat;
 import nima.diagram.edit.commands.RoundCommand;
-import nima.diagram.edit.commands.SimulationCommand;
-import nima.diagram.edit.parts.AttaqueEditPart;
 import nima.diagram.edit.parts.CombatEditPart;
 
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.gmf.runtime.notation.impl.ConnectorImpl;
 import org.eclipse.gmf.runtime.notation.impl.DiagramImpl;
-import org.eclipse.gmf.runtime.notation.impl.NodeImpl;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.StructuredSelection;
