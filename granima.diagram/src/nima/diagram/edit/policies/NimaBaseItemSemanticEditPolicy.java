@@ -3,7 +3,6 @@ package nima.diagram.edit.policies;
 import java.util.Iterator;
 
 import nima.Archetype;
-import nima.Attaque;
 import nima.Config;
 import nima.diagram.part.NimaDiagramEditorPlugin;
 import nima.diagram.part.NimaVisualIDRegistry;

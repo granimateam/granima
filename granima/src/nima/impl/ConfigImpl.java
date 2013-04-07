@@ -7,7 +7,6 @@
 package nima.impl;
 
 import nima.Archetype;
-import nima.Attaque;
 import nima.Config;
 import nima.NimaPackage;
 import nima.TypeAttaque;
@@ -16,14 +15,14 @@ import nima.typeAtt;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
+
+import tool.AnimaPopup;
+import tool.Des;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,7 +39,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link nima.impl.ConfigImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link nima.impl.ConfigImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link nima.impl.ConfigImpl#getAttaque <em>Attaque</em>}</li>
- *   <li>{@link nima.impl.ConfigImpl#getAttack <em>Attack</em>}</li>
  *   <li>{@link nima.impl.ConfigImpl#getNbAttaques <em>Nb Attaques</em>}</li>
  *   <li>{@link nima.impl.ConfigImpl#getEnchaine <em>Enchaine</em>}</li>
  *   <li>{@link nima.impl.ConfigImpl#getTypeDef <em>Type Def</em>}</li>
@@ -190,16 +188,6 @@ public class ConfigImpl extends EObjectImpl implements Config {
 	 * @ordered
 	 */
 	protected int attaque = ATTAQUE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAttack() <em>Attack</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttack()
-	 * @generated
-	 * @ordered
-	 */
-	protected Attaque attack;
 
 	/**
 	 * The default value of the '{@link #getNbAttaques() <em>Nb Attaques</em>}' attribute.
@@ -442,66 +430,6 @@ public class ConfigImpl extends EObjectImpl implements Config {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attaque getAttack() {
-		if (attack != null && attack.eIsProxy()) {
-			InternalEObject oldAttack = (InternalEObject)attack;
-			attack = (Attaque)eResolveProxy(oldAttack);
-			if (attack != oldAttack) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NimaPackage.CONFIG__ATTACK, oldAttack, attack));
-			}
-		}
-		return attack;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attaque basicGetAttack() {
-		return attack;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAttack(Attaque newAttack, NotificationChain msgs) {
-		Attaque oldAttack = attack;
-		attack = newAttack;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, NimaPackage.CONFIG__ATTACK, oldAttack, newAttack);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAttack(Attaque newAttack) {
-		if (newAttack != attack) {
-			NotificationChain msgs = null;
-			if (attack != null)
-				msgs = ((InternalEObject)attack).eInverseRemove(this, NimaPackage.ATTAQUE__ATTAQUANT, Attaque.class, msgs);
-			if (newAttack != null)
-				msgs = ((InternalEObject)newAttack).eInverseAdd(this, NimaPackage.ATTAQUE__ATTAQUANT, Attaque.class, msgs);
-			msgs = basicSetAttack(newAttack, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.CONFIG__ATTACK, newAttack, newAttack));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getNbAttaques() {
 		return nbAttaques;
 	}
@@ -619,6 +547,69 @@ public class ConfigImpl extends EObjectImpl implements Config {
 		}
 		return 0;
 	}
+	
+	public int attaque(int bonus) {
+
+Archetype attaquant, defenseur;
+Config attaque, defense;
+attaquant=this.getOwner();
+attaque=this;
+defenseur=attaquant.getCible();
+defense = defenseur.getActive();
+String attakname = attaque.getNom();
+
+if(!attaquant.isPeutAgir())
+	return -1;
+//Score de base
+int attaqueTotale =attaquant.getTotalAttaque();
+int defenseTotale=defenseur.getTotalDefense();
+
+//bonus config
+
+attaqueTotale+=attaque.getAttaque();
+defenseTotale+=defense.getDefense();
+		
+//bonus malus contexte
+if(defense.getTypeDef()==TypeDef.ESQUIVE
+		|| defense.getTypeDef()==TypeDef.PARADE){
+	int def = defenseur.getNbDef();
+	if(def ==1) defenseTotale=defenseTotale-30;
+	if(def ==2) defenseTotale=defenseTotale-50;
+	if(def ==3) defenseTotale=defenseTotale-70;
+	if(def >3) defenseTotale=defenseTotale-90;
+	defenseur.setNbDef(def+1);
+}
+
+int attaqueDes= AnimaPopup.getScoreDes(attaquant, "d'attaque");
+
+
+int defenseDes= AnimaPopup.getScoreDes(defenseur, "de défense");
+
+if(defenseTotale<0) defenseTotale=0;
+int marge = AnimaPopup.calcMarge(attaqueTotale, attaqueDes, defenseTotale, defenseDes);
+System.out.println("marge : "+marge);
+if(marge>0) {
+	defenseur.setPeutAgir(defense.getTypeDef()==TypeDef.ENCAISSEMENT);
+	int absorption = 2 + defenseur.getIP(attaque.getTypeDegat());
+	marge -= absorption * 10;
+	if(marge>10) {
+		int degat = attaque.getDegats()* marge /100;
+		int hp = defenseur.getHp()- degat;
+		defenseur.setHp(hp);		
+		AnimaPopup.resultat(attaque, defenseur, "Défense et armure passée", degat, "dégat subis. restant :"+hp);
+	}else {		
+		AnimaPopup.resultat(attaque, defenseur, "Défense réussie de justesse", 0, "dégat, actions annulées");
+	}
+}else if (marge<0) {
+	int result = Des.getContre(marge);	
+	AnimaPopup.resultat(attaque, defenseur, "Défense réussie, contre attaque possible", result, "bonus au contre");
+	return result;
+}else{
+	AnimaPopup.resultat(attaque, defenseur, "Défense réussie.", 0, "contre possible");
+	return -1;
+}
+return-1;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -673,10 +664,6 @@ public class ConfigImpl extends EObjectImpl implements Config {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetOwner((Archetype)otherEnd, msgs);
-			case NimaPackage.CONFIG__ATTACK:
-				if (attack != null)
-					msgs = ((InternalEObject)attack).eInverseRemove(this, NimaPackage.ATTAQUE__ATTAQUANT, Attaque.class, msgs);
-				return basicSetAttack((Attaque)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -691,8 +678,6 @@ public class ConfigImpl extends EObjectImpl implements Config {
 		switch (featureID) {
 			case NimaPackage.CONFIG__OWNER:
 				return basicSetOwner(null, msgs);
-			case NimaPackage.CONFIG__ATTACK:
-				return basicSetAttack(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -735,9 +720,6 @@ public class ConfigImpl extends EObjectImpl implements Config {
 				return getOwner();
 			case NimaPackage.CONFIG__ATTAQUE:
 				return getAttaque();
-			case NimaPackage.CONFIG__ATTACK:
-				if (resolve) return getAttack();
-				return basicGetAttack();
 			case NimaPackage.CONFIG__NB_ATTAQUES:
 				return getNbAttaques();
 			case NimaPackage.CONFIG__ENCHAINE:
@@ -782,9 +764,6 @@ public class ConfigImpl extends EObjectImpl implements Config {
 				return;
 			case NimaPackage.CONFIG__ATTAQUE:
 				setAttaque((Integer)newValue);
-				return;
-			case NimaPackage.CONFIG__ATTACK:
-				setAttack((Attaque)newValue);
 				return;
 			case NimaPackage.CONFIG__NB_ATTAQUES:
 				setNbAttaques((Integer)newValue);
@@ -834,9 +813,6 @@ public class ConfigImpl extends EObjectImpl implements Config {
 			case NimaPackage.CONFIG__ATTAQUE:
 				setAttaque(ATTAQUE_EDEFAULT);
 				return;
-			case NimaPackage.CONFIG__ATTACK:
-				setAttack((Attaque)null);
-				return;
 			case NimaPackage.CONFIG__NB_ATTAQUES:
 				setNbAttaques(NB_ATTAQUES_EDEFAULT);
 				return;
@@ -877,8 +853,6 @@ public class ConfigImpl extends EObjectImpl implements Config {
 				return getOwner() != null;
 			case NimaPackage.CONFIG__ATTAQUE:
 				return attaque != ATTAQUE_EDEFAULT;
-			case NimaPackage.CONFIG__ATTACK:
-				return attack != null;
 			case NimaPackage.CONFIG__NB_ATTAQUES:
 				return nbAttaques != NB_ATTAQUES_EDEFAULT;
 			case NimaPackage.CONFIG__ENCHAINE:

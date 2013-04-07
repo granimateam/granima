@@ -1,8 +1,8 @@
 package nima.diagram.part;
 
-import nima.Archetype;
+import nima.Config;
 import nima.diagram.edit.commands.SimulationCommand;
-import nima.diagram.edit.parts.ArchetypeEditPart;
+import nima.diagram.edit.parts.ConfigEditPart;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.ecore.util.Diagnostician;
@@ -20,7 +20,7 @@ import org.eclipse.ui.IActionDelegate;
 public class StartSimAction implements IActionDelegate {
 
 	
-	private Archetype att;
+	private Config att;
 	
 	@Override
 	public void run(IAction action) {
@@ -32,7 +32,7 @@ public class StartSimAction implements IActionDelegate {
 			if(d.getChildren().size()==0){
 				TransactionalEditingDomain domain = TransactionUtil.getEditingDomain(att);
 				SimulationCommand simu = new SimulationCommand(domain);
-				simu.setArchetype(att);
+				simu.setConfig(att);
 				
 				domain.getCommandStack().execute(simu);
 			}else
@@ -54,9 +54,9 @@ public class StartSimAction implements IActionDelegate {
 			StructuredSelection s = (StructuredSelection)selection;
 			Object o = s.getFirstElement();
 			if(o==null) return;
-			ArchetypeEditPart takedit =(ArchetypeEditPart) o;
+			ConfigEditPart takedit =(ConfigEditPart) o;
 			NodeImpl node = (NodeImpl)takedit.getModel();			
-			Archetype att = (Archetype)node.getElement();
+			Config att = (Config)node.getElement();
 			this.att=att;
 			action.setEnabled(true);
 

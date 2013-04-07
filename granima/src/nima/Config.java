@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link nima.Config#getDescription <em>Description</em>}</li>
  *   <li>{@link nima.Config#getOwner <em>Owner</em>}</li>
  *   <li>{@link nima.Config#getAttaque <em>Attaque</em>}</li>
- *   <li>{@link nima.Config#getAttack <em>Attack</em>}</li>
  *   <li>{@link nima.Config#getNbAttaques <em>Nb Attaques</em>}</li>
  *   <li>{@link nima.Config#getEnchaine <em>Enchaine</em>}</li>
  *   <li>{@link nima.Config#getTypeDef <em>Type Def</em>}</li>
@@ -224,34 +223,6 @@ public interface Config extends EObject {
 	void setAttaque(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Attack</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link nima.Attaque#getAttaquant <em>Attaquant</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attack</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attack</em>' reference.
-	 * @see #setAttack(Attaque)
-	 * @see nima.NimaPackage#getConfig_Attack()
-	 * @see nima.Attaque#getAttaquant
-	 * @model opposite="attaquant"
-	 * @generated
-	 */
-	Attaque getAttack();
-
-	/**
-	 * Sets the value of the '{@link nima.Config#getAttack <em>Attack</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Attack</em>' reference.
-	 * @see #getAttack()
-	 * @generated
-	 */
-	void setAttack(Attaque value);
-
-	/**
 	 * Returns the value of the '<em><b>Nb Attaques</b></em>' attribute.
 	 * The default value is <code>"1"</code>.
 	 * <!-- begin-user-doc -->
@@ -369,6 +340,14 @@ public interface Config extends EObject {
 	 * @generated
 	 */
 	int calcMalusDef(Config attaquand);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\r\nArchetype attaquant, defenseur;\r\nConfig attaque, defense;\r\nattaquant=this.getOwner();\r\nattaque=this;\r\ndefenseur=attaquant.getCible();\r\ndefense = defenseur.getActive();\r\nString attakname = attaque.getNom();\r\n\r\nif(!attaquant.isPeutAgir())\r\n\treturn -1;\r\n//Score de base\r\nint attaqueTotale =attaquant.getTotalAttaque();\r\nint defenseTotale=defenseur.getTotalDefense();\r\n\r\n//bonus config\r\n\r\nattaqueTotale+=attaque.getAttaque();\r\ndefenseTotale+=defense.getDefense();\r\n\t\t\r\n//bonus malus contexte\r\nif(defense.getTypeDef()==TypeDef.ESQUIVE\r\n\t\t|| defense.getTypeDef()==TypeDef.PARADE){\r\n\tint def = defenseur.getNbDef();\r\n\tif(def ==1) defenseTotale=defenseTotale-30;\r\n\tif(def ==2) defenseTotale=defenseTotale-50;\r\n\tif(def ==3) defenseTotale=defenseTotale-70;\r\n\tif(def >3) defenseTotale=defenseTotale-90;\r\n\tdefenseur.setNbDef(def+1);\r\n}\r\n//roll\r\nSystem.out.println(\"att :\"+attaqueTotale+ \" def :\"+defenseTotale);\r\nif(attaquant.isJoueur()){\r\n\t\r\n\tInputDialog d = new InputDialog(new Shell(),\"Score du joueur\", \"Entrez le score d\'attaque au d\351s de \"+attaquant.getNom(), \"50\",null);\r\n\tint choice = d.open();\r\n\tif(choice==Window.OK) {\r\n\t\tInteger result = Integer.parseInt(d.getValue());\r\n\t\tattaqueTotale+=result;\r\n\t}else {\r\n\t\tattaqueTotale+=Des.fullRoll();\r\n\t}\r\n}else {\r\n\tattaqueTotale+=Des.fullRoll();\r\n}\r\nif(defenseur.isJoueur()) {\r\n\tInputDialog d = new InputDialog(new Shell(),\"Score du joueur\", \"Entrez le score de d\351fense au d\351s de \"+attaquant.getNom(), \"50\",null);\r\n\tint choice = d.open();\r\n\tif(choice==Window.OK) {\r\n\t\tInteger result = Integer.parseInt(d.getValue());\r\n\t\tdefenseTotale+=result;\r\n\t}else {\r\n\t\tdefenseTotale+=Des.fullRoll();\r\n\t}\r\n\t\r\n}else {\r\n\tdefenseTotale+=Des.fullRoll();\t\t\r\n}\r\nif(defenseTotale<0) defenseTotale=0;\r\nint marge = attaqueTotale - defenseTotale;\r\nSystem.out.println(\"marge : \"+marge);\r\nif(marge>0) {\r\n\tdefenseur.setPeutAgir(defense.getTypeDef()==TypeDef.ENCAISSEMENT);\r\n\tint absorption = 2 + defenseur.getIP(attaque.getTypeDegat());\r\n\tmarge -= absorption * 10;\r\n\tif(marge>10) {\r\n\t\tint degat = attaque.getDegats()* marge /100;\r\n\t\tint hp = defenseur.getHp()- degat;\r\n\t\tdefenseur.setHp(hp);\r\n\t\tString tab[] ={\"Ok\"}; \r\n\t\tString info = defenseur.getNom()+\" encaisse \"+degat+\" points de d\351gats sur \"+attakname+\". Restant : \"+hp;\r\n\t\tMessageDialog d = new MessageDialog(new Shell(), \"R\351sultat\", null, info, 0, tab, 0);\r\n\t\td.open();\r\n\t}else {\r\n\t\tString tab[] ={\"Ok\"}; \r\n\t\tString info = defenseur.getNom()+\" se d\351fend de justesse sur \"+attakname+\". 0 D\351gat, pas d\'actions\";\r\n\t\tMessageDialog d = new MessageDialog(new Shell(), \"R\351sultat\", null, info, 0, tab, 0);\r\n\t\td.open();\t\r\n\t}\r\n}else if (marge<0) {\r\n\tint result = Des.getContre(marge);\r\n\tString tab[] ={\"Ok\"}; \r\n\tString info = \"D\351fense r\351ussi par\"+defenseur.getNom()+\", contre attaque contre \"+attakname+\" possible avec un bonus de \"+result;\r\n\tMessageDialog d = new MessageDialog(new Shell(), \"R\351sultat\", null, info, 0, tab, 0);\r\n\td.open();\r\n\treturn result;\r\n}else{\r\n\tString tab[] ={\"Ok\"}; \r\n\tString info = \"D\351fense r\351ussi par\"+defenseur.getNom()+\", pas de contre attaque possible contre \"+attakname;\r\n\tMessageDialog d = new MessageDialog(new Shell(), \"R\351sultat\", null, info, 0, tab, 0);\r\n\td.open();\r\n\treturn -1;\r\n}\r\nreturn-1;'"
+	 * @generated
+	 */
+	int attaque(int bonus);
 
 	/**
 	 * Returns the value of the '<em><b>Owner</b></em>' container reference.

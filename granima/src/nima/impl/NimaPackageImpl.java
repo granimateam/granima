@@ -7,14 +7,8 @@
 package nima.impl;
 
 import nima.Archetype;
-import nima.Attaque;
 import nima.Combat;
 import nima.Config;
-import nima.ConfigAoe;
-import nima.ConfigCac;
-import nima.ConfigLance;
-import nima.ConfigTir;
-import nima.DualHandConfig;
 import nima.NimaFactory;
 import nima.NimaPackage;
 import nima.TypeAttaque;
@@ -28,7 +22,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -65,13 +58,6 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * @generated
 	 */
 	private EClass combatEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass attaqueEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -439,6 +425,15 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getArchetype_Contre() {
+		return (EReference)archetypeEClass.getEStructuralFeatures().get(30);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConfig() {
 		return configEClass;
 	}
@@ -511,17 +506,8 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConfig_Attack() {
-		return (EReference)configEClass.getEStructuralFeatures().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getConfig_NbAttaques() {
-		return (EAttribute)configEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)configEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -530,7 +516,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * @generated
 	 */
 	public EReference getConfig_Enchaine() {
-		return (EReference)configEClass.getEStructuralFeatures().get(10);
+		return (EReference)configEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -539,7 +525,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * @generated
 	 */
 	public EAttribute getConfig_TypeDef() {
-		return (EAttribute)configEClass.getEStructuralFeatures().get(11);
+		return (EAttribute)configEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -548,7 +534,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * @generated
 	 */
 	public EAttribute getConfig_TypeAttaque() {
-		return (EAttribute)configEClass.getEStructuralFeatures().get(12);
+		return (EAttribute)configEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -610,62 +596,8 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getCombat_Attaques() {
-		return (EReference)combatEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getCombat_NbRound() {
-		return (EAttribute)combatEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAttaque() {
-		return attaqueEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAttaque_Cible() {
-		return (EReference)attaqueEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAttaque_BonusAtt() {
-		return (EAttribute)attaqueEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAttaque_Attaquant() {
-		return (EReference)attaqueEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAttaque_BonusDef() {
-		return (EAttribute)attaqueEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)combatEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -754,6 +686,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		createEAttribute(archetypeEClass, ARCHETYPE__BONUS_ATAQUE);
 		createEAttribute(archetypeEClass, ARCHETYPE__BONUS_DEF);
 		createEReference(archetypeEClass, ARCHETYPE__CURRENT);
+		createEReference(archetypeEClass, ARCHETYPE__CONTRE);
 
 		configEClass = createEClass(CONFIG);
 		createEAttribute(configEClass, CONFIG__INIT);
@@ -764,7 +697,6 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		createEAttribute(configEClass, CONFIG__DESCRIPTION);
 		createEReference(configEClass, CONFIG__OWNER);
 		createEAttribute(configEClass, CONFIG__ATTAQUE);
-		createEReference(configEClass, CONFIG__ATTACK);
 		createEAttribute(configEClass, CONFIG__NB_ATTAQUES);
 		createEReference(configEClass, CONFIG__ENCHAINE);
 		createEAttribute(configEClass, CONFIG__TYPE_DEF);
@@ -776,14 +708,7 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 
 		combatEClass = createEClass(COMBAT);
 		createEReference(combatEClass, COMBAT__ARCHETYPES);
-		createEReference(combatEClass, COMBAT__ATTAQUES);
 		createEAttribute(combatEClass, COMBAT__NB_ROUND);
-
-		attaqueEClass = createEClass(ATTAQUE);
-		createEReference(attaqueEClass, ATTAQUE__CIBLE);
-		createEAttribute(attaqueEClass, ATTAQUE__BONUS_ATT);
-		createEReference(attaqueEClass, ATTAQUE__ATTAQUANT);
-		createEAttribute(attaqueEClass, ATTAQUE__BONUS_DEF);
 
 		// Create enums
 		typeDefEEnum = createEEnum(TYPE_DEF);
@@ -852,14 +777,12 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		initEAttribute(getArchetype_BonusAtaque(), ecorePackage.getEInt(), "bonusAtaque", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getArchetype_BonusDef(), ecorePackage.getEInt(), "bonusDef", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArchetype_Current(), this.getConfig(), null, "current", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getArchetype_Contre(), this.getConfig(), null, "contre", null, 0, 1, Archetype.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(archetypeEClass, ecorePackage.getEInt(), "getIP", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.gettypeAtt(), "type", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(archetypeEClass, null, "resetRound", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(archetypeEClass, ecorePackage.getEInt(), "attaque", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "bonus", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(archetypeEClass, ecorePackage.getEInt(), "getTotalAttaque", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -877,7 +800,6 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		initEAttribute(getConfig_Description(), ecorePackage.getEString(), "description", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConfig_Owner(), this.getArchetype(), this.getArchetype_Configs(), "owner", null, 1, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfig_Attaque(), ecorePackage.getEInt(), "attaque", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConfig_Attack(), this.getAttaque(), this.getAttaque_Attaquant(), "attack", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfig_NbAttaques(), ecorePackage.getEInt(), "nbAttaques", "1", 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConfig_Enchaine(), this.getConfig(), null, "enchaine", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getConfig_TypeDef(), this.getTypeDef(), "typeDef", null, 0, 1, Config.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -886,26 +808,20 @@ public class NimaPackageImpl extends EPackageImpl implements NimaPackage {
 		op = addEOperation(configEClass, ecorePackage.getEInt(), "calcMalusDef", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getConfig(), "attaquand", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(configEClass, ecorePackage.getEInt(), "attaque", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "bonus", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(universEClass, Univers.class, "Univers", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnivers_Archetypes(), this.getArchetype(), null, "archetypes", null, 0, -1, Univers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUnivers_Combats(), this.getCombat(), null, "combats", null, 0, -1, Univers.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(combatEClass, Combat.class, "Combat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCombat_Archetypes(), this.getArchetype(), null, "archetypes", null, 0, -1, Combat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCombat_Attaques(), this.getAttaque(), null, "attaques", null, 0, -1, Combat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCombat_NbRound(), ecorePackage.getEInt(), "nbRound", null, 0, 1, Combat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(combatEClass, null, "resetRound", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(combatEClass, null, "resetAndRun", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		initEClass(attaqueEClass, Attaque.class, "Attaque", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttaque_Cible(), this.getArchetype(), null, "cible", null, 1, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAttaque_BonusAtt(), ecorePackage.getEInt(), "bonusAtt", null, 0, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAttaque_Attaquant(), this.getConfig(), this.getConfig_Attack(), "attaquant", null, 1, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAttaque_BonusDef(), ecorePackage.getEInt(), "bonusDef", null, 0, 1, Attaque.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		addEOperation(attaqueEClass, null, "resolve", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(typeDefEEnum, TypeDef.class, "TypeDef");

@@ -9,29 +9,20 @@ package nima.impl;
 import java.util.Collection;
 
 import nima.Archetype;
-import nima.Attaque;
 import nima.Config;
 import nima.NimaPackage;
 import nima.TypeDef;
-
 import nima.typeAtt;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.jface.dialogs.InputDialog;
-import org.eclipse.jface.dialogs.MessageDialog;
-import org.eclipse.jface.window.Window;
-import org.eclipse.swt.widgets.Shell;
 
 import tool.Des;
 
@@ -72,6 +63,7 @@ import tool.Des;
  *   <li>{@link nima.impl.ArchetypeImpl#getBonusAtaque <em>Bonus Ataque</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#getBonusDef <em>Bonus Def</em>}</li>
  *   <li>{@link nima.impl.ArchetypeImpl#getCurrent <em>Current</em>}</li>
+ *   <li>{@link nima.impl.ArchetypeImpl#getContre <em>Contre</em>}</li>
  * </ul>
  * </p>
  *
@@ -637,6 +629,16 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	 * @ordered
 	 */
 	protected Config current;
+
+	/**
+	 * The cached value of the '{@link #getContre() <em>Contre</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContre()
+	 * @generated
+	 * @ordered
+	 */
+	protected Config contre;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1332,6 +1334,44 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Config getContre() {
+		if (contre != null && contre.eIsProxy()) {
+			InternalEObject oldContre = (InternalEObject)contre;
+			contre = (Config)eResolveProxy(oldContre);
+			if (contre != oldContre) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, NimaPackage.ARCHETYPE__CONTRE, oldContre, contre));
+			}
+		}
+		return contre;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Config basicGetContre() {
+		return contre;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setContre(Config newContre) {
+		Config oldContre = contre;
+		contre = newContre;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, NimaPackage.ARCHETYPE__CONTRE, oldContre, contre));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public int getIP(typeAtt type) {
@@ -1358,113 +1398,13 @@ public class ArchetypeImpl extends EObjectImpl implements Archetype {
 	 * @generated
 	 */
 	public void resetRound() {
-this.setPeutAgir(true);
-this.setNbAction(0);
-this.setNbDef(0);
-int init = this.getInit() + this.getActive().getInit();
-init+= Des.fullRoll();
-this.setRolledInit(init);
-this.setCurrent(this.getActive());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int attaque(int bonus) {
-if(!this.isPeutAgir())
-	return -1;
-Archetype attaquant, defenseur;
-Config attaque, defense;
-attaquant=this;
-attaque=this.getActive();
-defenseur=this.getCible();
-defense = defenseur.getActive();
-String attakname = attaque.getNom();
-//Score de base
-int attaqueTotale =attaquant.getTotalAttaque();
-int defenseTotale=defenseur.getTotalDefense();
-
-//bonus config
-
-attaqueTotale+=attaque.getAttaque();
-defenseTotale+=defense.getDefense();
-		
-//bonus malus contexte
-if(defense.getTypeDef()==TypeDef.ESQUIVE
-		|| defense.getTypeDef()==TypeDef.PARADE){
-	int def = defenseur.getNbDef();
-	if(def ==1) defenseTotale=defenseTotale-30;
-	if(def ==2) defenseTotale=defenseTotale-50;
-	if(def ==3) defenseTotale=defenseTotale-70;
-	if(def >3) defenseTotale=defenseTotale-90;
-	this.getCible().setNbDef(def+1);
-}
-//roll
-System.out.println("att :"+attaqueTotale+ " def :"+defenseTotale);
-if(attaquant.isJoueur()){
-	
-	InputDialog d = new InputDialog(new Shell(),"Score du joueur", "Entrez le score d'attaque au dés de "+attaquant.getNom(), "50",null);
-	int choice = d.open();
-	if(choice==Window.OK) {
-		Integer result = Integer.parseInt(d.getValue());
-		attaqueTotale+=result;
-	}else {
-		attaqueTotale+=Des.fullRoll();
-	}
-}else {
-	attaqueTotale+=Des.fullRoll();
-}
-if(defenseur.isJoueur()) {
-	InputDialog d = new InputDialog(new Shell(),"Score du joueur", "Entrez le score de défense au dés de "+attaquant.getNom(), "50",null);
-	int choice = d.open();
-	if(choice==Window.OK) {
-		Integer result = Integer.parseInt(d.getValue());
-		defenseTotale+=result;
-	}else {
-		defenseTotale+=Des.fullRoll();
-	}
-	
-}else {
-	defenseTotale+=Des.fullRoll();		
-}
-if(defenseTotale<0) defenseTotale=0;
-int marge = attaqueTotale - defenseTotale;
-System.out.println("marge : "+marge);
-if(marge>0) {
-	defenseur.setPeutAgir(defense.getTypeDef()==TypeDef.ENCAISSEMENT);
-	int absorption = 2 + defenseur.getIP(attaque.getTypeDegat());
-	marge -= absorption * 10;
-	if(marge>10) {
-		int degat = attaque.getDegats()* marge /100;
-		int hp = defenseur.getHp()- degat;
-		defenseur.setHp(hp);
-		String tab[] ={"Ok"}; 
-		String info = defenseur.getNom()+" encaisse "+degat+" points de dégats sur "+attakname+". Restant : "+hp;
-		MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
-		d.open();
-	}else {
-		String tab[] ={"Ok"}; 
-		String info = defenseur.getNom()+" se défend de justesse sur "+attakname+". 0 Dégat, pas d'actions";
-		MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
-		d.open();	
-	}
-}else if (marge<0) {
-	int result = Des.getContre(marge);
-	String tab[] ={"Ok"}; 
-	String info = "Défense réussi par"+defenseur.getNom()+", contre attaque contre "+attakname+" possible avec un bonus de "+result;
-	MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
-	d.open();
-	return result;
-}else{
-	String tab[] ={"Ok"}; 
-	String info = "Défense réussi par"+defenseur.getNom()+", pas de contre attaque possible contre "+attakname;
-	MessageDialog d = new MessageDialog(new Shell(), "Résultat", null, info, 0, tab, 0);
-	d.open();
-	return -1;
-}
-return-1;
+		this.setPeutAgir(true);
+		this.setNbAction(0);
+		this.setNbDef(0);
+		int init = this.getInit() + this.getActive().getInit();
+		init+= Des.fullRoll();
+		this.setRolledInit(init);
+		this.setCurrent(this.getActive());
 	}
 
 	/**
@@ -1499,26 +1439,26 @@ return-1;
 	 * @generated
 	 */
 	public void baston(int bonus) {
-Config attaque = this.getCurrent();
-if(attaque==null)
-{
-	return;
-}
-int nb  = attaque.getNbAttaques();
-int superbonus = bonus;
-while(nb>0){
-	nb--;
-	int r =attaque(superbonus);
-	superbonus=0;
-	if(r>=0){
-		return;
-	}
-	
-}
-if(attaque.getEnchaine()!=null) {
-	this.setCurrent(attaque.getEnchaine());
-	baston(0);
-}	
+		Config attaque = this.getCurrent();
+		Config contrattaque = this.getCible().getContre();
+		if(attaque==null) {
+			return;
+		}
+		int nb  = attaque.getNbAttaques();
+		int superbonus = bonus;
+		while(nb>0){
+			nb--;
+			int r =attaque.attaque(superbonus);
+			superbonus=0;
+			if(r>=0){
+				contrattaque.attaque(r);
+			}
+			
+		}
+		if(attaque.getEnchaine()!=null) {
+			this.setCurrent(attaque.getEnchaine());
+			baston(0);
+		}
 	}
 
 	/**
@@ -1621,6 +1561,9 @@ if(attaque.getEnchaine()!=null) {
 			case NimaPackage.ARCHETYPE__CURRENT:
 				if (resolve) return getCurrent();
 				return basicGetCurrent();
+			case NimaPackage.ARCHETYPE__CONTRE:
+				if (resolve) return getContre();
+				return basicGetContre();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1725,6 +1668,9 @@ if(attaque.getEnchaine()!=null) {
 			case NimaPackage.ARCHETYPE__CURRENT:
 				setCurrent((Config)newValue);
 				return;
+			case NimaPackage.ARCHETYPE__CONTRE:
+				setContre((Config)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1827,6 +1773,9 @@ if(attaque.getEnchaine()!=null) {
 			case NimaPackage.ARCHETYPE__CURRENT:
 				setCurrent((Config)null);
 				return;
+			case NimaPackage.ARCHETYPE__CONTRE:
+				setContre((Config)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1899,6 +1848,8 @@ if(attaque.getEnchaine()!=null) {
 				return bonusDef != BONUS_DEF_EDEFAULT;
 			case NimaPackage.ARCHETYPE__CURRENT:
 				return current != null;
+			case NimaPackage.ARCHETYPE__CONTRE:
+				return contre != null;
 		}
 		return super.eIsSet(featureID);
 	}

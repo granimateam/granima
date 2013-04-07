@@ -164,29 +164,6 @@ public class NimaItemProviderAdapterFactory extends NimaAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link nima.Attaque} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AttaqueItemProvider attaqueItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link nima.Attaque}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAttaqueAdapter() {
-		if (attaqueItemProvider == null) {
-			attaqueItemProvider = new AttaqueItemProvider(this);
-		}
-
-		return attaqueItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -289,7 +266,6 @@ public class NimaItemProviderAdapterFactory extends NimaAdapterFactory implement
 		if (configItemProvider != null) configItemProvider.dispose();
 		if (universItemProvider != null) universItemProvider.dispose();
 		if (combatItemProvider != null) combatItemProvider.dispose();
-		if (attaqueItemProvider != null) attaqueItemProvider.dispose();
 	}
 
 }

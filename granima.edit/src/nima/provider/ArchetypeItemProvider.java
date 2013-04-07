@@ -91,6 +91,8 @@ public class ArchetypeItemProvider
 			addMalusCritTempPropertyDescriptor(object);
 			addBonusAtaquePropertyDescriptor(object);
 			addBonusDefPropertyDescriptor(object);
+			addCurrentPropertyDescriptor(object);
+			addContrePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -707,6 +709,50 @@ public class ArchetypeItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Current feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCurrentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Archetype_current_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Archetype_current_feature", "_UI_Archetype_type"),
+				 NimaPackage.Literals.ARCHETYPE__CURRENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Contre feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContrePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Archetype_contre_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Archetype_contre_feature", "_UI_Archetype_type"),
+				 NimaPackage.Literals.ARCHETYPE__CONTRE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

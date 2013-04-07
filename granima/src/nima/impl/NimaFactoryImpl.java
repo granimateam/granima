@@ -65,7 +65,6 @@ public class NimaFactoryImpl extends EFactoryImpl implements NimaFactory {
 			case NimaPackage.CONFIG: return createConfig();
 			case NimaPackage.UNIVERS: return createUnivers();
 			case NimaPackage.COMBAT: return createCombat();
-			case NimaPackage.ATTAQUE: return createAttaque();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -147,16 +146,6 @@ public class NimaFactoryImpl extends EFactoryImpl implements NimaFactory {
 	public Combat createCombat() {
 		CombatImpl combat = new CombatImpl();
 		return combat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Attaque createAttaque() {
-		AttaqueImpl attaque = new AttaqueImpl();
-		return attaque;
 	}
 
 	/**

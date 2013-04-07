@@ -88,10 +88,6 @@ public class NimaAdapterFactory extends AdapterFactoryImpl {
 				return createCombatAdapter();
 			}
 			@Override
-			public Adapter caseAttaque(Attaque object) {
-				return createAttaqueAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -164,20 +160,6 @@ public class NimaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCombatAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link nima.Attaque <em>Attaque</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see nima.Attaque
-	 * @generated
-	 */
-	public Adapter createAttaqueAdapter() {
 		return null;
 	}
 

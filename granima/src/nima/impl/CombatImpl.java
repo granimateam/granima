@@ -6,27 +6,21 @@
  */
 package nima.impl;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 
 import nima.Archetype;
-import nima.Attaque;
 import nima.Combat;
 import nima.NimaPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -40,7 +34,6 @@ import tool.InitComparator;
  * The following features are implemented:
  * <ul>
  *   <li>{@link nima.impl.CombatImpl#getArchetypes <em>Archetypes</em>}</li>
- *   <li>{@link nima.impl.CombatImpl#getAttaques <em>Attaques</em>}</li>
  *   <li>{@link nima.impl.CombatImpl#getNbRound <em>Nb Round</em>}</li>
  * </ul>
  * </p>
@@ -57,16 +50,6 @@ public class CombatImpl extends EObjectImpl implements Combat {
 	 * @ordered
 	 */
 	protected EList<Archetype> archetypes;
-
-	/**
-	 * The cached value of the '{@link #getAttaques() <em>Attaques</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttaques()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Attaque> attaques;
 
 	/**
 	 * The default value of the '{@link #getNbRound() <em>Nb Round</em>}' attribute.
@@ -124,18 +107,6 @@ public class CombatImpl extends EObjectImpl implements Combat {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Attaque> getAttaques() {
-		if (attaques == null) {
-			attaques = new EObjectContainmentEList<Attaque>(Attaque.class, this, NimaPackage.COMBAT__ATTAQUES);
-		}
-		return attaques;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getNbRound() {
 		return nbRound;
 	}
@@ -171,20 +142,20 @@ public class CombatImpl extends EObjectImpl implements Combat {
 	 * @generated
 	 */
 	public void resetAndRun() {
-		setNbRound(nbRound+1);
-		LinkedList<Archetype> l =new LinkedList<Archetype>(this.getArchetypes());
-		for(Archetype arch : l ) {
-			arch.resetRound();
-			
-		}
-		Collections.sort(l, new InitComparator());
-		
-		for(Archetype arch : l ) {
-			if(arch.isPeutAgir()) {
-				arch.baston(0);
-			}
-			
-		}
+				setNbRound(nbRound+1);
+				LinkedList<Archetype> l =new LinkedList<Archetype>(this.getArchetypes());
+				for(Archetype arch : l ) {
+					arch.resetRound();
+					
+				}
+				Collections.sort(l, new InitComparator());
+				
+				for(Archetype arch : l ) {
+					if(arch.isPeutAgir()) {
+						arch.baston(0);
+					}
+					
+				}
 	}
 
 	/**
@@ -197,8 +168,6 @@ public class CombatImpl extends EObjectImpl implements Combat {
 		switch (featureID) {
 			case NimaPackage.COMBAT__ARCHETYPES:
 				return ((InternalEList<?>)getArchetypes()).basicRemove(otherEnd, msgs);
-			case NimaPackage.COMBAT__ATTAQUES:
-				return ((InternalEList<?>)getAttaques()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -213,8 +182,6 @@ public class CombatImpl extends EObjectImpl implements Combat {
 		switch (featureID) {
 			case NimaPackage.COMBAT__ARCHETYPES:
 				return getArchetypes();
-			case NimaPackage.COMBAT__ATTAQUES:
-				return getAttaques();
 			case NimaPackage.COMBAT__NB_ROUND:
 				return getNbRound();
 		}
@@ -234,10 +201,6 @@ public class CombatImpl extends EObjectImpl implements Combat {
 				getArchetypes().clear();
 				getArchetypes().addAll((Collection<? extends Archetype>)newValue);
 				return;
-			case NimaPackage.COMBAT__ATTAQUES:
-				getAttaques().clear();
-				getAttaques().addAll((Collection<? extends Attaque>)newValue);
-				return;
 			case NimaPackage.COMBAT__NB_ROUND:
 				setNbRound((Integer)newValue);
 				return;
@@ -256,9 +219,6 @@ public class CombatImpl extends EObjectImpl implements Combat {
 			case NimaPackage.COMBAT__ARCHETYPES:
 				getArchetypes().clear();
 				return;
-			case NimaPackage.COMBAT__ATTAQUES:
-				getAttaques().clear();
-				return;
 			case NimaPackage.COMBAT__NB_ROUND:
 				setNbRound(NB_ROUND_EDEFAULT);
 				return;
@@ -276,8 +236,6 @@ public class CombatImpl extends EObjectImpl implements Combat {
 		switch (featureID) {
 			case NimaPackage.COMBAT__ARCHETYPES:
 				return archetypes != null && !archetypes.isEmpty();
-			case NimaPackage.COMBAT__ATTAQUES:
-				return attaques != null && !attaques.isEmpty();
 			case NimaPackage.COMBAT__NB_ROUND:
 				return nbRound != NB_ROUND_EDEFAULT;
 		}

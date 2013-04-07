@@ -414,7 +414,7 @@
    <objectContribution
          adaptable="false"
          id="nima.diagram.ui.objectContribution.RouteEditPart1"
-         objectClass="nima.diagram.edit.parts.ArchetypeEditPart">
+         objectClass="nima.diagram.edit.parts.ConfigEditPart">
       <action
             class="nima.diagram.part.StartSimAction"
             definitionId="Sim-ria.diagram.start"

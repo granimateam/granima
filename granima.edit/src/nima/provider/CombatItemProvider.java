@@ -103,7 +103,6 @@ public class CombatItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(NimaPackage.Literals.COMBAT__ARCHETYPES);
-			childrenFeatures.add(NimaPackage.Literals.COMBAT__ATTAQUES);
 		}
 		return childrenFeatures;
 	}
@@ -160,7 +159,6 @@ public class CombatItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case NimaPackage.COMBAT__ARCHETYPES:
-			case NimaPackage.COMBAT__ATTAQUES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -182,11 +180,6 @@ public class CombatItemProvider
 			(createChildParameter
 				(NimaPackage.Literals.COMBAT__ARCHETYPES,
 				 NimaFactory.eINSTANCE.createArchetype()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(NimaPackage.Literals.COMBAT__ATTAQUES,
-				 NimaFactory.eINSTANCE.createAttaque()));
 	}
 
 	/**

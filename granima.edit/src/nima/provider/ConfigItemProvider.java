@@ -67,7 +67,6 @@ public class ConfigItemProvider
 			addNomPropertyDescriptor(object);
 			addDescriptionPropertyDescriptor(object);
 			addAttaquePropertyDescriptor(object);
-			addAttackPropertyDescriptor(object);
 			addNbAttaquesPropertyDescriptor(object);
 			addEnchainePropertyDescriptor(object);
 			addTypeDefPropertyDescriptor(object);
@@ -226,28 +225,6 @@ public class ConfigItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Attack feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAttackPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Config_attack_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Config_attack_feature", "_UI_Config_type"),
-				 NimaPackage.Literals.CONFIG__ATTACK,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}

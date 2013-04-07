@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link nima.Combat#getArchetypes <em>Archetypes</em>}</li>
- *   <li>{@link nima.Combat#getAttaques <em>Attaques</em>}</li>
  *   <li>{@link nima.Combat#getNbRound <em>Nb Round</em>}</li>
  * </ul>
  * </p>
@@ -44,22 +43,6 @@ public interface Combat extends EObject {
 	 * @generated
 	 */
 	EList<Archetype> getArchetypes();
-
-	/**
-	 * Returns the value of the '<em><b>Attaques</b></em>' containment reference list.
-	 * The list contents are of type {@link nima.Attaque}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attaques</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attaques</em>' containment reference list.
-	 * @see nima.NimaPackage#getCombat_Attaques()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Attaque> getAttaques();
 
 	/**
 	 * Returns the value of the '<em><b>Nb Round</b></em>' attribute.
@@ -98,7 +81,7 @@ public interface Combat extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='setNbRound(nbRound+1);\r\nEList<Archetype> l = this.getArchetypes();\r\nfor(Archetype arch : l ) {\r\n\tarch.resetRound();\r\n\t\r\n}\r\nCollections.sort(l, new InitComparator());\r\n\r\nfor(Archetype arch : l ) {\r\n\tif(arch.isPeutAgir())\r\n\t{\r\n\t\tarch.getActive().getAttack().resolve();\r\n\t}\r\n\t\r\n}'"
+	 * @model annotation="http://www.eclipse.org/emf/2002/GenModel body='\t\tsetNbRound(nbRound+1);\r\n\t\tLinkedList<Archetype> l =new LinkedList<Archetype>(this.getArchetypes());\r\n\t\tfor(Archetype arch : l ) {\r\n\t\t\tarch.resetRound();\r\n\t\t\t\r\n\t\t}\r\n\t\tCollections.sort(l, new InitComparator());\r\n\t\t\r\n\t\tfor(Archetype arch : l ) {\r\n\t\t\tif(arch.isPeutAgir()) {\r\n\t\t\t\tarch.baston(0);\r\n\t\t\t}\r\n\t\t\t\r\n\t\t}'"
 	 * @generated
 	 */
 	void resetAndRun();
