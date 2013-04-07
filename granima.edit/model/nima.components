@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eef-components="http://www.eclipse.org/emf/eef/components/1.0.0" xmlns:eef-views="http://www.eclipse.org/emf/eef/views/1.0.0">
+  <eef-components:PropertiesEditionContext xmi:id="_NYl4kZ_NEeKKBZ91EcqAiQ" documentation="Edition Context for nima GenPackage">
+    <categories xmi:id="_NYnGsJ_NEeKKBZ91EcqAiQ" name="nima">
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_NYnGsZ_NEeKKBZ91EcqAiQ" name="Archetype" views="_NYntwZ_NEeKKBZ91EcqAiQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGsp_NEeKKBZ91EcqAiQ" name="hp" views="_NYntw5_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/hp"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGs5_NEeKKBZ91EcqAiQ" name="init" views="_NYntxJ_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/init"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGtJ_NEeKKBZ91EcqAiQ" name="attaque" views="_NYntxZ_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/attaque"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGtZ_NEeKKBZ91EcqAiQ" name="defense" views="_NYntxp_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/defense"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGtp_NEeKKBZ91EcqAiQ" name="typeDef" views="_NYntx5_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/typeDef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGt5_NEeKKBZ91EcqAiQ" name="rphy" views="_NYntyJ_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/rphy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGuJ_NEeKKBZ91EcqAiQ" name="rmys" views="_NYntyZ_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/rmys"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGuZ_NEeKKBZ91EcqAiQ" name="rpsy" views="_NYntyp_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/rpsy"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGup_NEeKKBZ91EcqAiQ" name="perf" views="_NYnty5_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/perf"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGu5_NEeKKBZ91EcqAiQ" name="tran" views="_NYntzJ_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/tran"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGvJ_NEeKKBZ91EcqAiQ" name="con" views="_NYntzZ_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/con"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGvZ_NEeKKBZ91EcqAiQ" name="cha" views="_NYntzp_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/cha"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGvp_NEeKKBZ91EcqAiQ" name="froid" views="_NYntz5_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/froid"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGv5_NEeKKBZ91EcqAiQ" name="elec" views="_NYnt0J_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/elec"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGwJ_NEeKKBZ91EcqAiQ" name="ener" views="_NYnt0Z_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/ener"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGwZ_NEeKKBZ91EcqAiQ" name="nom" views="_NYnt0p_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/nom"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGwp_NEeKKBZ91EcqAiQ" name="description" views="_NYnt05_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGw5_NEeKKBZ91EcqAiQ" name="active" views="_NYnt1J_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/granima/model/nima.ecore#//Archetype/active"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGxJ_NEeKKBZ91EcqAiQ" name="nbDef" views="_NYnt1Z_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/nbDef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGxZ_NEeKKBZ91EcqAiQ" name="joueur" views="_NYnt1p_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/joueur"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGxp_NEeKKBZ91EcqAiQ" name="nbAction" views="_NYnt15_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/nbAction"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGx5_NEeKKBZ91EcqAiQ" name="peutAgir" views="_NYnt2J_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/peutAgir"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGyJ_NEeKKBZ91EcqAiQ" name="rolledInit" views="_NYnt2Z_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/rolledInit"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGyZ_NEeKKBZ91EcqAiQ" name="cible" views="_NYnt2p_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/granima/model/nima.ecore#//Archetype/cible"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGyp_NEeKKBZ91EcqAiQ" name="hpMax" views="_NYnt25_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/hpMax"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGy5_NEeKKBZ91EcqAiQ" name="malusCritTemp" views="_NYnt3J_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/malusCritTemp"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGzJ_NEeKKBZ91EcqAiQ" name="bonusAtaque" views="_NYnt3Z_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/bonusAtaque"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGzZ_NEeKKBZ91EcqAiQ" name="bonusDef" views="_NYnt3p_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Archetype/bonusDef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGzp_NEeKKBZ91EcqAiQ" name="current" views="_NYnt35_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/granima/model/nima.ecore#//Archetype/current"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnGz5_NEeKKBZ91EcqAiQ" name="contre" views="_NYnt4J_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/granima/model/nima.ecore#//Archetype/contre"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/granima/model/nima.ecore#//Archetype"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_NYnG0J_NEeKKBZ91EcqAiQ" name="Config" views="_NYnt4Z_NEeKKBZ91EcqAiQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG0Z_NEeKKBZ91EcqAiQ" name="init" views="_NYoU0Z_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Config/init"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG0p_NEeKKBZ91EcqAiQ" name="defense" views="_NYoU0p_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Config/defense"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG05_NEeKKBZ91EcqAiQ" name="degats" views="_NYoU05_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Config/degats"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG1J_NEeKKBZ91EcqAiQ" name="typeDegat" views="_NYoU1J_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Config/typeDegat"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG1Z_NEeKKBZ91EcqAiQ" name="nom" views="_NYoU1Z_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Config/nom"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG1p_NEeKKBZ91EcqAiQ" name="description" views="_NYoU1p_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Config/description"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG15_NEeKKBZ91EcqAiQ" name="owner" views="_NYoU15_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/granima/model/nima.ecore#//Config/owner"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG2J_NEeKKBZ91EcqAiQ" name="attaque" views="_NYoU2J_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Config/attaque.1"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG2Z_NEeKKBZ91EcqAiQ" name="nbAttaques" views="_NYoU2Z_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Config/nbAttaques"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG2p_NEeKKBZ91EcqAiQ" name="enchaine" views="_NYoU2p_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/granima/model/nima.ecore#//Config/enchaine"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG25_NEeKKBZ91EcqAiQ" name="typeDef" views="_NYoU25_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Config/typeDef"/>
+        </properties>
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG3J_NEeKKBZ91EcqAiQ" name="typeAttaque" views="_NYoU3J_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Config/typeAttaque"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/granima/model/nima.ecore#//Config"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_NYnG3Z_NEeKKBZ91EcqAiQ" name="Univers" views="_NYoU3Z_NEeKKBZ91EcqAiQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG3p_NEeKKBZ91EcqAiQ" name="combats" views="_NYoU35_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EReference" href="platform:/resource/granima/model/nima.ecore#//Univers/combats"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/granima/model/nima.ecore#//Univers"/>
+      </bindings>
+      <bindings xsi:type="eef-components:PropertiesEditionComponent" xmi:id="_NYnG35_NEeKKBZ91EcqAiQ" name="Combat" views="_NYoU4J_NEeKKBZ91EcqAiQ">
+        <properties xsi:type="eef-components:PropertiesEditionElement" xmi:id="_NYnG4J_NEeKKBZ91EcqAiQ" name="nbRound" views="_NYoU4p_NEeKKBZ91EcqAiQ">
+          <model xsi:type="ecore:EAttribute" href="platform:/resource/granima/model/nima.ecore#//Combat/nbRound"/>
+        </properties>
+        <model xsi:type="ecore:EClass" href="platform:/resource/granima/model/nima.ecore#//Combat"/>
+      </bindings>
+    </categories>
+    <model href="platform:/resource/granima/model/nima.genmodel#//nima"/>
+  </eef-components:PropertiesEditionContext>
+  <eef-views:ViewsRepository xmi:id="_NYnG4Z_NEeKKBZ91EcqAiQ" documentation="Views repository for nima GenPackage" name="nima">
+    <RepositoryKind>SWT</RepositoryKind>
+    <RepositoryKind>Form</RepositoryKind>
+    <categories xmi:id="_NYntwJ_NEeKKBZ91EcqAiQ" name="nima">
+      <views xmi:id="_NYntwZ_NEeKKBZ91EcqAiQ" name="Archetype">
+        <elements xsi:type="eef-views:Container" xmi:id="_NYntwp_NEeKKBZ91EcqAiQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntw5_NEeKKBZ91EcqAiQ" name="hp">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntxJ_NEeKKBZ91EcqAiQ" name="init">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntxZ_NEeKKBZ91EcqAiQ" name="attaque">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntxp_NEeKKBZ91EcqAiQ" name="defense">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntx5_NEeKKBZ91EcqAiQ" name="typeDef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntyJ_NEeKKBZ91EcqAiQ" name="rphy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntyZ_NEeKKBZ91EcqAiQ" name="rmys">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntyp_NEeKKBZ91EcqAiQ" name="rpsy">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnty5_NEeKKBZ91EcqAiQ" name="perf">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntzJ_NEeKKBZ91EcqAiQ" name="tran">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntzZ_NEeKKBZ91EcqAiQ" name="con">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntzp_NEeKKBZ91EcqAiQ" name="cha">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYntz5_NEeKKBZ91EcqAiQ" name="froid">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt0J_NEeKKBZ91EcqAiQ" name="elec">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt0Z_NEeKKBZ91EcqAiQ" name="ener">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt0p_NEeKKBZ91EcqAiQ" name="nom">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt05_NEeKKBZ91EcqAiQ" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt1J_NEeKKBZ91EcqAiQ" name="active">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt1Z_NEeKKBZ91EcqAiQ" name="nbDef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt1p_NEeKKBZ91EcqAiQ" name="joueur">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt15_NEeKKBZ91EcqAiQ" name="nbAction">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt2J_NEeKKBZ91EcqAiQ" name="peutAgir">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.1"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt2Z_NEeKKBZ91EcqAiQ" name="rolledInit">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt2p_NEeKKBZ91EcqAiQ" name="cible">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt25_NEeKKBZ91EcqAiQ" name="hpMax">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt3J_NEeKKBZ91EcqAiQ" name="malusCritTemp">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt3Z_NEeKKBZ91EcqAiQ" name="bonusAtaque">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt3p_NEeKKBZ91EcqAiQ" name="bonusDef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt35_NEeKKBZ91EcqAiQ" name="current">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYnt4J_NEeKKBZ91EcqAiQ" name="contre">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_NYnt4Z_NEeKKBZ91EcqAiQ" name="Config">
+        <elements xsi:type="eef-views:Container" xmi:id="_NYoU0J_NEeKKBZ91EcqAiQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU0Z_NEeKKBZ91EcqAiQ" name="init">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU0p_NEeKKBZ91EcqAiQ" name="defense">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU05_NEeKKBZ91EcqAiQ" name="degats">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU1J_NEeKKBZ91EcqAiQ" name="typeDegat">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU1Z_NEeKKBZ91EcqAiQ" name="nom">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU1p_NEeKKBZ91EcqAiQ" name="description">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU15_NEeKKBZ91EcqAiQ" name="owner">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU2J_NEeKKBZ91EcqAiQ" name="attaque">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU2Z_NEeKKBZ91EcqAiQ" name="nbAttaques">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU2p_NEeKKBZ91EcqAiQ" name="enchaine">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.0"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU25_NEeKKBZ91EcqAiQ" name="typeDef">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU3J_NEeKKBZ91EcqAiQ" name="typeAttaque">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.2"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_NYoU3Z_NEeKKBZ91EcqAiQ" name="Univers">
+        <elements xsi:type="eef-views:Container" xmi:id="_NYoU3p_NEeKKBZ91EcqAiQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU35_NEeKKBZ91EcqAiQ" name="combats">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/EMFProperties.toolkits#//@widgets.7"/>
+          </elements>
+        </elements>
+      </views>
+      <views xmi:id="_NYoU4J_NEeKKBZ91EcqAiQ" name="Combat">
+        <elements xsi:type="eef-views:Container" xmi:id="_NYoU4Z_NEeKKBZ91EcqAiQ" name="properties">
+          <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.4"/>
+          <elements xsi:type="eef-views:ElementEditor" xmi:id="_NYoU4p_NEeKKBZ91EcqAiQ" name="nbRound">
+            <representation href="platform:/plugin/org.eclipse.emf.eef.views/std/SWT.toolkits#//@widgets.0"/>
+          </elements>
+        </elements>
+      </views>
+    </categories>
+  </eef-views:ViewsRepository>
+</xmi:XMI>
