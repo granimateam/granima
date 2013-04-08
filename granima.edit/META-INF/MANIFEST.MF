@@ -11,5 +11,6 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: nima.provider
 Require-Bundle: org.eclipse.core.runtime,
  granima;visibility:=reexport,
- org.eclipse.emf.edit;visibility:=reexport
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.eclipse.emf.eef.runtime;bundle-version="1.0.1";visibility:=reexport
 Bundle-ActivationPolicy: lazy
