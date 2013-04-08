@@ -14,27 +14,27 @@
           title="Archetype"
           description="Create new Archetype">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Archetype.gif"
+            bundle="granima.edit"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Attaque"
           description="Create new Attaque">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Attaque.gif"
+            bundle="granima.edit"/>
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Config"
           description="Create new Config">
         <smallIcon
-            xsi:type="gmftool:DefaultImage"/>
-        <largeIcon
-            xsi:type="gmftool:DefaultImage"/>
+            xsi:type="gmftool:BundleImage"
+            path="icons/full/obj16/Config.gif"
+            bundle="granima.edit"/>
       </tools>
     </tools>
   </palette>

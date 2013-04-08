@@ -155,16 +155,19 @@
             xsi:type="gmfgen:ToolEntry"
             title="Archetype"
             description="Create new Archetype"
+            smallIconPath="/granima.edit/icons/full/obj16/Archetype.gif"
             genNodes="//@diagram/@topLevelNodes.0"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Attaque"
             description="Create new Attaque"
+            smallIconPath="/granima.edit/icons/full/obj16/Attaque.gif"
             genLinks="//@diagram/@links.0 //@diagram/@links.1"/>
         <entries
             xsi:type="gmfgen:ToolEntry"
             title="Config"
             description="Create new Config"
+            smallIconPath="/granima.edit/icons/full/obj16/Config.gif"
             genNodes="//@diagram/@childNodes.0"/>
       </groups>
     </palette>
