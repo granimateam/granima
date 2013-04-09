@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="nima" nsURI="http://nima/1.0" nsPrefix="nima">
-  <eClassifiers xsi:type="ecore:EClass" name="Archetype">
+  <eClassifiers xsi:type="ecore:EClass" name="Archetype" eSuperTypes="#//Fiche">
     <eOperations name="getIP" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="if(typeAtt.CHALEUR == type)&#xD;&#xA;&#x9;return cha;&#xD;&#xA;if(typeAtt.ELECTRICITE == type)&#xD;&#xA;&#x9;return elec;&#xD;&#xA;if(typeAtt.FROID == type)&#xD;&#xA;&#x9;return cha;&#xD;&#xA;if(typeAtt.TRANCHANT == type)&#xD;&#xA;&#x9;return tran;&#xD;&#xA;if(typeAtt.CONTONDANT == type)&#xD;&#xA;&#x9;return con;&#xD;&#xA;if(typeAtt.PERFORANT == type)&#xD;&#xA;&#x9;return perf;&#xD;&#xA;if(typeAtt.ENERGIE == type)&#xD;&#xA;&#x9;return ener;&#xD;&#xA;return 0;"/>
@@ -46,8 +46,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="froid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="elec" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ener" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="active" eType="#//Config"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbDef" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="joueur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -108,12 +106,14 @@
     <eLiterals name="energie" value="6"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Univers">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="archetypes" upperBound="-1"
-        eType="#//Archetype" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fiches" upperBound="-1"
+        eType="#//Fiche" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="combats" upperBound="-1"
         eType="#//Combat" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categorie" eType="#//ListeCategorie"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Combat">
+  <eClassifiers xsi:type="ecore:EClass" name="Combat" eSuperTypes="#//Fiche">
     <eOperations name="resetRound">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="setNbRound(nbRound+1);&#xD;&#xA;EList&lt;Archetype> l = this.getArchetypes();&#xD;&#xA;for(Archetype arch : l )&#xD;&#xA;{&#xD;&#xA;&#x9;arch.resetRound();&#xD;&#xA;}"/>
@@ -133,5 +133,32 @@
     <eLiterals name="lance" value="1"/>
     <eLiterals name="tir" value="2"/>
     <eLiterals name="neutre" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fiche">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boxes" upperBound="-1"
+        eType="#//Box" containment="true" eOpposite="#//Box/fiche"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="liens" upperBound="-1"
+        eType="#//Lien" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categorie" eType="#//Categorie"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lien">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Box"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cible" lowerBound="1" eType="#//Box"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categorie" eType="#//Categorie"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Box">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fiche" lowerBound="1" eType="#//Fiche"
+        eOpposite="#//Fiche/boxes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cible" eType="#//Fiche"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ListeCategorie">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="categories" upperBound="-1"
+        eType="#//Categorie" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Categorie">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>
